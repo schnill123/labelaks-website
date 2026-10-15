@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Product Details | Label AKS</title>
+  <meta name="description" content="Explore elegant ladies' ethnic wear at Label AKS. Enquire about your favourite design on WhatsApp.">
+
+  <style>
+    :root {
+      --green: #174d38;
+      --gold: #c5a46d;
+      --cream: #faf8f3;
+      --text: #292929;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e7e0d5;
+      padding: 16px 20px;
+      text-align: center;
+    }
+
+    .brand {
+      color: var(--green);
+      font-family: Georgia, serif;
+      font-size: 30px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-decoration: none;
+    }
+
+    .tagline {
+      margin: 6px 0 0;
+      color: #777;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 22px 5%;
+      color: var(--green);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .product-container {
+      width: min(1000px, 92%);
+      margin: 0 auto 50px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+      gap: 40px;
+      align-items: start;
+    }
+
+    .product-image-box {
+      background: white;
+      padding: 12px;
+      border: 1px solid #eee7dc;
+      border-radius: 4px;
+    }
+
+    .product-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 750px;
+      object-fit: contain;
+      background: white;
+    }
+
+    .product-details {
+      padding: 15px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      color: var(--green);
+      font-family: Georgia, serif;
+      font-size: 34px;
+      line-height: 1.25;
+      margin: 12px 0;
+    }
+
+    .design-number {
+      color: #666;
+      font-size: 15px;
+      margin: 0 0 24px;
+    }
+
+    .description {
+      color: #555;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .enquiry-note {
+      background: #f0eee6;
+      border-left: 3px solid var(--gold);
+      padding: 14px;
+      margin: 24px 0;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .whatsapp-button {
+      display: block;
+      width: 100%;
+      background: #218c52;
+      color: white;
+      padding: 16px 20px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .whatsapp-button:hover {
+      background: #176b3d;
+    }
+
+    .collection-button {
+      display: block;
+      width: 100%;
+      margin-top: 12px;
+      padding: 14px 20px;
+      text-align: center;
+      border: 1px solid var(--green);
+      color: var(--green);
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .collection-button:hover {
+      background: #edf2ee;
+    }
+
+    .error-message {
+      width: min(700px, 90%);
+      margin: 50px auto;
+      padding: 25px;
+      background: white;
+      text-align: center;
+      border: 1px solid #eee;
+    }
+
+    .error-message a {
+      color: var(--green);
+    }
+
+    footer {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    @media (max-width: 650px) {
+      .brand {
+        font-size: 25px;
+      }
+
+      .product-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 92%;
+      }
+
+      .product-image {
+        max-height: 70vh;
+      }
+
+      .product-details {
+        padding-top: 0;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .back-link {
+        margin-top: 18px;
+        margin-bottom: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="brand" href="/">LABEL AKS</a>
+    <p class="tagline">ELEGANCE IN EVERY THREAD</p>
+  </header>
+
+  <a class="back-link" id="backLink" href="/">&larr; Back to Label AKS</a>
+
+  <main id="productRoot">
+    <div class="error-message">
+      Loading product details...
+    </div>
+  </main>
+
+  <footer>
+    <strong>LABEL AKS</strong><br>
+    537, Site 1, Vikaspuri<br>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+      Follow us on Instagram
+    </a>
+  </footer>
+
+  <script>
+    const WHATSAPP_NUMBER = "919810057892";
+
+    const categories = {
+      "western-wear": {
+        title: "Western Wear",
+        folder: "Westernwear",
+        count: 11
+      },
+      "cord-sets": {
+        title: "Co-ord Sets",
+        folder: "cordsets",
+        count: 37
+      },
+      "indo-western": {
+        title: "Indo-Western",
+        folder: "indowestern",
+        count: 22
+      },
+      "designer-suits": {
+        title: "Designer Suits",
+        folder: "designer-suits",
+        count: 71
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const categoryId = params.get("category");
+    const imageNumber = Number(params.get("image"));
+    const category = categories[categoryId];
+
+    const root = document.getElementById("productRoot");
+    const backLink = document.getElementById("backLink");
+
+    function showError(message) {
+      root.innerHTML = "";
+
+      const box = document.createElement("div");
+      box.className = "error-message";
+
+      const heading = document.createElement("h2");
+      heading.textContent = "Product not found";
+
+      const paragraph = document.createElement("p");
+      paragraph.textContent = message;
+
+      const link = document.createElement("a");
+      link.href = "/";
+      link.textContent = "Return to Label AKS homepage";
+
+      box.append(heading, paragraph, link);
+      root.appendChild(box);
+    }
+
+    function renderProduct() {
+      if (
+        !category ||
+        !Number.isInteger(imageNumber) ||
+        imageNumber < 1 ||
+        imageNumber > category.count
+      ) {
+        showError("Please return to the homepage and select a product.");
+        return;
+      }
+
+      const imagePath =
+        `/images/${category.folder}/${imageNumber}.jpeg`;
+
+      const productUrl = window.location.href;
+
+      const container = document.createElement("section");
+      container.className = "product-container";
+
+      const imageBox = document.createElement("div");
+      imageBox.className = "product-image-box";
+
+      const image = document.createElement("img");
+      image.className = "product-image";
+      image.src = imagePath;
+      image.alt = `${category.title} - Design ${imageNumber}`;
+      image.fetchPriority = "high";
+
+      image.onerror = function () {
+        showError("This product image could not be loaded. Please try another design.");
+      };
+
+      imageBox.appendChild(image);
+
+      const details = document.createElement("div");
+      details.className = "product-details";
+
+      const eyebrow = document.createElement("div");
+      eyebrow.className = "eyebrow";
+      eyebrow.textContent = "LABEL AKS COLLECTION";
+
+      const title = document.createElement("h1");
+      title.textContent = category.title;
+
+      const design = document.createElement("p");
+      design.className = "design-number";
+      design.textContent = `Design No. ${imageNumber}`;
+
+      const description = document.createElement("p");
+      description.className = "description";
+      description.textContent =
+        "Discover this design from our curated collection of ladies' fashion. Contact us to check availability, price, sizes and other details.";
+
+      const note = document.createElement("div");
+      note.className = "enquiry-note";
+      note.textContent =
+        "Like this design? Message us on WhatsApp and mention the design number to enquire about it.";
+
+      const whatsappMessage =
+        `Hello Label AKS! I am interested in ${category.title}, Design No. ${imageNumber}. Please share its price, available sizes and availability. Product link: ${productUrl}`;
+
+      const whatsapp = document.createElement("a");
+      whatsapp.className = "whatsapp-button";
+      whatsapp.href =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+      whatsapp.target = "_blank";
+      whatsapp.rel = "noopener";
+      whatsapp.textContent = "Enquire on WhatsApp";
+
+      const collection = document.createElement("a");
+      collection.className = "collection-button";
+      collection.href = `/#${categoryId}`;
+      collection.textContent = "Explore More Designs";
+
+      details.append(
+        eyebrow,
+        title,
+        design,
+        description,
+        note,
+        whatsapp,
+        collection
+      );
+
+      container.append(imageBox, details);
+      root.replaceChildren(container);
+
+      document.title =
+        `${category.title} - Design ${imageNumber} | Label AKS`;
+
+      backLink.href = `/#${categoryId}`;
+    }
+
+    renderProduct();
+  </script>
+</body>
+</html>
