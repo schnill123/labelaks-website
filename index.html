@@ -5,92 +5,256 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Label AKS | Ladies Suits, Vikaspuri</title>
-  <meta name="description" content="Discover elegant ladies suits at Label AKS, 537, Site 1, Vikaspuri, New Delhi.">
+  <meta name="description" content="Explore elegant ladies' suits and ethnic wear at Label AKS, 537, Site 1, Vikaspuri, New Delhi. Contact us on WhatsApp to buy.">
+
+  <meta name="theme-color" content="#582238">
   <style>
     * { box-sizing: border-box; }
+
+    :root {
+      --wine: #582238;
+      --wine-dark: #351421;
+      --cream: #fcf7f0;
+      --beige: #f0e2d4;
+      --gold: #b58b56;
+      --ink: #302329;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      color: #302329;
-      background: #fcf7f0;
-      line-height: 1.7;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
     }
+
     header {
-      background: #582238;
-      color: white;
-      padding: 24px 16px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-family: Georgia, serif;
-      letter-spacing: 4px;
-      font-size: 34px;
-    }
-    header p { margin: 4px 0 0; letter-spacing: 3px; font-size: 11px; }
-    nav {
-      padding: 14px;
-      text-align: center;
-      background: #f0e2d4;
-    }
-    nav a {
-      color: #582238;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    .hero {
-      text-align: center;
-      padding: 65px 20px;
-      background: #ead7c8;
-    }
-    .hero h2 {
-      font: normal 42px/1.2 Georgia, serif;
-      color: #582238;
-      margin: 0 0 16px;
-    }
-    .hero p { max-width: 540px; margin: 0 auto 25px; }
-    .button {
-      display: inline-block;
-      background: #582238;
-      color: white;
-      padding: 12px 22px;
-      text-decoration: none;
-      border-radius: 4px;
-      margin: 5px;
-    }
-    section { padding: 45px 20px; text-align: center; }
-    h2 { color: #582238; font-family: Georgia, serif; }
-    .collections {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .item {
-      background: white;
-      padding: 25px;
-      width: 280px;
-      border: 1px solid #ead7c8;
-    }
-    .item h3 { color: #582238; font-family: Georgia, serif; }
-    .visit { background: #f0e2d4; }
-    footer {
-      background: #351421;
+      background: var(--wine);
       color: white;
       text-align: center;
       padding: 25px 15px;
     }
-    footer p { margin: 5px; }
-    @media(max-width: 500px) {
-      .hero h2 { font-size: 34px; }
-      nav a { display: inline-block; margin: 4px 8px; }
+
+    header h1 {
+      margin: 0;
+      font: normal 36px Georgia, serif;
+      letter-spacing: 5px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 11px;
+      letter-spacing: 3px;
+    }
+
+    nav {
+      background: var(--beige);
+      padding: 13px 10px;
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 4px 10px;
+      color: var(--wine);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 65px 20px;
+      text-align: center;
+      background: #ead7c8;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .hero h2 {
+      max-width: 760px;
+      margin: 10px auto 15px;
+      color: var(--wine);
+      font: normal clamp(32px, 5vw, 48px)/1.2 Georgia, serif;
+    }
+
+    .hero p {
+      max-width: 570px;
+      margin: 0 auto 23px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--wine);
+      color: white;
+      text-decoration: none;
+      padding: 12px 19px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background .2s, transform .2s;
+    }
+
+    .button:hover {
+      background: var(--wine-dark);
+      transform: translateY(-1px);
+    }
+
+    .button-outline {
+      color: var(--wine);
+      background: transparent;
+      border: 1px solid var(--wine);
+    }
+
+    .button-outline:hover {
+      color: white;
+    }
+
+    section {
+      padding: 52px 18px;
+      text-align: center;
+    }
+
+    .section-heading {
+      margin: 0 0 8px;
+      color: var(--wine);
+      font: normal clamp(28px, 4vw, 36px) Georgia, serif;
+    }
+
+    .section-intro {
+      max-width: 620px;
+      margin: 0 auto 30px;
+      color: #6e5b61;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 1200px;
+      margin: 32px auto 0;
+      text-align: left;
+    }
+
+    .product {
+      min-width: 0;
+      overflow: hidden;
+      background: white;
+      border: 1px solid #eaded4;
+      border-radius: 7px;
+      box-shadow: 0 4px 16px rgba(53, 20, 33, .06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      background: #f0e2d4;
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 15px;
+    }
+
+    .product h3 {
+      color: var(--wine);
+      font: normal 19px Georgia, serif;
+      margin: 0 0 7px;
+    }
+
+    .product p {
+      color: #6e5b61;
+      font-size: 13px;
+      margin: 0 0 15px;
+    }
+
+    .product .button {
+      margin-top: auto;
+      text-align: center;
+      padding: 11px 8px;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about p {
+      max-width: 650px;
+      margin: 12px auto;
+    }
+
+    .visit {
+      background: var(--beige);
+    }
+
+    .visit .button {
+      margin: 6px;
+    }
+
+    footer {
+      padding: 28px 15px;
+      background: var(--wine-dark);
+      color: white;
+      text-align: center;
+    }
+
+    footer h3 {
+      margin: 0;
+      font: normal 23px Georgia, serif;
+      letter-spacing: 3px;
+    }
+
+    footer p { margin: 6px; font-size: 13px; }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10;
+      background: #187b49;
+      color: white;
+      padding: 13px 17px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 13px;
+      box-shadow: 0 3px 14px #0003;
+    }
+
+    @media (max-width: 950px) {
+      .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 650px) {
+      header h1 { font-size: 30px; }
+      .hero { padding: 48px 17px; }
+      section { padding: 40px 13px; }
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 24px;
+      }
+      .product-info { padding: 11px; }
+      .product h3 { font-size: 16px; }
+      .product .button { font-size: 12px; padding: 10px 5px; }
+      .whatsapp-float { right: 10px; bottom: 10px; }
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>LABEL AKS</h1>
@@ -98,74 +262,121 @@
   </header>
 
   <nav>
-    <a href="#collections">Collections</a>
+    <a href="#collections">Our Collection</a>
     <a href="#about">About Us</a>
     <a href="#visit">Visit Us</a>
   </nav>
 
-  <div class="hero">
-    <h2>Elegance for Every Occasion</h2>
-    <p>
-      Discover beautiful ladies' suits and ethnic styles
-      for everyday wear, family gatherings and celebrations.
-      We look forward to welcoming you!
-    </p>
-    <a class="button" href="#collections">Explore Collections</a>
-    <a class="button" href="#visit">Find Our Store</a>
-  </div>
-
-  <section id="collections">
-    <h2>Our Collections</h2>
-    <p>Discover your next favourite style at Label AKS.</p>
-    <div class="collections">
-      <div class="item">
-        <h3>Elegant Suit Sets</h3>
-        <p>Beautiful styles for everyday elegance.</p>
-      </div>
-      <div class="item">
-        <h3>Festive Collection</h3>
-        <p>Special looks for celebrations and occasions.</p>
-      </div>
-      <div class="item">
-        <h3>New Arrivals</h3>
-        <p>Explore fresh colours, patterns and designs.</p>
-      </div>
+  <main>
+    <div class="hero">
+      <div class="eyebrow">Discover your style</div>
+      <h2>Elegance for Every Occasion</h2>
+      <p>
+        Discover beautiful ladies' suits and ethnic styles for everyday wear,
+        family gatherings and celebrations. Find a look that feels like you.
+      </p>
+      <a class="button" href="#collections">Explore Our Collection</a>
+      <a class="button button-outline" href="#visit">Find Our Store</a>
     </div>
-  </section>
 
-  <section id="about">
-    <h2>A Personal Shopping Experience</h2>
-    <p>
-      At Label AKS, we want every customer to feel welcome.
-      Visit our showroom, browse our collection and let us
-      help you find something you love.
-    </p>
-  </section>
+    <section id="collections">
+      <div class="eyebrow">Selected with care</div>
+      <h2 class="section-heading">Our Suit Collection</h2>
+      <p class="section-intro">
+        Explore our latest designs. Interested in a piece?
+        Contact us on WhatsApp for the price, availability and purchase details.
+      </p>
 
-  <section class="visit" id="visit">
-    <h2>Visit Label AKS</h2>
-    <p><strong>Address:</strong><br>
-      537, Site 1, Vikaspuri, New Delhi
-    </p>
-    <a class="button"
-       href="https://www.google.com/maps/search/?api=1&query=537%2C%20Site%201%2C%20Vikaspuri%2C%20New%20Delhi"
-       target="_blank" rel="noopener">
-      Get Google Maps Directions
-    </a>
-    <p style="margin-top:25px">
-      Have a question about our collection?
-    </p>
-    <a class="button"
-        href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20I%20want%20to%20enquire%20about%20a%20product%20that%20I%20want%20to%20purchase."
-       target="_blank" rel="noopener">
-      Enquire on WhatsApp
-    </a>
-  </section>
+      <div class="products" id="product-gallery">
+        <p>Loading our collection…</p>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="eyebrow">A personal touch</div>
+      <h2 class="section-heading">A Personal Shopping Experience</h2>
+      <p>
+        At Label AKS, we want every customer to feel welcome.
+        Browse our collection, ask us about your favourite designs,
+        and let us help you find something you love.
+      </p>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="eyebrow">We look forward to meeting you</div>
+      <h2 class="section-heading">Visit Label AKS</h2>
+      <p><strong>Address:</strong><br>
+        537, Site 1, Vikaspuri, New Delhi
+      </p>
+
+      <a class="button"
+         href="https://www.google.com/maps/search/?api=1&query=537%2C%20Site%201%2C%20Vikaspuri%2C%20New%20Delhi"
+         target="_blank" rel="noopener">
+        Get Google Maps Directions
+      </a>
+
+      <p style="margin-top:25px">Have a question or want to purchase a suit?</p>
+      <a class="button"
+         href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20I%20would%20like%20to%20enquire%20about%20your%20collection."
+         target="_blank" rel="noopener">
+        Contact Us on WhatsApp
+      </a>
+    </section>
+  </main>
 
   <footer>
     <h3>LABEL AKS</h3>
     <p>Elegant Ethnic Wear · Vikaspuri, New Delhi</p>
     <p>© 2026 Label AKS</p>
   </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20I%20would%20like%20to%20enquire%20about%20your%20collection."
+     target="_blank" rel="noopener" aria-label="Contact Label AKS on WhatsApp">
+    WhatsApp Us
+  </a>
+
+  <script>
+    const products = [
+      { name: "Suit Collection 01", image: "Suit%201.jpeg" },
+      { name: "Suit Collection 02", image: "Suit2.jpeg" },
+      { name: "Suit Collection 03", image: "Suit4.jpeg" },
+      { name: "Suit Collection 04", image: "suit%201a.jpeg" },
+      { name: "Suit Collection 05", image: "suit3.jpeg" },
+      { name: "Suit Collection 06", image: "suit5.jpeg" },
+      { name: "Suit Collection 07", image: "suit6.jpeg" },
+      { name: "Featured Design 01", image: "cod.jpeg" },
+      { name: "Featured Design 02", image: "Cod2.jpeg" },
+      { name: "Lehenga Collection", image: "Lehenga%201.jpeg" }
+    ];
+
+    const gallery = document.getElementById("product-gallery");
+
+    gallery.innerHTML = products.map((product, index) => {
+      const message = encodeURIComponent(
+        `Hello Label AKS, I am interested in ${product.name}. Please share the price and availability.`
+      );
+      const imagePath = `images/${product.image}`;
+
+      return `
+        <article class="product">
+          <img
+            src="${imagePath}"
+            alt="${product.name} at Label AKS"
+            loading="${index < 4 ? "eager" : "lazy"}"
+          >
+          <div class="product-info">
+            <h3>${product.name}</h3>
+            <p>Ask us about this design and its availability.</p>
+            <a class="button"
+               href="https://wa.me/919810057892?text=${message}"
+               target="_blank" rel="noopener">
+              Contact Us to Buy
+            </a>
+          </div>
+        </article>
+      `;
+    }).join("");
+  </script>
 </body>
 </html>
