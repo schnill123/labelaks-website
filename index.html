@@ -329,8 +329,13 @@
       width: max-content;
       gap: var(--product-gap);
       padding: 4px 0 12px;
-      animation: productScroll 100s linear infinite;
+      animation: productScroll 45s linear infinite;
       will-change: transform;
+    }
+
+    /* ONLY CHANGE: Designer Suits scrolls more slowly */
+    .section-designer-suits .product-track {
+      animation-duration: 100s;
     }
 
     .product-viewport:hover .product-track,
@@ -825,7 +830,7 @@
     <div class="category-grid" id="categoryGrid"></div>
   </section>
 
-  <!-- The four numbered-image product galleries are generated here -->
+  <!-- Product galleries are generated here -->
   <div id="productSections"></div>
 
   <!-- Our Story -->
@@ -950,13 +955,6 @@
   </a>
 
   <script>
-    /*
-      IMPORTANT:
-      These four categories have numbered product images in folders.
-      Each product image links to product.html with its category and image number.
-      The remaining categories appear only in the collection directory.
-    */
-
     const categories = [
       {
         id: "western-wear",
@@ -1040,11 +1038,6 @@
       article.className = "category-card";
 
       const link = document.createElement("a");
-
-      /*
-        Numbered categories go to their collection page from the directory.
-        Other categories also link to their collection page.
-      */
       link.href = `/category.html?category=${encodeURIComponent(category.id)}`;
 
       const image = document.createElement("img");
@@ -1073,9 +1066,8 @@
     }
 
     /*
-      Creates one product card.
-      Clicking either the image or View Product opens the individual product
-      page, NOT the whole collection.
+      Individual product links:
+      /product.html?category=designer-suits&image=12
     */
     function createProductCard(category, imageNumber) {
       const card = document.createElement("article");
@@ -1122,7 +1114,9 @@
 
     function createProductSection(category) {
       const section = document.createElement("section");
-section.className = "product-section section-" + category.id;
+
+      /* Class lets Designer Suits have its own scrolling speed. */
+      section.className = "product-section section-" + category.id;
       section.id = category.id;
 
       const heading = document.createElement("div");
@@ -1148,18 +1142,11 @@ section.className = "product-section section-" + category.id;
       const track = document.createElement("div");
       track.className = "product-track";
 
-      /*
-        Original cards: one per numbered image.
-      */
       for (let i = 1; i <= category.count; i++) {
         track.appendChild(createProductCard(category, i));
       }
 
-      /*
-        Duplicate cards for continuous scrolling.
-        Cloned links are removed from keyboard navigation so screen readers
-        and keyboard users don't encounter duplicate products.
-      */
+      /* Duplicate the cards to support continuous scrolling. */
       for (let i = 1; i <= category.count; i++) {
         const clone = createProductCard(category, i);
         clone.setAttribute("aria-hidden", "true");
@@ -1192,10 +1179,6 @@ section.className = "product-section section-" + category.id;
     function renderProductSections() {
       productSections.replaceChildren();
 
-      /*
-        Only render the four categories that have complete numbered
-        image folders. This avoids duplicate sections containing one image.
-      */
       const populatedCategories = categories.filter(category =>
         category.populated === true &&
         category.folder &&
