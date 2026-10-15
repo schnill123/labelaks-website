@@ -152,7 +152,7 @@
 
     .main-nav a:hover { color: var(--champagne); }
 
-    /* COMPACT HERO — APPROXIMATELY 40% OF PREVIOUS HEIGHT */
+    /* COMPACT HERO */
 
     #homeHero {
       position: relative;
@@ -334,119 +334,6 @@
       text-transform: uppercase;
     }
 
-    /* PRODUCT CAROUSELS */
-
-    .product-section {
-      padding: 42px 0;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border);
-      background: var(--paper);
-    }
-
-    .product-section:nth-child(even) { background: var(--white); }
-
-    .product-viewport {
-      width: 100%;
-      overflow: hidden;
-      touch-action: pan-y;
-    }
-
-    .product-track {
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: stretch;
-      width: max-content;
-      gap: 16px;
-      transform: translateX(0);
-      will-change: transform;
-    }
-
-    .product-card {
-      flex: 0 0 210px;
-      width: 210px;
-      min-width: 0;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: var(--white);
-    }
-
-    .product-card img {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      background: var(--sage);
-    }
-
-    .product-info {
-      padding: 12px 9px 15px;
-      text-align: center;
-    }
-
-    .product-info h3 {
-      margin: 0 0 5px;
-      color: var(--forest);
-      font-family: var(--heading);
-      font-size: 19px;
-      font-weight: 600;
-      line-height: 1.2;
-    }
-
-    .product-info p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 10px;
-    }
-
-    .product-link {
-      display: inline-block;
-      margin-top: 9px;
-      border-bottom: 1px solid var(--gold);
-      color: var(--forest);
-      font-size: 9px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .carousel-controls {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .carousel-button {
-      width: 38px;
-      height: 38px;
-      border: 1px solid var(--forest);
-      border-radius: 50%;
-      background: transparent;
-      color: var(--forest);
-      cursor: pointer;
-      font-size: 19px;
-    }
-
-    .carousel-button:hover {
-      background: var(--forest);
-      color: var(--white);
-    }
-
-    .view-all {
-      display: table;
-      margin: 22px auto 0;
-      padding: 11px 20px;
-      border: 1px solid var(--forest);
-      color: var(--forest);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .8px;
-      text-transform: uppercase;
-    }
-
-    .view-all:hover {
-      background: var(--forest);
-      color: var(--white);
-    }
-
     /* ABOUT */
 
     .about-section {
@@ -456,16 +343,31 @@
 
     .about-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       align-items: center;
       gap: 42px;
     }
 
-    .about-image img {
+    /* Show the complete Our Story image without cropping */
+    .about-image {
+      min-width: 0;
       width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+    }
+
+    .about-image img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+      object-position: center;
       background: var(--white);
+    }
+
+    .about-copy {
+      min-width: 0;
+      overflow-wrap: break-word;
     }
 
     .about-copy .eyebrow {
@@ -675,21 +577,15 @@
         gap: 12px;
       }
 
-      .product-section { padding: 36px 0; }
-      .product-track { gap: 12px; }
-
-      .product-card {
-        flex-basis: 158px;
-        width: 158px;
-      }
-
-      .product-info h3 { font-size: 17px; }
-
       .about-section { padding: 42px 0; }
 
       .about-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 22px;
+      }
+
+      .about-copy h2 {
+        font-size: clamp(36px, 9vw, 46px);
       }
 
       .visit-section { padding: 40px 0; }
@@ -755,8 +651,8 @@
     </div>
   </nav>
 
-  <!-- COMPACT SOLID-GREEN HERO -->
   <main>
+    <!-- COMPACT SOLID-GREEN HERO -->
     <section id="homeHero">
       <div class="hero-content">
         <div class="eyebrow">Welcome to Label AKS</div>
@@ -791,7 +687,7 @@
       </div>
     </section>
 
-    <div id="productSections"></div>
+    <!-- REMOVED: generated product sections that caused repeated sections -->
 
     <section class="about-section" id="about">
       <div class="container about-layout">
@@ -1036,245 +932,6 @@
       });
     }
 
-    function createProductCard(category, number, imagePath) {
-      const card = document.createElement("article");
-      card.className = "product-card";
-
-      const link = document.createElement("a");
-      link.href = categoryURL(category);
-      link.setAttribute("aria-label", "Explore " + category.title);
-      link.appendChild(
-        makeImage(
-          imagePath,
-          category.caption + " " + String(number).padStart(2, "0")
-        )
-      );
-
-      const info = document.createElement("div");
-      info.className = "product-info";
-
-      const heading = document.createElement("h3");
-      heading.textContent =
-        category.caption + " " + String(number).padStart(2, "0");
-
-      const description = document.createElement("p");
-      description.textContent = "Discover this collection at Label AKS.";
-
-      const more = document.createElement("a");
-      more.className = "product-link";
-      more.href = categoryURL(category);
-      more.textContent = "Explore Collection";
-
-      info.append(heading, description, more);
-      card.append(link, info);
-
-      return card;
-    }
-
-    function createProductSection(category) {
-      const section = document.createElement("section");
-      section.className = "product-section";
-      section.id = category.id;
-
-      const container = document.createElement("div");
-      container.className = "container";
-
-      const heading = document.createElement("div");
-      heading.className = "section-heading";
-
-      const eyebrow = document.createElement("div");
-      eyebrow.className = "eyebrow";
-      eyebrow.textContent = "Discover Label AKS";
-
-      const title = document.createElement("h2");
-      title.textContent = category.title;
-
-      const description = document.createElement("p");
-      description.textContent = category.description;
-
-      heading.append(eyebrow, title, description);
-
-      const viewport = document.createElement("div");
-      viewport.className = "product-viewport";
-
-      const track = document.createElement("div");
-      track.className = "product-track";
-
-      if (category.populated) {
-        for (let i = 1; i <= category.count; i++) {
-          track.appendChild(
-            createProductCard(
-              category,
-              i,
-              "/images/" + category.folder + "/" + i + ".jpeg"
-            )
-          );
-        }
-      } else {
-        track.appendChild(createProductCard(category, 1, category.cover));
-      }
-
-      viewport.appendChild(track);
-
-      const controls = document.createElement("div");
-      controls.className = "carousel-controls";
-
-      const previous = document.createElement("button");
-      previous.className = "carousel-button";
-      previous.type = "button";
-      previous.textContent = "‹";
-      previous.setAttribute("aria-label", "Scroll " + category.title + " backward");
-
-      const next = document.createElement("button");
-      next.className = "carousel-button";
-      next.type = "button";
-      next.textContent = "›";
-      next.setAttribute("aria-label", "Scroll " + category.title + " forward");
-
-      controls.append(previous, next);
-
-      const all = document.createElement("a");
-      all.className = "view-all";
-      all.href = categoryURL(category);
-      all.textContent = "View " + category.title;
-
-      container.append(heading, viewport, controls, all);
-      section.appendChild(container);
-
-      previous.addEventListener("click", function () {
-        moveCarousel(track, -1);
-      });
-
-      next.addEventListener("click", function () {
-        moveCarousel(track, 1);
-      });
-
-      return section;
-    }
-
-    function renderProductSections() {
-      const host = document.getElementById("productSections");
-      const fragment = document.createDocumentFragment();
-
-      categories.forEach(function (category) {
-        fragment.appendChild(createProductSection(category));
-      });
-
-      host.replaceChildren(fragment);
-      initialiseProductScrolling();
-    }
-
-    /* CONTINUOUS PRODUCT AUTO-SCROLL */
-
-    function initialiseProductScrolling() {
-      const reducedMotion =
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      document.querySelectorAll(".product-viewport").forEach(function (viewport) {
-        const track = viewport.querySelector(".product-track");
-
-        if (!track || track.dataset.ready === "true") return;
-        track.dataset.ready = "true";
-
-        const originals = Array.from(track.children);
-
-        if (reducedMotion || originals.length < 2) return;
-
-        originals.forEach(function (card) {
-          const clone = card.cloneNode(true);
-          clone.setAttribute("aria-hidden", "true");
-
-          clone.querySelectorAll("a, button, [tabindex]").forEach(function (el) {
-            el.setAttribute("tabindex", "-1");
-          });
-
-          track.appendChild(clone);
-        });
-
-        let resizeFrame;
-
-        function configure() {
-          cancelAnimationFrame(resizeFrame);
-
-          resizeFrame = requestAnimationFrame(function () {
-            const styles = getComputedStyle(track);
-            const gap = parseFloat(styles.columnGap) || parseFloat(styles.gap) || 0;
-
-            const distance = originals.reduce(function (sum, card) {
-              return sum + card.getBoundingClientRect().width;
-            }, 0) + gap * (originals.length - 1);
-
-            if (!distance) return;
-
-            const duration = Math.max(18, distance / 24);
-
-            track.style.setProperty("--loop-distance", distance + "px");
-            track.style.animation =
-              "labelAKSScroll " + duration + "s linear infinite";
-            track.style.animationPlayState =
-              viewport.matches(":hover, :focus-within") ? "paused" : "running";
-          });
-        }
-
-        viewport.addEventListener("mouseenter", function () {
-          track.style.animationPlayState = "paused";
-        });
-
-        viewport.addEventListener("mouseleave", function () {
-          track.style.animationPlayState = "running";
-        });
-
-        viewport.addEventListener("focusin", function () {
-          track.style.animationPlayState = "paused";
-        });
-
-        viewport.addEventListener("focusout", function (event) {
-          if (!viewport.contains(event.relatedTarget)) {
-            track.style.animationPlayState = "running";
-          }
-        });
-
-        viewport.addEventListener("touchstart", function () {
-          track.style.animationPlayState = "paused";
-        }, { passive: true });
-
-        viewport.addEventListener("touchend", function () {
-          track.style.animationPlayState = "running";
-        }, { passive: true });
-
-        window.addEventListener("resize", configure, { passive: true });
-        configure();
-      });
-    }
-
-    function moveCarousel(track, direction) {
-      const card = track.querySelector(".product-card");
-      if (!card) return;
-
-      const styles = getComputedStyle(track);
-      const gap = parseFloat(styles.gap) || 0;
-      const distance = card.getBoundingClientRect().width + gap;
-
-      track.style.animationPlayState = "paused";
-      track.style.transition = "transform .35s ease";
-
-      const transform = getComputedStyle(track).transform;
-      let currentX = 0;
-
-      if (transform && transform !== "none") {
-        currentX = new DOMMatrixReadOnly(transform).m41;
-      }
-
-      track.style.transform =
-        "translateX(" + (currentX - direction * distance) + "px)";
-
-      window.setTimeout(function () {
-        track.style.transition = "";
-        track.style.transform = "translateX(0)";
-        track.style.animationPlayState = "running";
-      }, 400);
-    }
-
     function initialiseAnnouncements() {
       const element = document.getElementById("announcementMessage");
       let index = 0;
@@ -1292,20 +949,10 @@
       }, 3500);
     }
 
-    const animationStyle = document.createElement("style");
-    animationStyle.textContent = `
-      @keyframes labelAKSScroll {
-        from { transform: translateX(0); }
-        to { transform: translateX(calc(-1 * var(--loop-distance))); }
-      }
-    `;
-    document.head.appendChild(animationStyle);
-
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
 
     renderCategoryGrid();
-    renderProductSections();
     initialiseAnnouncements();
   </script>
 </body>
