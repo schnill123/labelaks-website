@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,9 +53,9 @@
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     button { font: inherit; }
-    .container { width: min(1180px, 92%); margin: auto; }
+    .container { width: min(1180px, 92%); margin-inline: auto; }
 
-    /* ANNOUNCEMENTS */
+    /* ANNOUNCEMENT */
 
     .announcement {
       min-height: 38px;
@@ -69,6 +70,12 @@
       text-transform: uppercase;
     }
 
+    .announcement-message {
+      transition: opacity .25s ease;
+    }
+
+    /* INSTAGRAM BANNER */
+
     .instagram-banner {
       padding: 11px 14px;
       background: var(--forest);
@@ -79,6 +86,7 @@
     }
 
     .instagram-banner a { color: var(--champagne); }
+    .instagram-banner a:hover { color: var(--white); }
     .instagram-banner strong { color: var(--white); }
 
     /* HEADER */
@@ -123,7 +131,9 @@
       text-transform: uppercase;
     }
 
-    nav {
+    /* NAVIGATION */
+
+    .main-nav {
       background: var(--forest);
       color: var(--white);
     }
@@ -136,57 +146,46 @@
       padding: 12px 0;
     }
 
-    nav a {
+    .main-nav a {
       font-size: 10px;
       letter-spacing: .8px;
       text-transform: uppercase;
     }
 
-    nav a:hover { color: var(--champagne); }
+    .main-nav a:hover { color: var(--champagne); }
 
-    /* HERO — INDEPENDENT OVERLAY, NOT A BACKGROUND GRADIENT */
+    /* HERO — SOLID GREEN, NO IMAGE, NO OVERLAY */
 
     #homeHero {
       position: relative;
-      isolation: isolate;
       min-height: 460px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
       padding: 75px 22px;
-      background-color: var(--forest);
-      color: var(--white);
+      background: #344B3B !important;
+      background-image: none !important;
+      color: #FFFFFF !important;
       text-align: center;
     }
 
-    #homeHero .hero-image {
-      position: absolute;
-      z-index: -2;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      max-width: none;
-      object-fit: cover;
-      object-position: center 45%;
-    }
-
-    #homeHero .hero-overlay {
-      position: absolute;
-      z-index: -1;
-      inset: 0;
-      background: rgba(30,48,35,.86);
-      pointer-events: none;
+    #homeHero .hero-image,
+    #homeHero .hero-overlay,
+    #homeHero::before,
+    #homeHero::after {
+      display: none !important;
+      content: none !important;
+      background-image: none !important;
     }
 
     #homeHero .hero-content {
       position: relative;
-      z-index: 1;
       width: min(760px, 100%);
     }
 
     #homeHero .eyebrow {
-      color: var(--champagne);
+      color: #F3DDB0 !important;
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 3px;
@@ -195,23 +194,23 @@
 
     #homeHero h1 {
       margin: 15px 0;
-      color: #FFFFFF;
+      color: #FFFFFF !important;
       font-family: var(--heading);
       font-size: clamp(45px, 7vw, 76px);
       font-weight: 500;
       line-height: 1.05;
-      text-shadow: 0 2px 15px rgba(0,0,0,.25);
     }
 
     #homeHero p {
       max-width: 570px;
       margin: 0 auto 26px;
-      color: #F4F1E9;
+      color: #F4F1E9 !important;
       font-size: 13px;
       line-height: 1.9;
     }
 
-    .hero-actions, .visit-actions {
+    .hero-actions,
+    .visit-actions {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -233,6 +232,7 @@
       text-align: center;
       text-transform: uppercase;
       cursor: pointer;
+      transition: background .2s, color .2s;
     }
 
     .btn:hover {
@@ -246,7 +246,12 @@
       border-color: var(--white);
     }
 
-    /* SHARED SECTION HEADINGS */
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--forest);
+    }
+
+    /* SECTION HEADINGS */
 
     .section-heading {
       margin-bottom: 28px;
@@ -339,7 +344,9 @@
       background: var(--paper);
     }
 
-    .product-section:nth-child(even) { background: var(--white); }
+    .product-section:nth-child(even) {
+      background: var(--white);
+    }
 
     .product-viewport {
       width: 100%;
@@ -360,6 +367,7 @@
     .product-card {
       flex: 0 0 210px;
       width: 210px;
+      min-width: 0;
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--white);
@@ -515,7 +523,10 @@
       background: var(--paper);
     }
 
-    .visit-icon { color: var(--gold); font-size: 26px; }
+    .visit-icon {
+      color: var(--gold);
+      font-size: 26px;
+    }
 
     .visit-card h2 {
       margin: 5px 0 12px;
@@ -590,7 +601,7 @@
       text-align: center;
     }
 
-    /* WHATSAPP */
+    /* WHATSAPP BUTTON */
 
     .whatsapp-float {
       position: fixed;
@@ -612,7 +623,10 @@
     /* RESPONSIVE */
 
     @media (max-width: 900px) {
-      .category-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .category-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+      }
+
       .about-layout { gap: 25px; }
       .footer-main { gap: 20px; }
     }
@@ -620,8 +634,13 @@
     @media (max-width: 600px) {
       .brand-name { font-size: 39px; }
       .brand-tagline { font-size: 8px; letter-spacing: 2px; }
-      .nav-inner { gap: 9px 14px; padding: 11px 5px; }
-      nav a { font-size: 9px; }
+
+      .nav-inner {
+        gap: 9px 14px;
+        padding: 11px 5px;
+      }
+
+      .main-nav a { font-size: 9px; }
 
       #homeHero {
         min-height: 400px;
@@ -632,23 +651,49 @@
       #homeHero p { font-size: 12px; }
 
       .collections { padding: 45px 0; }
-      .category-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+
+      .category-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 12px;
+      }
+
       .product-section { padding: 40px 0; }
       .product-track { gap: 12px; }
-      .product-card { flex-basis: 158px; width: 158px; }
+
+      .product-card {
+        flex-basis: 158px;
+        width: 158px;
+      }
+
       .product-info h3 { font-size: 17px; }
 
       .about-section { padding: 45px 0; }
-      .about-layout { grid-template-columns: 1fr; gap: 22px; }
+
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
       .visit-section { padding: 45px 0; }
       .visit-card h2 { font-size: 36px; }
-      .footer-main { grid-template-columns: 1fr; gap: 20px; }
-      .whatsapp-float { right: 12px; bottom: 12px; }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .whatsapp-float {
+        right: 12px;
+        bottom: 12px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after {
+
+      *,
+      *::before,
+      *::after {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
@@ -659,25 +704,28 @@
 
 <body>
   <div class="announcement" aria-live="polite">
-    <span id="announcementMessage">Discover timeless style at Label AKS</span>
+    <span class="announcement-message" id="announcementMessage">
+      Discover timeless style at Label AKS
+    </span>
   </div>
 
   <div class="instagram-banner">
-    <a href="https://www.instagram.com/label_aks/" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.instagram.com/label_aks/"
+       target="_blank" rel="noopener noreferrer">
       Follow <strong>@label_aks</strong> on Instagram for the latest stock updates &amp; exclusive offers
     </a>
   </div>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/" aria-label="Label AKS home">
+      <a class="brand" href="/" aria-label="Label AKS homepage">
         <span class="brand-name">LABEL AKS</span>
         <span class="brand-tagline">Style · Elegance · You</span>
       </a>
     </div>
   </header>
 
-  <nav aria-label="Main navigation">
+  <nav class="main-nav" aria-label="Main navigation">
     <div class="container nav-inner">
       <a href="/">Home</a>
       <a href="#collections">Collections</a>
@@ -690,16 +738,8 @@
   </nav>
 
   <main>
-    <!-- The overlay is a separate element. Hero background is not a CSS shorthand. -->
-    <section id="homeHero" class="hero">
-      <img class="hero-image"
-           src="/images/label-aks-social.jpeg"
-           alt=""
-           fetchpriority="high"
-           onerror="this.style.display='none'">
-
-      <div class="hero-overlay" aria-hidden="true"></div>
-
+    <!-- SOLID FOREST-GREEN HERO: NO IMAGE OR OVERLAY -->
+    <section id="homeHero">
       <div class="hero-content">
         <div class="eyebrow">Welcome to Label AKS</div>
         <h1>Elegance in Every Thread</h1>
@@ -707,11 +747,14 @@
           Explore a thoughtfully selected collection of women's fashion,
           from everyday elegance to statement looks for your special occasions.
         </p>
+
         <div class="hero-actions">
           <a class="btn" href="#collections">Explore Collections</a>
           <a class="btn btn-outline"
              href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20I%20would%20like%20to%20know%20about%20your%20collection."
-             target="_blank" rel="noopener noreferrer">Enquire on WhatsApp</a>
+             target="_blank" rel="noopener noreferrer">
+            Enquire on WhatsApp
+          </a>
         </div>
       </div>
     </section>
@@ -723,6 +766,7 @@
           <h2>Explore Our Collections</h2>
           <p>From effortless everyday looks to elegant occasion wear, find styles that feel uniquely you.</p>
         </div>
+
         <div class="category-grid" id="categoryGrid"></div>
       </div>
     </section>
@@ -737,6 +781,7 @@
                loading="lazy"
                onerror="this.style.display='none'">
         </div>
+
         <div class="about-copy">
           <div class="eyebrow">Our Story</div>
           <h2>Fashion That Feels Like You</h2>
@@ -756,13 +801,19 @@
           <p class="address">Label AKS</p>
           <p>537, Site 1, Vikaspuri, New Delhi</p>
           <p>Come explore our collection and find something special for your wardrobe.</p>
+
           <div class="visit-actions">
             <a class="btn"
                href="https://www.google.com/maps/search/?api=1&query=Label%20AKS%2C%20537%20Site%201%2C%20Vikaspuri%2C%20New%20Delhi"
-               target="_blank" rel="noopener noreferrer">Get Directions</a>
+               target="_blank" rel="noopener noreferrer">
+              Get Directions
+            </a>
+
             <a class="btn"
                href="https://wa.me/919810057892"
-               target="_blank" rel="noopener noreferrer">Contact Us</a>
+               target="_blank" rel="noopener noreferrer">
+              Contact Us
+            </a>
           </div>
         </div>
       </div>
@@ -816,62 +867,96 @@
 
     const categories = [
       {
-        slug: "western-wear", title: "Western Wear",
-        folder: "Westernwear", count: 11, id: "western-wear",
+        slug: "western-wear",
+        title: "Western Wear",
+        folder: "Westernwear",
+        count: 11,
+        id: "western-wear",
         description: "Contemporary styles for your wardrobe.",
         caption: "Elegant Western Wear Style",
-        cover: "/images/Westernwear/1.jpeg", populated: true
+        cover: "/images/Westernwear/1.jpeg",
+        populated: true
       },
       {
-        slug: "cord-sets", title: "Co-ord Sets",
-        folder: "cordsets", count: 37, id: "cord-sets",
+        slug: "cord-sets",
+        title: "Co-ord Sets",
+        folder: "cordsets",
+        count: 37,
+        id: "cord-sets",
         description: "Effortless style, beautifully coordinated.",
         caption: "Elegant Co-ord Set",
-        cover: "/images/cordsets/1.jpeg", populated: true
+        cover: "/images/cordsets/1.jpeg",
+        populated: true
       },
       {
-        slug: "indo-western", title: "Indo-Western",
-        folder: "indowestern", count: 22, id: "indo-western",
+        slug: "indo-western",
+        title: "Indo-Western",
+        folder: "indowestern",
+        count: 22,
+        id: "indo-western",
         description: "A modern expression of Indian elegance.",
         caption: "Elegant Indo-Western Style",
-        cover: "/images/indowestern/1.jpeg", populated: true
+        cover: "/images/indowestern/1.jpeg",
+        populated: true
       },
       {
-        slug: "designer-suits", title: "Designer Suits",
-        folder: "designer-suits", count: 71, id: "designer-suits",
+        slug: "designer-suits",
+        title: "Designer Suits",
+        folder: "designer-suits",
+        count: 71,
+        id: "designer-suits",
         description: "Statement styles with beautiful details.",
         caption: "Elegant Designer Suit",
-        cover: "/images/designer-suits/1.jpeg", populated: true
+        cover: "/images/designer-suits/1.jpeg",
+        populated: true
       },
       {
-        slug: "suit-sets", title: "Suit Sets",
-        id: "suit-sets", description: "Beautiful suit styles for every day.",
-        caption: "Elegant Suit Set", cover: "/images/Suit 1.jpeg"
+        slug: "suit-sets",
+        title: "Suit Sets",
+        id: "suit-sets",
+        description: "Beautiful suit styles for every day.",
+        caption: "Elegant Suit Set",
+        cover: "/images/Suit 1.jpeg"
       },
       {
-        slug: "lehengas", title: "Lehengas",
-        id: "lehengas", description: "Celebrate your moments in style.",
-        caption: "Elegant Lehenga", cover: "/images/Lehenga 1.jpeg"
+        slug: "lehengas",
+        title: "Lehengas",
+        id: "lehengas",
+        description: "Celebrate your moments in style.",
+        caption: "Elegant Lehenga",
+        cover: "/images/Lehenga 1.jpeg"
       },
       {
-        slug: "daily-wear", title: "Daily Wear",
-        id: "daily-wear", description: "Comfortable styles for everyday dressing.",
-        caption: "Everyday Style", cover: "/images/suit 1a.jpeg"
+        slug: "daily-wear",
+        title: "Daily Wear",
+        id: "daily-wear",
+        description: "Comfortable styles for everyday dressing.",
+        caption: "Everyday Style",
+        cover: "/images/suit 1a.jpeg"
       },
       {
-        slug: "festive-wear", title: "Festive Wear",
-        id: "festive-wear", description: "Make festive occasions feel special.",
-        caption: "Festive Collection", cover: "/images/Suit2.jpeg"
+        slug: "festive-wear",
+        title: "Festive Wear",
+        id: "festive-wear",
+        description: "Make festive occasions feel special.",
+        caption: "Festive Collection",
+        cover: "/images/Suit2.jpeg"
       },
       {
-        slug: "party-wear", title: "Party & Occasion Wear",
-        id: "party-wear", description: "Find a look for your next celebration.",
-        caption: "Occasion Wear", cover: "/images/Suit4.jpeg"
+        slug: "party-wear",
+        title: "Party & Occasion Wear",
+        id: "party-wear",
+        description: "Find a look for your next celebration.",
+        caption: "Occasion Wear",
+        cover: "/images/Suit4.jpeg"
       },
       {
-        slug: "new-arrivals", title: "New Arrivals",
-        id: "new-arrivals", description: "Discover styles from our latest selection.",
-        caption: "New Arrival", cover: "/images/cod.jpeg"
+        slug: "new-arrivals",
+        title: "New Arrivals",
+        id: "new-arrivals",
+        description: "Discover styles from our latest selection.",
+        caption: "New Arrival",
+        cover: "/images/cod.jpeg"
       }
     ];
 
@@ -918,10 +1003,14 @@
 
         const label = document.createElement("div");
         label.className = "category-label";
-        label.innerHTML =
-          "<strong></strong><span>Explore Collection</span>";
-        label.querySelector("strong").textContent = category.title;
 
+        const strong = document.createElement("strong");
+        strong.textContent = category.title;
+
+        const subtitle = document.createElement("span");
+        subtitle.textContent = "Explore Collection";
+
+        label.append(strong, subtitle);
         tile.append(image, label);
         grid.appendChild(tile);
       });
@@ -958,6 +1047,7 @@
 
       info.append(heading, description, more);
       card.append(link, info);
+
       return card;
     }
 
@@ -971,9 +1061,18 @@
 
       const heading = document.createElement("div");
       heading.className = "section-heading";
-      heading.innerHTML = '<div class="eyebrow">Discover Label AKS</div><h2></h2><p></p>';
-      heading.querySelector("h2").textContent = category.title;
-      heading.querySelector("p").textContent = category.description;
+
+      const eyebrow = document.createElement("div");
+      eyebrow.className = "eyebrow";
+      eyebrow.textContent = "Discover Label AKS";
+
+      const title = document.createElement("h2");
+      title.textContent = category.title;
+
+      const description = document.createElement("p");
+      description.textContent = category.description;
+
+      heading.append(eyebrow, title, description);
 
       const viewport = document.createElement("div");
       viewport.className = "product-viewport";
@@ -984,11 +1083,17 @@
       if (category.populated) {
         for (let i = 1; i <= category.count; i++) {
           track.appendChild(
-            createProductCard(category, i, "/images/" + category.folder + "/" + i + ".jpeg")
+            createProductCard(
+              category,
+              i,
+              "/images/" + category.folder + "/" + i + ".jpeg"
+            )
           );
         }
       } else {
-        track.appendChild(createProductCard(category, 1, category.cover));
+        track.appendChild(
+          createProductCard(category, 1, category.cover)
+        );
       }
 
       viewport.appendChild(track);
@@ -1041,7 +1146,8 @@
       initialiseProductScrolling();
     }
 
-    /* Seamless automatic scroll; no duplicate timers are created. */
+    /* CONTINUOUS PRODUCT AUTO-SCROLL */
+
     function initialiseProductScrolling() {
       const reducedMotion =
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1082,11 +1188,11 @@
 
             if (!distance) return;
 
-            const seconds = Math.max(18, distance / 24);
+            const duration = Math.max(18, distance / 24);
 
             track.style.setProperty("--loop-distance", distance + "px");
             track.style.animation =
-              "labelAKSScroll " + seconds + "s linear infinite";
+              "labelAKSScroll " + duration + "s linear infinite";
             track.style.animationPlayState =
               viewport.matches(":hover, :focus-within") ? "paused" : "running";
           });
@@ -1134,8 +1240,12 @@
       track.style.animationPlayState = "paused";
       track.style.transition = "transform .35s ease";
 
-      const matrix = new DOMMatrixReadOnly(getComputedStyle(track).transform);
-      const currentX = getComputedStyle(track).transform === "none" ? 0 : matrix.m41;
+      const transform = getComputedStyle(track).transform;
+      let currentX = 0;
+
+      if (transform && transform !== "none") {
+        currentX = new DOMMatrixReadOnly(transform).m41;
+      }
 
       track.style.transform =
         "translateX(" + (currentX - direction * distance) + "px)";
@@ -1151,7 +1261,7 @@
       const element = document.getElementById("announcementMessage");
       let index = 0;
 
-      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
       window.setInterval(function () {
         element.style.opacity = "0";
@@ -1164,15 +1274,14 @@
       }, 3500);
     }
 
-    /* Add animation once; it only controls product tracks. */
-    const carouselStyle = document.createElement("style");
-    carouselStyle.textContent = `
+    const animationStyle = document.createElement("style");
+    animationStyle.textContent = `
       @keyframes labelAKSScroll {
         from { transform: translateX(0); }
         to { transform: translateX(calc(-1 * var(--loop-distance))); }
       }
     `;
-    document.head.appendChild(carouselStyle);
+    document.head.appendChild(animationStyle);
 
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
