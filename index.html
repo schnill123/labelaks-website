@@ -9,11 +9,11 @@
   <meta name="description" content="Discover elegant ladies suits and ethnic wear at Label AKS, 537, Site 1, Vikas Puri, Near Metro Pillar 624, New Delhi - 110018.">
   <meta name="theme-color" content="#355844">
 
-  <!-- Browser tab icon -->
+  <!-- Browser tab icon: correct logo filename -->
   <link rel="icon" type="image/png" href="/images/label-aks-logo.png">
   <link rel="apple-touch-icon" href="/images/label-aks-logo.png">
 
-  <!-- Social sharing preview -->
+  <!-- Social sharing preview: correct JPEG filename -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Label AKS">
   <meta property="og:title" content="Label AKS | Elegance for Every Occasion">
@@ -86,10 +86,10 @@
       font-weight: 500;
       line-height: 1.2;
       white-space: nowrap;
-      transition: transform 0.6s ease;
+      transition: transform 0.5s ease;
     }
 
-    /* HEADER - TEXT ONLY, NO LOGO IMAGE */
+    /* HEADER: TEXT ONLY, NO LOGO IMAGE */
 
     header {
       background: var(--green);
@@ -141,7 +141,7 @@
       color: #E7D3A4;
     }
 
-    /* HERO BANNER */
+    /* HERO */
 
     .hero {
       background: linear-gradient(135deg, var(--green-dark), #52745B);
@@ -185,7 +185,7 @@
       border-color: var(--gold-dark);
     }
 
-    /* GENERAL SECTIONS */
+    /* SECTIONS */
 
     section {
       padding: 60px 5%;
@@ -254,7 +254,7 @@
       margin: 0 auto;
     }
 
-    /* VISIT AND ADDRESS */
+    /* VISIT */
 
     .contact {
       background: var(--sage-deep);
@@ -291,7 +291,7 @@
       color: #E7D3A4;
     }
 
-    /* FLOATING WHATSAPP BUTTON */
+    /* FLOATING WHATSAPP */
 
     .whatsapp-float {
       position: fixed;
@@ -311,7 +311,7 @@
       background: #105F35;
     }
 
-    /* MOBILE LAYOUT */
+    /* MOBILE */
 
     @media (max-width: 600px) {
       .announcement-bar {
@@ -394,16 +394,6 @@
         font-size: 11px;
       }
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .announcement-message {
-        transition: none;
-      }
-    }
   </style>
 </head>
 
@@ -415,7 +405,7 @@
        aria-label="Store announcements">
     <div class="announcement-viewport">
       <div class="announcement-message" id="announcementMessage">
-        Exciting offers on Store Visit
+        Exciting offers when you visit our store
       </div>
     </div>
   </div>
@@ -537,7 +527,6 @@
     <!-- VISIT AND ADDRESS -->
     <section id="visit" class="contact">
       <h2>Visit Our Showroom</h2>
-
       <p><strong>Label AKS</strong></p>
 
       <p class="address">
@@ -598,45 +587,41 @@
       new Date().getFullYear();
 
     const announcements = [
-      "✨ Exciting offers on Store Visit",
-      "🚚 Free shipping on orders above ₹5,999/-"
+      "Exciting offers when you visit our store",
+      "🚚 Free shipping on orders above ₹5,999/-",
+      "🌸 Discover styles made for every occasion",
+      "🎁 Special surprises await in-store",
+      "💚 Your next favourite suit awaits at Label AKS",
+      "📍 Visit us at Vikas Puri, New Delhi"
     ];
 
     const message = document.getElementById("announcementMessage");
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    let index = 0;
 
-    let currentAnnouncement = 0;
-
-    if (!reducedMotion) {
+    if (message && message.parentElement) {
       setInterval(() => {
-        const messageHeight = message.offsetHeight;
+        const height = message.parentElement.clientHeight;
 
         // Slide the current announcement upward.
-        message.style.transform =
-          `translateY(-${messageHeight}px)`;
+        message.style.transition = "transform 0.5s ease";
+        message.style.transform = `translateY(-${height}px)`;
 
         setTimeout(() => {
-          currentAnnouncement =
-            (currentAnnouncement + 1) % announcements.length;
+          index = (index + 1) % announcements.length;
 
-          // Place the next message below the viewport.
+          // Place the next announcement below the visible area.
           message.style.transition = "none";
-          message.style.transform =
-            `translateY(${messageHeight}px)`;
+          message.style.transform = `translateY(${height}px)`;
+          message.textContent = announcements[index];
 
-          message.textContent =
-            announcements[currentAnnouncement];
-
-          // Restart the transition cleanly.
+          // Recalculate the layout before animating.
           void message.offsetHeight;
 
           requestAnimationFrame(() => {
-            message.style.transition = "transform 0.6s ease";
+            message.style.transition = "transform 0.5s ease";
             message.style.transform = "translateY(0)";
           });
-        }, 600);
+        }, 500);
       }, 3500);
     }
   </script>
