@@ -58,6 +58,52 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+    /* Instagram follow banner */
+    .instagram-banner {
+      background: #f0ede3;
+      border-bottom: 1px solid #ded8c7;
+      text-align: center;
+      padding: 9px 14px;
+    }
+
+    .instagram-banner a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 7px;
+      color: var(--green-dark);
+      font-size: 10px;
+      letter-spacing: 0.35px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .instagram-banner a:hover {
+      color: #a48749;
+    }
+
+    .instagram-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 19px;
+      height: 19px;
+      border: 1.5px solid currentColor;
+      border-radius: 6px;
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .instagram-arrow {
+      color: #8d7139;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-left: 5px;
+    }
+
     .announcement {
       background: var(--green-dark);
       color: white;
@@ -571,6 +617,19 @@
     }
 
     @media (max-width: 520px) {
+      .instagram-banner {
+        padding: 9px 10px;
+      }
+
+      .instagram-banner a {
+        gap: 5px;
+        font-size: 9px;
+      }
+
+      .instagram-arrow {
+        margin-left: 3px;
+      }
+
       .header-inner {
         padding: 10px 14px;
       }
@@ -670,7 +729,21 @@
 
 <body>
 
-  <!-- Announcement ticker -->
+  <!-- Instagram follow banner: appears at the very top -->
+  <div class="instagram-banner">
+    <a href="https://www.instagram.com/label_aks"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Follow Label AKS on Instagram for latest stock updates and offers">
+      <span class="instagram-icon" aria-hidden="true">◎</span>
+      <span>
+        Follow <strong>@label_aks</strong> on Instagram for the latest stock updates &amp; exclusive offers
+      </span>
+      <span class="instagram-arrow">FOLLOW US ↗</span>
+    </a>
+  </div>
+
+  <!-- Existing announcement ticker -->
   <div class="announcement">
     <div class="announcement-track" aria-label="Label AKS announcements">
       <span>Welcome to Label AKS</span>
@@ -725,8 +798,8 @@
     </div>
   </section>
 
-  <!-- Collections -->
   <main>
+    <!-- Collections -->
     <section class="section" id="collections">
       <div class="section-heading">
         <div class="section-kicker">Find Your Look</div>
@@ -737,10 +810,7 @@
         </p>
       </div>
 
-      <!-- Category shortcuts are generated automatically -->
       <div class="collection-directory" id="collectionDirectory"></div>
-
-      <!-- Product rows are generated in the desired order -->
       <div id="collectionRows" aria-live="polite"></div>
     </section>
 
@@ -804,6 +874,9 @@
       <a href="#collections">Collections</a>
       <a href="#about">About Us</a>
       <a href="#visit">Visit Us</a>
+      <a href="https://www.instagram.com/label_aks"
+         target="_blank"
+         rel="noopener noreferrer">Instagram</a>
       <a href="https://wa.me/919810057892"
          target="_blank"
          rel="noopener noreferrer">WhatsApp</a>
@@ -831,10 +904,10 @@
       3. Indo-Western
       4. Designer Suits
       5. Suit Sets
-      6. All remaining categories
+      6. Remaining categories
 
-      Numbered images are loaded from their existing folders.
-      Keep folder names and image filename capitalization exactly as uploaded.
+      Empty collections automatically appear after collections
+      that have product photos configured.
     */
 
     const categories = [
@@ -916,33 +989,24 @@
       }
     ];
 
-    /*
-      Build the product list for a category.
-      Numbered folders use 1.jpeg, 2.jpeg, 3.jpeg, and so on.
-    */
     function getProducts(category) {
       if (Array.isArray(category.products)) {
         return category.products;
       }
 
       if (category.folder && category.count > 0) {
-        return Array.from({ length: category.count }, (_, index) => {
-          const number = index + 1;
-
-          return {
-            image: `/images/${category.folder}/${number}.jpeg`,
-            label: category.name
-          };
-        });
+        return Array.from({ length: category.count }, (_, index) => ({
+          image: `/images/${category.folder}/${index + 1}.jpeg`,
+          label: category.name
+        }));
       }
 
       return [];
     }
 
     /*
-      A collection is considered populated when products are configured.
-      This puts empty collections after collections with product photos.
-      The first five populated collections retain the requested order.
+      Keep the configured order for populated collections.
+      Move collections without configured products to the bottom.
     */
     const orderedCategories = [...categories].sort((a, b) => {
       const aHasProducts = getProducts(a).length > 0;
@@ -962,9 +1026,7 @@
       return `/category.html?category=${encodeURIComponent(category.slug)}`;
     }
 
-    /*
-      Create category shortcut tiles in the same order as the collection rows.
-    */
+    // Build the category shortcuts in the same order as the rows.
     orderedCategories.forEach(category => {
       const link = document.createElement("a");
       link.className = "directory-item";
@@ -973,10 +1035,7 @@
       directory.appendChild(link);
     });
 
-    /*
-      Create each collection heading and horizontal image strip.
-      Clicking a photo opens the separate page for that category.
-    */
+    // Build the horizontal product rows.
     orderedCategories.forEach(category => {
       const products = getProducts(category);
 
@@ -1017,7 +1076,10 @@
       } else {
         const strip = document.createElement("div");
         strip.className = "product-strip";
-        strip.setAttribute("aria-label", `${category.name} product photos`);
+        strip.setAttribute(
+          "aria-label",
+          `${category.name} product photos`
+        );
 
         products.forEach((product, index) => {
           const link = document.createElement("a");
@@ -1034,6 +1096,7 @@
           img.loading = index < 3 ? "eager" : "lazy";
           img.decoding = "async";
 
+          // Hide cards whose image files are missing.
           img.onerror = () => {
             link.remove();
           };
