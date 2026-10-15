@@ -334,6 +334,123 @@
       text-transform: uppercase;
     }
 
+    /* SCROLLING PRODUCT GALLERIES */
+
+    .product-section {
+      padding: 42px 0;
+      background: var(--paper);
+      overflow: hidden;
+    }
+
+    .product-section:nth-child(even) {
+      background: var(--white);
+    }
+
+    .product-section .section-heading {
+      margin-bottom: 20px;
+    }
+
+    .product-section .section-heading h2 {
+      font-size: clamp(30px, 4vw, 40px);
+    }
+
+    .product-viewport {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-track {
+      display: flex;
+      width: max-content;
+      gap: 16px;
+      padding: 4px 0 14px;
+      will-change: transform;
+      animation: productScroll 45s linear infinite;
+    }
+
+    .product-viewport:hover .product-track {
+      animation-play-state: paused;
+    }
+
+    .product-card {
+      flex: 0 0 220px;
+      width: 220px;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0 3px 12px rgba(25,45,29,.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      background: var(--sage);
+    }
+
+    .product-info {
+      padding: 11px 9px;
+      text-align: center;
+    }
+
+    .product-info strong {
+      display: block;
+      color: var(--forest);
+      font-family: var(--heading);
+      font-size: 19px;
+      line-height: 1.2;
+    }
+
+    .product-info span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    .product-info a {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--forest);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .product-section .view-all-wrap {
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    .product-section .view-all {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 8px 16px;
+      border: 1px solid var(--forest);
+      background: var(--forest);
+      color: var(--white);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      transition: background .2s, color .2s;
+    }
+
+    .product-section .view-all:hover {
+      background: transparent;
+      color: var(--forest);
+    }
+
+    @keyframes productScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
     /* ABOUT */
 
     .about-section {
@@ -349,6 +466,7 @@
     }
 
     /* Show the complete Our Story image without cropping */
+
     .about-image {
       min-width: 0;
       width: 100%;
@@ -525,6 +643,7 @@
       .category-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
       .about-layout { gap: 25px; }
       .footer-main { gap: 20px; }
+      .product-card { flex-basis: 195px; width: 195px; }
     }
 
     @media (max-width: 600px) {
@@ -539,6 +658,7 @@
       .main-nav a { font-size: 9px; }
 
       /* Compact mobile hero */
+
       #homeHero {
         min-height: 0 !important;
         padding: 20px 15px !important;
@@ -576,6 +696,11 @@
         grid-template-columns: repeat(2, minmax(0,1fr));
         gap: 12px;
       }
+
+      .product-section { padding: 32px 0; }
+      .product-section .section-heading { margin-bottom: 14px; }
+      .product-track { gap: 12px; }
+      .product-card { flex-basis: 165px; width: 165px; }
 
       .about-section { padding: 42px 0; }
 
@@ -653,6 +778,7 @@
 
   <main>
     <!-- COMPACT SOLID-GREEN HERO -->
+
     <section id="homeHero">
       <div class="hero-content">
         <div class="eyebrow">Welcome to Label AKS</div>
@@ -687,7 +813,8 @@
       </div>
     </section>
 
-    <!-- REMOVED: generated product sections that caused repeated sections -->
+    <!-- ONLY THE FOUR MULTI-IMAGE GALLERIES ARE RENDERED HERE -->
+    <div id="productSections"></div>
 
     <section class="about-section" id="about">
       <div class="container about-layout">
@@ -749,11 +876,11 @@
           <h3>Explore</h3>
           <div class="footer-links">
             <a href="#collections">All Collections</a>
-            <a href="#western-wear">Western Wear</a>
-            <a href="#cord-sets">Co-ord Sets</a>
-            <a href="#indo-western">Indo-Western</a>
-            <a href="#designer-suits">Designer Suits</a>
-            <a href="#new-arrivals">New Arrivals</a>
+            <a href="/category.html?category=western-wear">Western Wear</a>
+            <a href="/category.html?category=cord-sets">Co-ord Sets</a>
+            <a href="/category.html?category=indo-western">Indo-Western</a>
+            <a href="/category.html?category=designer-suits">Designer Suits</a>
+            <a href="/category.html?category=new-arrivals">New Arrivals</a>
           </div>
         </div>
 
@@ -915,7 +1042,10 @@
         tile.className = "category-tile";
         tile.href = categoryURL(category);
 
-        const image = makeImage(category.cover, category.title + " collection");
+        const image = makeImage(
+          category.cover,
+          category.title + " collection"
+        );
 
         const label = document.createElement("div");
         label.className = "category-label";
@@ -932,11 +1062,137 @@
       });
     }
 
+    /* BUILD ONE CARD FOR EACH NUMBERED PRODUCT IMAGE */
+
+    function createProductCard(category, imageNumber) {
+      const card = document.createElement("article");
+      card.className = "product-card";
+
+      const imagePath =
+        "/images/" + category.folder + "/" + imageNumber + ".jpeg";
+
+      const image = makeImage(
+        imagePath,
+        category.title + " design " + imageNumber
+      );
+
+      const info = document.createElement("div");
+      info.className = "product-info";
+
+      const title = document.createElement("strong");
+      title.textContent = category.title;
+
+      const description = document.createElement("span");
+      description.textContent = "Design " + imageNumber;
+
+      const link = document.createElement("a");
+      link.href = categoryURL(category);
+      link.textContent = "View Collection";
+
+      info.append(title, description, link);
+      card.append(image, info);
+
+      return card;
+    }
+
+    /* CREATE ONE HORIZONTAL SCROLLING GALLERY */
+
+    function createProductSection(category) {
+      const section = document.createElement("section");
+      section.className = "product-section";
+      section.id = category.id;
+
+      const container = document.createElement("div");
+      container.className = "container";
+
+      const heading = document.createElement("div");
+      heading.className = "section-heading";
+
+      const eyebrow = document.createElement("div");
+      eyebrow.className = "eyebrow";
+      eyebrow.textContent = "Discover the Collection";
+
+      const title = document.createElement("h2");
+      title.textContent = category.title;
+
+      const description = document.createElement("p");
+      description.textContent = category.description;
+
+      heading.append(eyebrow, title, description);
+
+      const viewport = document.createElement("div");
+      viewport.className = "product-viewport";
+
+      const track = document.createElement("div");
+      track.className = "product-track";
+
+      for (let i = 1; i <= category.count; i++) {
+        track.appendChild(createProductCard(category, i));
+      }
+
+      /*
+        Duplicate the cards for a continuous loop.
+        The animation travels half the track width and
+        returns seamlessly to the start.
+      */
+      for (let i = 1; i <= category.count; i++) {
+        const clone = createProductCard(category, i);
+        clone.setAttribute("aria-hidden", "true");
+
+        clone.querySelectorAll("a").forEach(function (link) {
+          link.setAttribute("tabindex", "-1");
+        });
+
+        track.appendChild(clone);
+      }
+
+      viewport.appendChild(track);
+
+      const viewAllWrap = document.createElement("div");
+      viewAllWrap.className = "view-all-wrap";
+
+      const viewAll = document.createElement("a");
+      viewAll.className = "view-all";
+      viewAll.href = categoryURL(category);
+      viewAll.textContent = "View All " + category.title;
+
+      viewAllWrap.appendChild(viewAll);
+      container.append(heading, viewport, viewAllWrap);
+      section.appendChild(container);
+
+      return section;
+    }
+
+    /*
+      IMPORTANT:
+      Only categories containing numbered product galleries
+      are rendered here. This prevents duplicate single-image
+      sections appearing below the scrolling galleries.
+    */
+
+    function renderProductSections() {
+      const host = document.getElementById("productSections");
+      host.replaceChildren();
+
+      categories
+        .filter(function (category) {
+          return category.populated === true &&
+                 category.folder &&
+                 Number.isInteger(category.count) &&
+                 category.count > 0;
+        })
+        .forEach(function (category) {
+          host.appendChild(createProductSection(category));
+        });
+    }
+
     function initialiseAnnouncements() {
       const element = document.getElementById("announcementMessage");
       let index = 0;
 
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+      }
 
       window.setInterval(function () {
         element.style.opacity = "0";
@@ -953,6 +1209,7 @@
       new Date().getFullYear();
 
     renderCategoryGrid();
+    renderProductSections();
     initialiseAnnouncements();
   </script>
 </body>
