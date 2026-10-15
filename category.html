@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#355844">
+<title>Collection | Label AKS</title>
+<link rel="icon" href="/images/label-aks-logo.png">
+<style>
+:root {
+  --green:#355844; --dark:#263F32; --sage:#E7F0DF;
+  --ivory:#FFFDF5; --gold:#B89550; --text:#29372D; --border:#D6E1D0;
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--sage); color:var(--text); font-family:Arial,sans-serif; line-height:1.6; }
+header { background:var(--green); color:white; text-align:center; padding:15px 12px; }
+.brand { color:white; text-decoration:none; font:29px Georgia,serif; letter-spacing:4px; }
+nav { display:flex; justify-content:center; flex-wrap:wrap; gap:22px; margin-top:8px; }
+nav a { color:white; text-decoration:none; font-size:14px; }
+main { max-width:1400px; margin:auto; padding:30px 5% 55px; }
+.back { color:var(--green); font-weight:bold; text-decoration:none; display:inline-block; margin-bottom:12px; }
+h1 { color:var(--green); font:normal clamp(30px,4vw,44px) Georgia,serif; margin:0; }
+.intro { margin:5px 0 22px; }
+.products { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:18px; }
+.product { background:var(--ivory); border:1px solid var(--border); border-radius:6px; padding:10px; text-align:center; }
+.product img { width:100%; height:320px; object-fit:contain; display:block; background:white; }
+.product h2 { color:var(--green); font:normal 17px Georgia,serif; margin:10px 0; }
+.button { display:inline-block; background:var(--gold); color:white; padding:10px 14px; border-radius:4px; text-decoration:none; font-weight:bold; }
+.empty { background:var(--ivory); border:1px dashed var(--border); padding:22px; border-radius:6px; }
+footer { background:var(--dark); color:white; text-align:center; padding:25px 12px; }
+.whatsapp { position:fixed; right:15px; bottom:15px; background:#167D46; color:white; padding:12px 17px; border-radius:28px; text-decoration:none; font-weight:bold; }
+@media(max-width:600px) {
+  main { padding:25px 12px 40px; }
+  .products { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .product { padding:7px; }
+  .product img { height:230px; }
+  .product h2 { font-size:15px; }
+  .button { padding:9px 8px; font-size:12px; }
+}
+@media(max-width:360px) {
+  .products { grid-template-columns:1fr; }
+  .product img { height:300px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/">LABEL AKS</a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/#about">About Us</a>
+    <a href="/#visit">Visit Us</a>
+  </nav>
+</header>
+
+<main>
+  <a class="back" href="/">← Back to all collections</a>
+  <h1 id="categoryTitle">Our Collection</h1>
+  <p class="intro">Contact us for prices, sizes and availability.</p>
+  <div class="products" id="products"></div>
+</main>
+
+<footer>
+  <strong>LABEL AKS</strong>
+  <p>Elegance for Every Occasion</p>
+  <p>537, Site 1, Vikas Puri, Near Metro Pillar 624, New Delhi - 110018</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919810057892" target="_blank" rel="noopener">WhatsApp</a>
+
+<script>
+const categories = [
+  {slug:"suit-sets",name:"Suit Sets",images:[
+    {src:"/images/Suit%201.jpeg",label:"Suit Collection 01"},
+    {src:"/images/Suit2.jpeg",label:"Suit Collection 02"},
+    {src:"/images/Suit4.jpeg",label:"Suit Collection 03"},
+    {src:"/images/suit%201a.jpeg",label:"Suit Collection 04"},
+    {src:"/images/suit3.jpeg",label:"Suit Collection 05"},
+    {src:"/images/suit5.jpeg",label:"Suit Collection 06"},
+    {src:"/images/suit6.jpeg",label:"Suit Collection 07"},
+    {src:"/images/cod.jpeg",label:"Featured Design 01"},
+    {src:"/images/Cod2.jpeg",label:"Featured Design 02"}
+  ]},
+  {slug:"daily-wear",name:"Daily Wear",images:[]},
+  {slug:"festive-wear",name:"Festive Wear",images:[]},
+  {slug:"party-wear",name:"Party & Occasion Wear",images:[]},
+  {slug:"designer-suits",name:"Designer Suits",folder:"images/designer-suits",count:71},
+  {slug:"lehengas",name:"Lehengas",images:[
+    {src:"/images/Lehenga%201.jpeg",label:"Lehenga Collection"}
+  ]},
+  {slug:"new-arrivals",name:"New Arrivals",images:[]},
+  {slug:"westernwear",name:"Western Wear",folder:"images/Westernwear",count:11},
+  {slug:"cordsets",name:"Co-ord Sets",folder:"images/cordsets",count:37},
+  {slug:"indowestern",name:"Indo-Western",folder:"images/indowestern",count:22}
+];
+
+const params = new URLSearchParams(window.location.search);
+const category = categories.find(item => item.slug === params.get("category"));
+const title = document.getElementById("categoryTitle");
+const grid = document.getElementById("products");
+
+function getProducts(item) {
+  if (item.count) {
+    return Array.from({length:item.count}, (_,i) => ({
+      src:`/${item.folder}/${i+1}.jpeg`,
+      label:`${item.name} ${String(i+1).padStart(2,"0")}`
+    }));
+  }
+  return item.images || [];
+}
+
+if (!category) {
+  title.textContent = "Collection not found";
+  grid.innerHTML = '<div class="empty">Please return to the homepage and select a collection.</div>';
+} else {
+  title.textContent = category.name;
+  document.title = `${category.name} | Label AKS`;
+  const products = getProducts(category);
+
+  if (!products.length) {
+    grid.innerHTML = '<div class="empty">New styles are being added to this collection. Please check back soon.</div>';
+  }
+
+  products.forEach((item,index) => {
+    const card = document.createElement("article");
+    card.className = "product";
+
+    const img = document.createElement("img");
+    img.src = item.src;
+    img.alt = item.label;
+    img.loading = index < 4 ? "eager" : "lazy";
+    img.onerror = () => card.remove();
+
+    const name = document.createElement("h2");
+    name.textContent = item.label;
+
+    const button = document.createElement("a");
+    button.className = "button";
+    button.textContent = "Contact Us to Buy";
+    button.target = "_blank";
+    button.rel = "noopener";
+    button.href = "https://wa.me/919810057892?text=" +
+      encodeURIComponent(`Hello Label AKS, please share the price and availability of ${item.label}.`);
+
+    card.append(img,name,button);
+    grid.appendChild(card);
+  });
+}
+</script>
+</body>
+</html>
