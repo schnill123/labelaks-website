@@ -7,7 +7,7 @@
 
   <title>Label AKS | Elegant Ethnic Wear in Vikaspuri, Delhi</title>
   <meta name="description" content="Discover elegant suits, designer suits, co-ord sets, Western wear, Indo-Western styles and more at Label AKS, Vikaspuri, New Delhi.">
-  <meta name="theme-color" content="#526b58">
+  <meta name="theme-color" content="#344b3b">
 
   <link rel="icon" href="/images/label-aks-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +20,7 @@
       --green-dark: #344b3b;
       --green-light: #e8eee7;
       --gold: #b99a58;
+      --champagne: #f3ddb0;
       --cream: #faf8f2;
       --white: #ffffff;
       --text: #30372f;
@@ -58,60 +59,36 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    
+    /* Instagram banner — Forest Green & Champagne */
+    .instagram-banner {
+      background: #344B3B;
+      color: #F3DDB0;
+      text-align: center;
+      padding: 11px 14px;
+      border-bottom: 2px solid #B99A58;
+    }
 
-/* Instagram follow banner — Forest Green & Champagne */
-.instagram-banner {
-  background: #344B3B;
-  color: #F3DDB0;
-  text-align: center;
-  padding: 11px 14px;
-  border-bottom: 2px solid #B99A58;
-}
+    .instagram-banner a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 7px;
+      color: #F3DDB0;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
 
-.instagram-banner a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 7px;
-  color: #F3DDB0;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.4px;
-  text-decoration: none;
-  transition: color 0.2s;
-}
+    .instagram-banner a:hover {
+      color: #FFFFFF;
+    }
 
-.instagram-banner a:hover {
-  color: #FFFFFF;
-}
-
-.instagram-banner strong {
-  color: #FFFFFF;
-  font-weight: 700;
-}
-
-.instagram-icon {
-  color: #F3DDB0;
-  border-color: #F3DDB0;
-}
-
-.instagram-arrow {
-  color: #FFFFFF;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-left: 5px;
-}
-
-
-.instagram-arrow {
-  color: #FFFFFF;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-left: 5px;
+    .instagram-banner strong {
+      color: #FFFFFF;
+      font-weight: 700;
     }
 
     .instagram-icon {
@@ -120,21 +97,23 @@
       justify-content: center;
       width: 19px;
       height: 19px;
-      border: 1.5px solid currentColor;
+      border: 1.5px solid #F3DDB0;
       border-radius: 6px;
+      color: #F3DDB0;
       font-size: 15px;
       line-height: 1;
       font-weight: 700;
     }
 
     .instagram-arrow {
-      color: #8d7139;
+      color: #FFFFFF;
       font-size: 9px;
       font-weight: 700;
       letter-spacing: 1px;
       margin-left: 5px;
     }
 
+    /* Announcement ticker */
     .announcement {
       background: var(--green-dark);
       color: white;
@@ -161,6 +140,7 @@
       to { transform: translateX(-50%); }
     }
 
+    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -241,17 +221,23 @@
       background: var(--green-dark);
     }
 
+    /* Hero — improved text readability */
     .hero {
-      min-height: 440px;
+      min-height: 460px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 75px 22px;
+
       background:
-        linear-gradient(rgba(37, 54, 41, 0.65), rgba(37, 54, 41, 0.68)),
+        linear-gradient(
+          rgba(30, 48, 35, 0.86),
+          rgba(30, 48, 35, 0.86)
+        ),
         url('/images/label-aks-social.jpeg') center 45% / cover no-repeat,
-        var(--green);
+        #344B3B;
+
       color: white;
     }
 
@@ -260,7 +246,7 @@
     }
 
     .eyebrow {
-      color: #e5d0a1;
+      color: var(--champagne);
       font-size: 11px;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -273,6 +259,8 @@
       font-size: clamp(42px, 7vw, 76px);
       line-height: 1.05;
       font-weight: 600;
+      color: #FFFFFF;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
     }
 
     .hero p {
@@ -280,9 +268,10 @@
       margin: 0 auto 28px;
       font-size: 14px;
       line-height: 1.9;
-      color: #f2f1e9;
+      color: #F4F1E9;
     }
 
+    /* Buttons */
     .button {
       display: inline-flex;
       align-items: center;
@@ -317,6 +306,7 @@
       border-color: white;
     }
 
+    /* Sections */
     .section {
       max-width: 1280px;
       margin: auto;
@@ -351,6 +341,7 @@
       color: var(--muted);
     }
 
+    /* Collection directory */
     .collection-directory {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -375,6 +366,7 @@
       transform: translateY(-2px);
     }
 
+    /* Collection rows */
     .collection-row {
       margin: 0 0 45px;
       scroll-margin-top: 110px;
@@ -420,6 +412,7 @@
       color: var(--gold);
     }
 
+    /* Product strips */
     .product-strip {
       display: flex;
       gap: 16px;
@@ -499,6 +492,7 @@
       text-align: center;
     }
 
+    /* About */
     .about {
       background: var(--green-light);
     }
@@ -525,6 +519,7 @@
       line-height: 2;
     }
 
+    /* Visit showroom */
     .visit {
       background: var(--cream);
     }
@@ -567,6 +562,7 @@
       color: white;
     }
 
+    /* Footer */
     footer {
       padding: 28px 20px;
       background: var(--green-dark);
@@ -605,6 +601,7 @@
       font-size: 9px;
     }
 
+    /* Floating WhatsApp shortcut */
     .floating-whatsapp {
       position: fixed;
       z-index: 80;
@@ -627,6 +624,7 @@
       background: #176b3f;
     }
 
+    /* Tablet */
     @media (max-width: 850px) {
       .header-inner {
         flex-direction: column;
@@ -647,6 +645,7 @@
       }
     }
 
+    /* Mobile */
     @media (max-width: 520px) {
       .instagram-banner {
         padding: 9px 10px;
@@ -760,7 +759,7 @@
 
 <body>
 
-  <!-- Instagram follow banner: appears at the very top -->
+  <!-- Instagram banner -->
   <div class="instagram-banner">
     <a href="https://www.instagram.com/label_aks"
        target="_blank"
@@ -774,7 +773,7 @@
     </a>
   </div>
 
-  <!-- Existing announcement ticker -->
+  <!-- Announcement ticker -->
   <div class="announcement">
     <div class="announcement-track" aria-label="Label AKS announcements">
       <span>Welcome to Label AKS</span>
@@ -788,7 +787,7 @@
     </div>
   </div>
 
-  <!-- Header and navigation -->
+  <!-- Header -->
   <header>
     <div class="header-inner">
       <a class="brand" href="/" aria-label="Label AKS home">
@@ -928,19 +927,6 @@
   </a>
 
   <script>
-    /*
-      COLLECTION ORDER:
-      1. Western Wear
-      2. Co-ord Sets
-      3. Indo-Western
-      4. Designer Suits
-      5. Suit Sets
-      6. Remaining categories
-
-      Empty collections automatically appear after collections
-      that have product photos configured.
-    */
-
     const categories = [
       {
         slug: "westernwear",
@@ -1020,6 +1006,19 @@
       }
     ];
 
+    const singularNames = {
+      "westernwear": "Elegant Western Wear Style",
+      "cordsets": "Elegant Co-ord Set",
+      "indowestern": "Elegant Indo-Western Style",
+      "designer-suits": "Elegant Designer Suit",
+      "suit-sets": "Elegant Suit Set",
+      "lehengas": "Elegant Lehenga",
+      "daily-wear": "Elegant Daily Wear Style",
+      "festive-wear": "Elegant Festive Wear Style",
+      "party-wear": "Elegant Party Wear Style",
+      "new-arrivals": "Elegant New Arrival"
+    };
+
     function getProducts(category) {
       if (Array.isArray(category.products)) {
         return category.products;
@@ -1035,10 +1034,6 @@
       return [];
     }
 
-    /*
-      Keep the configured order for populated collections.
-      Move collections without configured products to the bottom.
-    */
     const orderedCategories = [...categories].sort((a, b) => {
       const aHasProducts = getProducts(a).length > 0;
       const bHasProducts = getProducts(b).length > 0;
@@ -1057,7 +1052,6 @@
       return `/category.html?category=${encodeURIComponent(category.slug)}`;
     }
 
-    // Build the category shortcuts in the same order as the rows.
     orderedCategories.forEach(category => {
       const link = document.createElement("a");
       link.className = "directory-item";
@@ -1066,7 +1060,6 @@
       directory.appendChild(link);
     });
 
-    // Build the horizontal product rows.
     orderedCategories.forEach(category => {
       const products = getProducts(category);
 
@@ -1107,10 +1100,7 @@
       } else {
         const strip = document.createElement("div");
         strip.className = "product-strip";
-        strip.setAttribute(
-          "aria-label",
-          `${category.name} product photos`
-        );
+        strip.setAttribute("aria-label", `${category.name} product photos`);
 
         products.forEach((product, index) => {
           const link = document.createElement("a");
@@ -1127,16 +1117,14 @@
           img.loading = index < 3 ? "eager" : "lazy";
           img.decoding = "async";
 
-          // Hide cards whose image files are missing.
-          img.onerror = () => {
-            link.remove();
-          };
+          img.onerror = () => link.remove();
 
           const caption = document.createElement("div");
           caption.className = "product-caption";
 
           const productName = document.createElement("strong");
-          productName.textContent = category.name;
+          const baseName = singularNames[category.slug] || `Elegant ${category.name}`;
+          productName.textContent = `${baseName} ${String(index + 1).padStart(2, "0")}`;
 
           const productLabel = document.createElement("span");
           productLabel.textContent = "Explore Collection";
