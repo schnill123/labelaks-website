@@ -3,38 +3,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#344B3B">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Label AKS | Elegant Women's Fashion</title>
-  <meta name="description" content="Discover women's suits, designer suits, co-ord sets, western wear, lehengas and Indo-Western fashion at Label AKS, Vikaspuri, New Delhi.">
-  <meta property="og:title" content="Label AKS | Women's Fashion">
-  <meta property="og:description" content="Explore elegant fashion at Label AKS, Vikaspuri, New Delhi.">
-  <meta property="og:image" content="https://labelaks.in/images/label-aks-social.jpeg">
-  <meta property="og:url" content="https://labelaks.in/">
-
-  <link rel="icon" href="/images/label-aks-logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Label AKS | Elegant Ladies' Ethnic Wear</title>
+  <meta name="description" content="Discover elegant ladies' suits, designer suits, co-ord sets, western wear, lehengas and Indo-Western fashion at Label AKS, Vikaspuri, New Delhi.">
 
   <style>
     :root {
-      --forest: #344B3B;
-      --deep: #26392D;
-      --champagne: #F3DDB0;
-      --gold: #B99A58;
-      --sage: #E8EDE5;
-      --paper: #F5F6F1;
-      --white: #FFFFFF;
-      --ink: #28342C;
-      --muted: #6B756D;
-      --border: #DDE3D9;
-      --heading: "Cormorant Garamond", Georgia, serif;
-      --body: "Montserrat", Arial, sans-serif;
+      --green: #174d38;
+      --green-dark: #103b2b;
+      --gold: #c5a46d;
+      --cream: #faf8f3;
+      --text: #292929;
+      --muted: #6c6c6c;
+      --product-gap: 16px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     html {
       scroll-behavior: smooth;
@@ -43,315 +30,291 @@
 
     body {
       margin: 0;
-      overflow-x: hidden;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--body);
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: var(--text);
     }
 
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-    .container { width: min(1180px, 92%); margin-inline: auto; }
+    a {
+      color: inherit;
+    }
 
-    /* ANNOUNCEMENT */
+    img {
+      max-width: 100%;
+    }
 
-    .announcement {
-      min-height: 34px;
-      display: grid;
-      place-items: center;
-      padding: 6px 12px;
-      background: var(--deep);
-      color: var(--champagne);
-      text-align: center;
-      font-size: 10px;
+    /* Announcement ticker */
+
+    .announcement-bar {
+      overflow: hidden;
+      background: var(--green-dark);
+      color: #fff;
+      white-space: nowrap;
+      padding: 10px 0;
+      font-size: 12px;
       letter-spacing: 1px;
-      text-transform: uppercase;
     }
 
-    .announcement-message { transition: opacity .25s ease; }
+    .announcement-track {
+      display: flex;
+      width: max-content;
+      animation: announcementScroll 28s linear infinite;
+    }
 
-    /* INSTAGRAM BANNER */
+    .announcement-track span {
+      padding-right: 65px;
+    }
+
+    @keyframes announcementScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Instagram banner */
 
     .instagram-banner {
-      padding: 9px 12px;
-      background: var(--forest);
-      color: var(--champagne);
-      border-bottom: 2px solid var(--gold);
+      display: block;
+      background: #f3eee4;
+      color: var(--green);
       text-align: center;
-      font-size: 10px;
+      padding: 10px 12px;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 1px;
     }
 
-    .instagram-banner a { color: var(--champagne); }
-    .instagram-banner a:hover { color: var(--white); }
-    .instagram-banner strong { color: var(--white); }
+    .instagram-banner strong {
+      color: var(--green-dark);
+    }
 
-    /* HEADER */
+    /* Brand header */
 
     .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 3px 15px rgba(25,45,29,.05);
+      background: #fff;
+      text-align: center;
+      padding: 18px 15px 12px;
     }
 
-    .header-inner {
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 7px 0;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 1;
+    .brand-logo {
+      display: block;
+      width: auto;
+      max-width: 230px;
+      max-height: 100px;
+      object-fit: contain;
+      margin: 0 auto 5px;
     }
 
     .brand-name {
-      color: var(--forest);
-      font-family: var(--heading);
-      font-size: 38px;
-      font-weight: 600;
-      letter-spacing: 4px;
+      display: inline-block;
+      color: var(--green);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: bold;
+      letter-spacing: 5px;
+      text-decoration: none;
     }
 
     .brand-tagline {
-      margin-top: 6px;
-      color: var(--gold);
-      font-size: 8px;
+      margin: 7px 0 0;
+      color: #777;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 11px;
       letter-spacing: 3px;
-      text-transform: uppercase;
     }
 
-    /* NAVIGATION */
+    /* Navigation */
 
     .main-nav {
-      background: var(--forest);
-      color: var(--white);
-    }
-
-    .nav-inner {
+      position: sticky;
+      top: 0;
+      z-index: 20;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 8px 22px;
-      padding: 10px 0;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+      background: #fff;
+      border-top: 1px solid #eee8dc;
+      border-bottom: 1px solid #e5ded2;
+      padding: 0 10px;
     }
 
     .main-nav a {
-      font-size: 10px;
-      letter-spacing: .7px;
+      display: inline-block;
+      padding: 15px 17px;
+      color: var(--green);
+      text-decoration: none;
       text-transform: uppercase;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
-    .main-nav a:hover { color: var(--champagne); }
+    .main-nav a:hover {
+      color: var(--gold);
+    }
 
-    /* COMPACT HERO */
+    /* Hero */
 
-    #homeHero {
-      position: relative;
-      min-height: 0 !important;
-      height: auto;
+    .hero {
+      min-height: 245px;
+      padding: 48px 20px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      overflow: hidden;
-      padding: 24px 18px !important;
-      background: #344B3B !important;
-      background-image: none !important;
-      color: #FFFFFF !important;
+      align-items: center;
       text-align: center;
+      color: #fff;
+      background: var(--green);
     }
 
-    #homeHero .hero-image,
-    #homeHero .hero-overlay,
-    #homeHero::before,
-    #homeHero::after {
-      display: none !important;
-      content: none !important;
-      background-image: none !important;
-    }
-
-    #homeHero .hero-content {
-      position: relative;
-      width: min(760px, 100%);
-    }
-
-    #homeHero .eyebrow {
-      color: #F3DDB0 !important;
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 2px;
+    .hero-kicker {
+      color: #e4d2ad;
+      font-size: 11px;
+      letter-spacing: 4px;
       text-transform: uppercase;
     }
 
-    #homeHero h1 {
-      margin: 5px 0 7px !important;
-      color: #FFFFFF !important;
-      font-family: var(--heading);
-      font-size: clamp(32px, 4.2vw, 44px) !important;
-      font-weight: 500;
-      line-height: 1.02 !important;
+    .hero h1 {
+      max-width: 800px;
+      margin: 15px 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+      font-size: clamp(29px, 5vw, 46px);
+      line-height: 1.2;
     }
 
-    #homeHero p {
-      max-width: 540px;
-      margin: 0 auto 13px !important;
-      color: #F4F1E9 !important;
-      font-size: 11px !important;
-      line-height: 1.55 !important;
+    .hero p {
+      max-width: 600px;
+      margin: 0 0 24px;
+      color: #f0eee7;
+      font-size: 14px;
+      line-height: 1.8;
     }
 
-    .hero-actions,
-    .visit-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .btn {
-      display: inline-flex;
-      min-height: 34px;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 14px;
-      border: 1px solid var(--champagne);
-      background: var(--champagne);
-      color: var(--deep);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .5px;
-      text-align: center;
+    .gold-button {
+      display: inline-block;
+      padding: 13px 25px;
+      background: var(--gold);
+      color: #192c21;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      cursor: pointer;
-      transition: background .2s, color .2s;
+      border: 1px solid var(--gold);
+      transition: 0.2s;
     }
 
-    .btn:hover {
-      background: transparent;
-      color: var(--champagne);
+    .gold-button:hover {
+      background: #fff;
+      border-color: #fff;
     }
 
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      border-color: var(--white);
-    }
-
-    .btn-outline:hover {
-      background: var(--white);
-      color: var(--forest);
-    }
-
-    /* SECTION HEADINGS */
+    /* Shared section heading */
 
     .section-heading {
-      margin-bottom: 26px;
       text-align: center;
+      padding: 0 18px;
+      margin-bottom: 30px;
     }
 
     .section-heading .eyebrow {
       color: var(--gold);
       font-size: 10px;
-      letter-spacing: 2px;
+      font-weight: bold;
+      letter-spacing: 3px;
       text-transform: uppercase;
     }
 
     .section-heading h2 {
-      margin: 5px 0 8px;
-      color: var(--forest);
-      font-family: var(--heading);
-      font-size: clamp(32px, 5vw, 46px);
-      font-weight: 500;
-      line-height: 1.1;
+      margin: 10px 0;
+      color: var(--green);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(26px, 4vw, 35px);
+      font-weight: normal;
     }
 
     .section-heading p {
       max-width: 620px;
-      margin: auto;
+      margin: 0 auto;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 13px;
+      line-height: 1.8;
     }
 
-    /* COLLECTION DIRECTORY */
+    /* Collections directory */
 
     .collections {
-      padding: 48px 0;
-      background: var(--white);
+      padding: 55px 5% 35px;
+      background: var(--cream);
     }
 
     .category-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0,1fr));
-      gap: 16px;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 1250px;
+      margin: 0 auto;
     }
 
-    .category-tile {
+    .category-card {
       min-width: 0;
-      overflow: hidden;
-      background: var(--paper);
-      transition: transform .25s, box-shadow .25s;
+      background: #fff;
+      border: 1px solid #eee7dc;
+      text-align: center;
+      transition: transform 0.25s, box-shadow 0.25s;
     }
 
-    .category-tile:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 22px rgba(35,55,38,.1);
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px #0000000d;
     }
 
-    .category-tile img {
+    .category-card a {
+      display: block;
+      height: 100%;
+      text-decoration: none;
+    }
+
+    .category-card img {
+      display: block;
       width: 100%;
       aspect-ratio: 3 / 4;
       object-fit: cover;
-      background: var(--sage);
+      background: #f3f0ea;
     }
 
-    .category-label {
-      min-height: 60px;
-      display: grid;
-      place-content: center;
-      padding: 9px 6px;
-      text-align: center;
+    .category-card h3 {
+      margin: 14px 5px 6px;
+      color: var(--green);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16px;
+      font-weight: normal;
     }
 
-    .category-label strong {
-      color: var(--forest);
-      font-family: var(--heading);
-      font-size: 19px;
-      line-height: 1.2;
-    }
-
-    .category-label span {
-      margin-top: 4px;
-      color: var(--gold);
-      font-size: 9px;
+    .category-card p {
+      margin: 0 5px 15px;
+      color: #888;
+      font-size: 10px;
+      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    /* SCROLLING PRODUCT GALLERIES */
+    /* Product scrolling sections */
 
     .product-section {
-      padding: 42px 0;
-      background: var(--paper);
-      overflow: hidden;
+      padding: 45px 0 38px;
+      border-bottom: 1px solid #eee9df;
+      scroll-margin-top: 70px;
     }
 
-    .product-section:nth-child(even) {
-      background: var(--white);
+    .product-section:nth-of-type(even) {
+      background: #fff;
     }
 
     .product-section .section-heading {
-      margin-bottom: 20px;
-    }
-
-    .product-section .section-heading h2 {
-      font-size: clamp(30px, 4vw, 40px);
+      margin-bottom: 25px;
     }
 
     .product-viewport {
@@ -362,784 +325,846 @@
 
     .product-track {
       display: flex;
+      align-items: stretch;
       width: max-content;
-      gap: 16px;
-      padding: 4px 0 14px;
-      will-change: transform;
+      gap: var(--product-gap);
+      padding: 4px 0 12px;
       animation: productScroll 45s linear infinite;
+      will-change: transform;
     }
 
-    .product-viewport:hover .product-track {
+    .product-viewport:hover .product-track,
+    .product-viewport:focus-within .product-track {
       animation-play-state: paused;
+    }
+
+    @keyframes productScroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(calc(-50% - var(--product-gap) / 2));
+      }
     }
 
     .product-card {
       flex: 0 0 220px;
       width: 220px;
       overflow: hidden;
-      background: var(--white);
-      border: 1px solid var(--border);
-      box-shadow: 0 3px 12px rgba(25,45,29,.05);
+      background: #fff;
+      border: 1px solid #eee7dc;
+    }
+
+    .product-image-link {
+      display: block;
+      overflow: hidden;
+      background: #f5f2ec;
     }
 
     .product-card img {
+      display: block;
       width: 100%;
       aspect-ratio: 3 / 4;
       object-fit: cover;
-      background: var(--sage);
+      transition: transform 0.35s;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.04);
     }
 
     .product-info {
-      padding: 11px 9px;
+      padding: 13px 12px 15px;
       text-align: center;
     }
 
-    .product-info strong {
-      display: block;
-      color: var(--forest);
-      font-family: var(--heading);
-      font-size: 19px;
-      line-height: 1.2;
+    .product-info h3 {
+      margin: 0 0 6px;
+      color: var(--green);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16px;
+      font-weight: normal;
     }
 
-    .product-info span {
-      display: block;
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 9px;
+    .product-info p {
+      margin: 0 0 12px;
+      color: #777;
+      font-size: 12px;
     }
 
-    .product-info a {
+    .view-collection {
       display: inline-block;
-      margin-top: 8px;
-      color: var(--forest);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .5px;
-      text-transform: uppercase;
+      color: var(--green);
       border-bottom: 1px solid var(--gold);
-    }
-
-    .product-section .view-all-wrap {
-      margin-top: 8px;
-      text-align: center;
-    }
-
-    .product-section .view-all {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 34px;
-      padding: 8px 16px;
-      border: 1px solid var(--forest);
-      background: var(--forest);
-      color: var(--white);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .5px;
+      padding-bottom: 4px;
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      transition: background .2s, color .2s;
     }
 
-    .product-section .view-all:hover {
-      background: transparent;
-      color: var(--forest);
+    .view-collection:hover {
+      color: var(--gold);
     }
 
-    @keyframes productScroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+    .view-all-wrap {
+      text-align: center;
+      padding: 15px 15px 0;
     }
 
-    /* ABOUT */
-
-    .about-section {
-      padding: 60px 0;
-      background: var(--sage);
+    .outline-button {
+      display: inline-block;
+      padding: 12px 24px;
+      color: var(--green);
+      border: 1px solid var(--green);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    .about-layout {
+    .outline-button:hover {
+      background: var(--green);
+      color: #fff;
+    }
+
+    /* Our Story */
+
+    .our-story {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 50px;
       align-items: center;
-      gap: 42px;
+      padding: 65px 8%;
+      background: var(--cream);
     }
 
-    /* Show the complete Our Story image without cropping */
-
-    .about-image {
-      min-width: 0;
+    .story-image-wrap {
       width: 100%;
+      text-align: center;
     }
 
-    .about-image img {
+    .story-image {
       display: block;
       width: 100%;
-      max-width: 100%;
       height: auto;
+      max-height: none;
       aspect-ratio: auto;
       object-fit: contain;
       object-position: center;
-      background: var(--white);
+      margin: 0 auto;
     }
 
-    .about-copy {
-      min-width: 0;
-      overflow-wrap: break-word;
-    }
-
-    .about-copy .eyebrow {
+    .story-copy .eyebrow {
       color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
       text-transform: uppercase;
     }
 
-    .about-copy h2 {
-      margin: 8px 0 15px;
-      color: var(--forest);
-      font-family: var(--heading);
-      font-size: clamp(38px, 5vw, 52px);
-      font-weight: 500;
-      line-height: 1.1;
+    .story-copy h2 {
+      margin: 12px 0 20px;
+      color: var(--green);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: normal;
     }
 
-    .about-copy p {
-      color: #58645A;
-      font-size: 12px;
-      line-height: 2;
-    }
-
-    .about-copy .btn,
-    .visit-actions .btn {
-      margin-top: 10px;
-      border-color: var(--forest);
-      background: var(--forest);
-      color: var(--white);
-    }
-
-    .about-copy .btn:hover,
-    .visit-actions .btn:hover {
-      background: transparent;
-      color: var(--forest);
-    }
-
-    /* SHOWROOM */
-
-    .visit-section {
-      padding: 55px 0;
-      background: var(--white);
-      text-align: center;
-    }
-
-    .visit-card {
-      max-width: 750px;
-      margin: auto;
-      padding: 28px 20px;
-      border: 1px solid var(--border);
-      background: var(--paper);
-    }
-
-    .visit-icon {
-      color: var(--gold);
-      font-size: 26px;
-    }
-
-    .visit-card h2 {
-      margin: 5px 0 12px;
-      color: var(--forest);
-      font-family: var(--heading);
-      font-size: 40px;
-      font-weight: 500;
-    }
-
-    .visit-card p {
-      margin: 6px 0;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .visit-card .address {
-      color: var(--forest);
+    .story-copy p {
+      color: #5f5f5f;
       font-size: 14px;
-      font-weight: 700;
+      line-height: 1.9;
     }
 
-    /* FOOTER */
+    .story-copy .outline-button {
+      margin-top: 12px;
+    }
+
+    /* Showroom */
+
+    .showroom {
+      padding: 55px 20px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .showroom-details {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .showroom-details strong {
+      color: var(--green);
+    }
+
+    .showroom-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    /* Footer */
 
     .site-footer {
-      padding: 35px 0 20px;
-      background: var(--deep);
-      color: var(--sage);
+      background: var(--green-dark);
+      color: #fff;
+      padding: 42px 6% 20px;
     }
 
-    .footer-main {
+    .footer-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr;
-      gap: 30px;
-      padding-bottom: 25px;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 35px;
+      max-width: 1200px;
+      margin: 0 auto 30px;
     }
 
     .footer-brand {
-      color: var(--champagne);
-      font-family: var(--heading);
-      font-size: 35px;
-      letter-spacing: 2px;
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      letter-spacing: 3px;
     }
 
     .footer-column h3 {
-      margin: 0 0 10px;
-      color: var(--champagne);
-      font-family: var(--heading);
-      font-size: 22px;
-      font-weight: 500;
+      margin: 0 0 15px;
+      color: #e4d2ad;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .footer-column p,
     .footer-column a {
-      color: #D9E0D8;
-      font-size: 11px;
+      color: #e6e9e5;
+      font-size: 12px;
       line-height: 2;
     }
 
-    .footer-column a:hover { color: var(--champagne); }
+    .footer-column a {
+      display: block;
+      width: fit-content;
+      text-decoration: none;
+    }
 
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+    .footer-column a:hover {
+      color: var(--gold);
     }
 
     .footer-bottom {
-      padding-top: 17px;
-      border-top: 1px solid rgba(255,255,255,.15);
-      color: #C3CEC3;
-      font-size: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 20px;
+      border-top: 1px solid #ffffff2b;
       text-align: center;
+      color: #d5ddd7;
+      font-size: 11px;
+      line-height: 1.8;
     }
 
-    /* WHATSAPP BUTTON */
+    /* Floating WhatsApp button */
 
     .whatsapp-float {
       position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 200;
+      z-index: 50;
+      right: 20px;
+      bottom: 20px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 12px 17px;
-      border-radius: 30px;
-      background: #18794E;
-      color: #FFFFFF;
-      box-shadow: 0 5px 20px rgba(0,0,0,.2);
-      font-size: 11px;
-      font-weight: 700;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 18px;
+      border-radius: 50px;
+      background: #218c52;
+      color: #fff;
+      box-shadow: 0 4px 16px #00000024;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
     }
 
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .category-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
-      .about-layout { gap: 25px; }
-      .footer-main { gap: 20px; }
-      .product-card { flex-basis: 195px; width: 195px; }
+    .whatsapp-float:hover {
+      background: #176b3d;
     }
 
-    @media (max-width: 600px) {
-      .brand-name { font-size: 35px; }
-      .brand-tagline { font-size: 8px; letter-spacing: 2px; }
+    /* Responsive layout */
 
-      .nav-inner {
-        gap: 8px 13px;
-        padding: 9px 5px;
+    @media (max-width: 1000px) {
+      .category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
       }
 
-      .main-nav a { font-size: 9px; }
-
-      /* Compact mobile hero */
-
-      #homeHero {
-        min-height: 0 !important;
-        padding: 20px 15px !important;
+      .product-card {
+        flex-basis: 195px;
+        width: 195px;
       }
 
-      #homeHero .eyebrow {
-        font-size: 8px;
-        letter-spacing: 1.8px;
+      .our-story {
+        gap: 30px;
+        padding: 50px 5%;
+      }
+    }
+
+    @media (max-width: 650px) {
+      :root {
+        --product-gap: 12px;
       }
 
-      #homeHero h1 {
-        margin: 5px 0 7px !important;
-        font-size: 32px !important;
-        line-height: 1.05 !important;
+      .site-header {
+        padding: 15px 10px 12px;
       }
 
-      #homeHero p {
-        max-width: 420px;
-        margin: 0 auto 11px !important;
-        font-size: 10px !important;
-        line-height: 1.5 !important;
+      .brand-logo {
+        max-width: 180px;
+        max-height: 75px;
       }
 
-      .hero-actions { gap: 7px; }
-
-      #homeHero .btn {
-        min-height: 32px;
-        padding: 7px 10px;
-        font-size: 8px;
+      .brand-name {
+        font-size: 28px;
+        letter-spacing: 4px;
       }
 
-      .collections { padding: 38px 0; }
+      .brand-tagline {
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
+
+      .main-nav {
+        padding: 0 4px;
+      }
+
+      .main-nav a {
+        padding: 12px 8px;
+        font-size: 9px;
+        letter-spacing: 0.5px;
+      }
+
+      .hero {
+        min-height: 220px;
+        padding: 38px 18px;
+      }
+
+      .hero p {
+        font-size: 13px;
+      }
+
+      .collections {
+        padding: 40px 4% 25px;
+      }
 
       .category-grid {
-        grid-template-columns: repeat(2, minmax(0,1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
       }
 
-      .product-section { padding: 32px 0; }
-      .product-section .section-heading { margin-bottom: 14px; }
-      .product-track { gap: 12px; }
-      .product-card { flex-basis: 165px; width: 165px; }
-
-      .about-section { padding: 42px 0; }
-
-      .about-layout {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 22px;
+      .category-card h3 {
+        font-size: 14px;
       }
 
-      .about-copy h2 {
-        font-size: clamp(36px, 9vw, 46px);
+      .category-card p {
+        font-size: 9px;
       }
 
-      .visit-section { padding: 40px 0; }
-      .visit-card h2 { font-size: 35px; }
+      .product-section {
+        padding: 35px 0 28px;
+      }
 
-      .footer-main {
+      .product-section .section-heading {
+        margin-bottom: 18px;
+      }
+
+      .product-card {
+        flex-basis: 165px;
+        width: 165px;
+      }
+
+      .product-info {
+        padding: 11px 8px 13px;
+      }
+
+      .product-info h3 {
+        font-size: 14px;
+      }
+
+      .product-info p {
+        font-size: 11px;
+      }
+
+      .our-story {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 25px;
+        padding: 40px 6%;
+      }
+
+      .story-image-wrap {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .story-copy h2 {
+        font-size: 30px;
+      }
+
+      .showroom {
+        padding: 40px 18px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .site-footer {
+        padding: 35px 7% 18px;
       }
 
       .whatsapp-float {
         right: 12px;
         bottom: 12px;
+        padding: 12px 15px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
+      html {
+        scroll-behavior: auto;
+      }
 
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
+      .announcement-track,
+      .product-track {
+        animation: none;
+      }
+
+      .category-card,
+      .product-card img {
+        transition: none;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="announcement" aria-live="polite">
-    <span class="announcement-message" id="announcementMessage">
-      Discover timeless style at Label AKS
-    </span>
-  </div>
 
-  <div class="instagram-banner">
-    <a href="https://www.instagram.com/label_aks/"
-       target="_blank" rel="noopener noreferrer">
-      Follow <strong>@label_aks</strong> on Instagram for the latest stock updates &amp; exclusive offers
-    </a>
-  </div>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/" aria-label="Label AKS homepage">
-        <span class="brand-name">LABEL AKS</span>
-        <span class="brand-tagline">Style · Elegance · You</span>
-      </a>
+  <!-- Announcement ticker -->
+  <div class="announcement-bar" aria-label="Store announcements">
+    <div class="announcement-track">
+      <span>WELCOME TO LABEL AKS · ELEGANCE IN EVERY THREAD</span>
+      <span>DISCOVER YOUR NEXT FAVOURITE LOOK · VISIT OUR VIKASPURI SHOWROOM</span>
+      <span>WELCOME TO LABEL AKS · ELEGANCE IN EVERY THREAD</span>
+      <span>DISCOVER YOUR NEXT FAVOURITE LOOK · VISIT OUR VIKASPURI SHOWROOM</span>
     </div>
+  </div>
+
+  <!-- Instagram banner -->
+  <a
+    class="instagram-banner"
+    href="https://www.instagram.com/"
+    target="_blank"
+    rel="noopener"
+  >
+    FOLLOW OUR JOURNEY ON INSTAGRAM · <strong>DISCOVER LABEL AKS</strong>
+  </a>
+
+  <!-- Brand header -->
+  <header class="site-header" id="top">
+    <a href="/" aria-label="Label AKS homepage">
+      <img
+        class="brand-logo"
+        src="/images/label-aks-logo.png"
+        alt="Label AKS"
+        onerror="this.style.display='none'"
+      >
+    </a>
+
+    <a class="brand-name" href="/">LABEL AKS</a>
+    <p class="brand-tagline">ELEGANCE IN EVERY THREAD</p>
   </header>
 
+  <!-- Navigation -->
   <nav class="main-nav" aria-label="Main navigation">
-    <div class="container nav-inner">
-      <a href="/">Home</a>
-      <a href="#collections">Collections</a>
-      <a href="#western-wear">Western Wear</a>
-      <a href="#designer-suits">Designer Suits</a>
-      <a href="#new-arrivals">New Arrivals</a>
-      <a href="#about">Our Story</a>
-      <a href="#visit">Visit Us</a>
-    </div>
+    <a href="/">Home</a>
+    <a href="#collections">Collections</a>
+    <a href="#western-wear">Western Wear</a>
+    <a href="#designer-suits">Designer Suits</a>
+    <a href="#our-story">Our Story</a>
+    <a href="#showroom">Visit Us</a>
+    <a href="https://wa.me/919810057892" target="_blank" rel="noopener">Contact</a>
   </nav>
 
-  <main>
-    <!-- COMPACT SOLID-GREEN HERO -->
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-kicker">Discover Your Style</div>
+    <h1>Elegance in Every Thread</h1>
+    <p>
+      Thoughtfully selected styles for everyday elegance, festive moments
+      and special occasions. Find a look that feels uniquely yours at Label AKS.
+    </p>
+    <a class="gold-button" href="#collections">Explore Collections</a>
+  </section>
 
-    <section id="homeHero">
-      <div class="hero-content">
-        <div class="eyebrow">Welcome to Label AKS</div>
-        <h1>Elegance in Every Thread</h1>
+  <!-- Collections directory -->
+  <section class="collections" id="collections">
+    <div class="section-heading">
+      <div class="eyebrow">Curated For You</div>
+      <h2>Explore Our Collections</h2>
+      <p>
+        From effortless everyday styles to statement occasion wear,
+        discover designs for every mood and moment.
+      </p>
+    </div>
 
-        <p>
-          Explore a thoughtfully selected collection of women's fashion,
-          from everyday elegance to statement looks for your special occasions.
-        </p>
+    <div class="category-grid" id="categoryGrid"></div>
+  </section>
 
-        <div class="hero-actions">
-          <a class="btn" href="#collections">Explore Collections</a>
+  <!-- The four numbered-image product galleries are generated here -->
+  <div id="productSections"></div>
 
-          <a class="btn btn-outline"
-             href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20I%20would%20like%20to%20know%20about%20your%20collection."
-             target="_blank" rel="noopener noreferrer">
-            Enquire on WhatsApp
-          </a>
-        </div>
+  <!-- Our Story -->
+  <section class="our-story" id="our-story">
+    <div class="story-image-wrap">
+      <img
+        class="story-image"
+        src="/images/label-aks-social.jpeg"
+        alt="Label AKS — fashion, style and elegance"
+        loading="lazy"
+      >
+    </div>
+
+    <div class="story-copy">
+      <div class="eyebrow">Our Story</div>
+      <h2>Style That Feels Like You</h2>
+      <p>
+        At Label AKS, we believe clothing is more than what you wear.
+        It is a way to express your personality, celebrate your moments
+        and feel confident in your own style.
+      </p>
+      <p>
+        Our collection brings together carefully selected designs,
+        beautiful details and versatile styles for women who appreciate
+        elegance and individuality.
+      </p>
+      <p>
+        We look forward to welcoming you and helping you find something
+        you truly love.
+      </p>
+      <a class="outline-button" href="#showroom">Visit Our Showroom</a>
+    </div>
+  </section>
+
+  <!-- Showroom -->
+  <section class="showroom" id="showroom">
+    <div class="section-heading">
+      <div class="eyebrow">We Would Love To Meet You</div>
+      <h2>Visit Label AKS</h2>
+      <p>
+        Experience our collection in person at our showroom in Vikaspuri, New Delhi.
+      </p>
+    </div>
+
+    <div class="showroom-details">
+      <p><strong>Label AKS</strong></p>
+      <p>537, Site 1, Vikaspuri, New Delhi</p>
+      <p>For collection details and availability, please contact us on WhatsApp.</p>
+
+      <div class="showroom-actions">
+        <a
+          class="outline-button"
+          href="https://www.google.com/maps/search/?api=1&query=537%2C+Site+1%2C+Vikaspuri%2C+New+Delhi"
+          target="_blank"
+          rel="noopener"
+        >Find Us on Google Maps</a>
+
+        <a
+          class="gold-button"
+          href="https://wa.me/919810057892"
+          target="_blank"
+          rel="noopener"
+        >Chat on WhatsApp</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="collections" id="collections">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">Find Your Style</div>
-          <h2>Explore Our Collections</h2>
-          <p>From effortless everyday looks to elegant occasion wear, find styles that feel uniquely you.</p>
-        </div>
-
-        <div class="category-grid" id="categoryGrid"></div>
-      </div>
-    </section>
-
-    <!-- ONLY THE FOUR MULTI-IMAGE GALLERIES ARE RENDERED HERE -->
-    <div id="productSections"></div>
-
-    <section class="about-section" id="about">
-      <div class="container about-layout">
-        <div class="about-image">
-          <img src="/images/label-aks-social.jpeg"
-               alt="Label AKS fashion collection"
-               loading="lazy"
-               onerror="this.style.display='none'">
-        </div>
-
-        <div class="about-copy">
-          <div class="eyebrow">Our Story</div>
-          <h2>Fashion That Feels Like You</h2>
-          <p>At Label AKS, we believe what you wear should make you feel confident, comfortable and beautiful.</p>
-          <p>Our collection brings together elegant suits, contemporary silhouettes and occasion-ready styles, selected for women who appreciate thoughtful details and individual expression.</p>
-          <p>Visit our showroom in Vikaspuri and discover a collection chosen with you in mind.</p>
-          <a class="btn" href="#visit">Visit Our Showroom</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="visit-section" id="visit">
-      <div class="container">
-        <div class="visit-card">
-          <div class="visit-icon" aria-hidden="true">✦</div>
-          <h2>We'd Love to See You</h2>
-          <p class="address">Label AKS</p>
-          <p>537, Site 1, Vikaspuri, New Delhi</p>
-          <p>Come explore our collection and find something special for your wardrobe.</p>
-
-          <div class="visit-actions">
-            <a class="btn"
-               href="https://www.google.com/maps/search/?api=1&query=Label%20AKS%2C%20537%20Site%201%2C%20Vikaspuri%2C%20New%20Delhi"
-               target="_blank" rel="noopener noreferrer">
-              Get Directions
-            </a>
-
-            <a class="btn"
-               href="https://wa.me/919810057892"
-               target="_blank" rel="noopener noreferrer">
-              Contact Us
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-main">
-        <div class="footer-column">
-          <div class="footer-brand">LABEL AKS</div>
-          <p>Thoughtfully selected fashion for everyday elegance and special occasions.</p>
-          <p><a href="https://www.instagram.com/label_aks/" target="_blank" rel="noopener noreferrer">Follow us on Instagram</a></p>
-        </div>
-
-        <div class="footer-column">
-          <h3>Explore</h3>
-          <div class="footer-links">
-            <a href="#collections">All Collections</a>
-            <a href="/category.html?category=western-wear">Western Wear</a>
-            <a href="/category.html?category=cord-sets">Co-ord Sets</a>
-            <a href="/category.html?category=indo-western">Indo-Western</a>
-            <a href="/category.html?category=designer-suits">Designer Suits</a>
-            <a href="/category.html?category=new-arrivals">New Arrivals</a>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <h3>Visit Us</h3>
-          <p>537, Site 1, Vikaspuri<br>New Delhi, India</p>
-          <p><a href="https://wa.me/919810057892" target="_blank" rel="noopener noreferrer">WhatsApp: +91 98100 57892</a></p>
-          <p><a href="https://www.google.com/maps/search/?api=1&query=Label%20AKS%2C%20537%20Site%201%2C%20Vikaspuri%2C%20New%20Delhi" target="_blank" rel="noopener noreferrer">Find us on Google Maps</a></p>
-        </div>
+    <div class="footer-grid">
+      <div class="footer-column">
+        <div class="footer-brand">LABEL AKS</div>
+        <p>Elegance in Every Thread.</p>
+        <p>
+          Discover ladies' fashion selected for everyday wear,
+          celebrations and special occasions.
+        </p>
       </div>
 
-      <div class="footer-bottom">
-        © <span id="currentYear"></span> Label AKS. All rights reserved.
+      <div class="footer-column">
+        <h3>Explore</h3>
+        <a href="#collections">All Collections</a>
+        <a href="/category.html?category=western-wear">Western Wear</a>
+        <a href="/category.html?category=cord-sets">Co-ord Sets</a>
+        <a href="/category.html?category=indo-western">Indo-Western</a>
+        <a href="/category.html?category=designer-suits">Designer Suits</a>
+        <a href="/category.html?category=new-arrivals">New Arrivals</a>
       </div>
+
+      <div class="footer-column">
+        <h3>Get In Touch</h3>
+        <p>537, Site 1, Vikaspuri, New Delhi</p>
+        <a href="https://wa.me/919810057892" target="_blank" rel="noopener">
+          WhatsApp: +91 98100 57892
+        </a>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=537%2C+Site+1%2C+Vikaspuri%2C+New+Delhi"
+          target="_blank"
+          rel="noopener"
+        >Find Us on Google Maps</a>
+        <a href="#our-story">About Label AKS</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; <span id="copyrightYear"></span> Label AKS. All rights reserved.
+      <br>
+      Made with care for women who love their style.
     </div>
   </footer>
 
-  <a class="whatsapp-float"
-     href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20I%20am%20interested%20in%20your%20collection."
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Chat with Label AKS on WhatsApp">
-    <span aria-hidden="true">◉</span> Chat with us
+  <!-- Floating WhatsApp button -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/919810057892"
+    target="_blank"
+    rel="noopener"
+    aria-label="Contact Label AKS on WhatsApp"
+  >
+    <span aria-hidden="true">◉</span>
+    WhatsApp Us
   </a>
 
   <script>
-    "use strict";
+    /*
+      IMPORTANT:
+      These four categories have numbered product images in folders.
+      Each product image links to product.html with its category and image number.
+      The remaining categories appear only in the collection directory.
+    */
 
     const categories = [
       {
-        slug: "western-wear",
+        id: "western-wear",
         title: "Western Wear",
         folder: "Westernwear",
         count: 11,
-        id: "western-wear",
-        description: "Contemporary styles for your wardrobe.",
-        caption: "Elegant Western Wear Style",
-        cover: "/images/Westernwear/1.jpeg",
-        populated: true
+        populated: true,
+        image: "/images/Cod2.jpeg",
+        description: "Contemporary styles"
       },
       {
-        slug: "cord-sets",
+        id: "cord-sets",
         title: "Co-ord Sets",
         folder: "cordsets",
         count: 37,
-        id: "cord-sets",
-        description: "Effortless style, beautifully coordinated.",
-        caption: "Elegant Co-ord Set",
-        cover: "/images/cordsets/1.jpeg",
-        populated: true
+        populated: true,
+        image: "/images/cod.jpeg",
+        description: "Effortless matching looks"
       },
       {
-        slug: "indo-western",
+        id: "indo-western",
         title: "Indo-Western",
         folder: "indowestern",
         count: 22,
-        id: "indo-western",
-        description: "A modern expression of Indian elegance.",
-        caption: "Elegant Indo-Western Style",
-        cover: "/images/indowestern/1.jpeg",
-        populated: true
+        populated: true,
+        image: "/images/Suit2.jpeg",
+        description: "Traditional meets modern"
       },
       {
-        slug: "designer-suits",
+        id: "designer-suits",
         title: "Designer Suits",
         folder: "designer-suits",
         count: 71,
-        id: "designer-suits",
-        description: "Statement styles with beautiful details.",
-        caption: "Elegant Designer Suit",
-        cover: "/images/designer-suits/1.jpeg",
-        populated: true
+        populated: true,
+        image: "/images/Suit4.jpeg",
+        description: "Elegant designer styles"
       },
       {
-        slug: "suit-sets",
-        title: "Suit Sets",
         id: "suit-sets",
-        description: "Beautiful suit styles for every day.",
-        caption: "Elegant Suit Set",
-        cover: "/images/Suit 1.jpeg"
+        title: "Suit Sets",
+        image: "/images/Suit 1.jpeg",
+        description: "Beautiful suit sets"
       },
       {
-        slug: "lehengas",
-        title: "Lehengas",
         id: "lehengas",
-        description: "Celebrate your moments in style.",
-        caption: "Elegant Lehenga",
-        cover: "/images/Lehenga 1.jpeg"
+        title: "Lehengas",
+        image: "/images/Lehenga 1.jpeg",
+        description: "Celebrate in style"
       },
       {
-        slug: "daily-wear",
-        title: "Daily Wear",
         id: "daily-wear",
-        description: "Comfortable styles for everyday dressing.",
-        caption: "Everyday Style",
-        cover: "/images/suit 1a.jpeg"
+        title: "Daily Wear",
+        image: "/images/suit 1a.jpeg",
+        description: "Everyday elegance"
       },
       {
-        slug: "festive-wear",
-        title: "Festive Wear",
         id: "festive-wear",
-        description: "Make festive occasions feel special.",
-        caption: "Festive Collection",
-        cover: "/images/Suit2.jpeg"
+        title: "Festive Wear",
+        image: "/images/Suit2.jpeg",
+        description: "Styles for celebrations"
       },
       {
-        slug: "party-wear",
-        title: "Party & Occasion Wear",
         id: "party-wear",
-        description: "Find a look for your next celebration.",
-        caption: "Occasion Wear",
-        cover: "/images/Suit4.jpeg"
+        title: "Party Wear",
+        image: "/images/Suit4.jpeg",
+        description: "Make every moment special"
       },
       {
-        slug: "new-arrivals",
-        title: "New Arrivals",
         id: "new-arrivals",
-        description: "Discover styles from our latest selection.",
-        caption: "New Arrival",
-        cover: "/images/cod.jpeg"
+        title: "New Arrivals",
+        image: "/images/cod.jpeg",
+        description: "Discover the latest styles"
       }
     ];
 
-    const announcements = [
-      "Discover timeless style at Label AKS",
-      "Elegant styles for everyday moments",
-      "Find something special for every occasion",
-      "Explore our latest fashion collections",
-      "Visit Label AKS, Vikaspuri, New Delhi",
-      "Follow @label_aks for the latest stock updates"
-    ];
+    const categoryGrid = document.getElementById("categoryGrid");
+    const productSections = document.getElementById("productSections");
 
-    function categoryURL(category) {
-      return "/category.html?category=" + encodeURIComponent(category.slug);
-    }
+    function createCategoryCard(category) {
+      const article = document.createElement("article");
+      article.className = "category-card";
 
-    function makeImage(src, alt) {
+      const link = document.createElement("a");
+
+      /*
+        Numbered categories go to their collection page from the directory.
+        Other categories also link to their collection page.
+      */
+      link.href = `/category.html?category=${encodeURIComponent(category.id)}`;
+
       const image = document.createElement("img");
-      image.src = src;
-      image.alt = alt;
+      image.src = category.image;
+      image.alt = category.title;
       image.loading = "lazy";
-      image.decoding = "async";
 
-      image.addEventListener("error", function () {
-        const fallback = document.createElement("div");
-        fallback.textContent = "Label AKS";
-        fallback.style.cssText =
-          "aspect-ratio:3/4;display:grid;place-items:center;background:#E8EDE5;color:#344B3B;font-size:12px";
-        image.replaceWith(fallback);
-      }, { once: true });
+      const heading = document.createElement("h3");
+      heading.textContent = category.title;
 
-      return image;
+      const description = document.createElement("p");
+      description.textContent = category.description || "Explore Collection";
+
+      link.append(image, heading, description);
+      article.appendChild(link);
+
+      return article;
     }
 
     function renderCategoryGrid() {
-      const grid = document.getElementById("categoryGrid");
+      categoryGrid.replaceChildren();
 
-      categories.forEach(function (category) {
-        const tile = document.createElement("a");
-        tile.className = "category-tile";
-        tile.href = categoryURL(category);
-
-        const image = makeImage(
-          category.cover,
-          category.title + " collection"
-        );
-
-        const label = document.createElement("div");
-        label.className = "category-label";
-
-        const strong = document.createElement("strong");
-        strong.textContent = category.title;
-
-        const subtitle = document.createElement("span");
-        subtitle.textContent = "Explore Collection";
-
-        label.append(strong, subtitle);
-        tile.append(image, label);
-        grid.appendChild(tile);
+      categories.forEach(category => {
+        categoryGrid.appendChild(createCategoryCard(category));
       });
     }
 
-    /* BUILD ONE CARD FOR EACH NUMBERED PRODUCT IMAGE */
-
+    /*
+      Creates one product card.
+      Clicking either the image or View Product opens the individual product
+      page, NOT the whole collection.
+    */
     function createProductCard(category, imageNumber) {
       const card = document.createElement("article");
       card.className = "product-card";
 
-      const imagePath =
-        "/images/" + category.folder + "/" + imageNumber + ".jpeg";
+      const productUrl =
+        `/product.html?category=${encodeURIComponent(category.id)}&image=${imageNumber}`;
 
-      const image = makeImage(
-        imagePath,
-        category.title + " design " + imageNumber
+      const imageLink = document.createElement("a");
+      imageLink.href = productUrl;
+      imageLink.className = "product-image-link";
+      imageLink.setAttribute(
+        "aria-label",
+        `View ${category.title}, Design ${imageNumber}`
       );
+
+      const image = document.createElement("img");
+      image.src = `/images/${category.folder}/${imageNumber}.jpeg`;
+      image.alt = `${category.title} — Design ${imageNumber}`;
+      image.loading = "lazy";
+      image.decoding = "async";
+
+      imageLink.appendChild(image);
 
       const info = document.createElement("div");
       info.className = "product-info";
 
-      const title = document.createElement("strong");
+      const title = document.createElement("h3");
       title.textContent = category.title;
 
-      const description = document.createElement("span");
-      description.textContent = "Design " + imageNumber;
+      const description = document.createElement("p");
+      description.textContent = `Design No. ${imageNumber}`;
 
-      const link = document.createElement("a");
-      link.href = categoryURL(category);
-      link.textContent = "View Collection";
+      const viewLink = document.createElement("a");
+      viewLink.href = productUrl;
+      viewLink.className = "view-collection";
+      viewLink.textContent = "View Product";
 
-      info.append(title, description, link);
-      card.append(image, info);
+      info.append(title, description, viewLink);
+      card.append(imageLink, info);
 
       return card;
     }
-
-    /* CREATE ONE HORIZONTAL SCROLLING GALLERY */
 
     function createProductSection(category) {
       const section = document.createElement("section");
       section.className = "product-section";
       section.id = category.id;
 
-      const container = document.createElement("div");
-      container.className = "container";
-
       const heading = document.createElement("div");
       heading.className = "section-heading";
 
       const eyebrow = document.createElement("div");
       eyebrow.className = "eyebrow";
-      eyebrow.textContent = "Discover the Collection";
+      eyebrow.textContent = "Explore The Collection";
 
       const title = document.createElement("h2");
       title.textContent = category.title;
 
       const description = document.createElement("p");
-      description.textContent = category.description;
+      description.textContent =
+        `${category.description}. Browse our designs and select an individual product to enquire about it.`;
 
       heading.append(eyebrow, title, description);
 
       const viewport = document.createElement("div");
       viewport.className = "product-viewport";
+      viewport.setAttribute("aria-label", `${category.title} products`);
 
       const track = document.createElement("div");
       track.className = "product-track";
 
+      /*
+        Original cards: one per numbered image.
+      */
       for (let i = 1; i <= category.count; i++) {
         track.appendChild(createProductCard(category, i));
       }
 
       /*
-        Duplicate the cards for a continuous loop.
-        The animation travels half the track width and
-        returns seamlessly to the start.
+        Duplicate cards for continuous scrolling.
+        Cloned links are removed from keyboard navigation so screen readers
+        and keyboard users don't encounter duplicate products.
       */
       for (let i = 1; i <= category.count; i++) {
         const clone = createProductCard(category, i);
         clone.setAttribute("aria-hidden", "true");
 
-        clone.querySelectorAll("a").forEach(function (link) {
+        clone.querySelectorAll("a").forEach(link => {
           link.setAttribute("tabindex", "-1");
         });
 
@@ -1152,65 +1177,46 @@
       viewAllWrap.className = "view-all-wrap";
 
       const viewAll = document.createElement("a");
-      viewAll.className = "view-all";
-      viewAll.href = categoryURL(category);
-      viewAll.textContent = "View All " + category.title;
+      viewAll.className = "outline-button";
+      viewAll.href =
+        `/category.html?category=${encodeURIComponent(category.id)}`;
+      viewAll.textContent = `View All ${category.title}`;
 
       viewAllWrap.appendChild(viewAll);
-      container.append(heading, viewport, viewAllWrap);
-      section.appendChild(container);
+
+      section.append(heading, viewport, viewAllWrap);
 
       return section;
     }
 
-    /*
-      IMPORTANT:
-      Only categories containing numbered product galleries
-      are rendered here. This prevents duplicate single-image
-      sections appearing below the scrolling galleries.
-    */
-
     function renderProductSections() {
-      const host = document.getElementById("productSections");
-      host.replaceChildren();
+      productSections.replaceChildren();
 
-      categories
-        .filter(function (category) {
-          return category.populated === true &&
-                 category.folder &&
-                 Number.isInteger(category.count) &&
-                 category.count > 0;
-        })
-        .forEach(function (category) {
-          host.appendChild(createProductSection(category));
-        });
+      /*
+        Only render the four categories that have complete numbered
+        image folders. This avoids duplicate sections containing one image.
+      */
+      const populatedCategories = categories.filter(category =>
+        category.populated === true &&
+        category.folder &&
+        Number.isInteger(category.count) &&
+        category.count > 0
+      );
+
+      populatedCategories.forEach(category => {
+        productSections.appendChild(createProductSection(category));
+      });
     }
 
     function initialiseAnnouncements() {
-      const element = document.getElementById("announcementMessage");
-      let index = 0;
-
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        return;
-      }
-
-      window.setInterval(function () {
-        element.style.opacity = "0";
-
-        window.setTimeout(function () {
-          index = (index + 1) % announcements.length;
-          element.textContent = announcements[index];
-          element.style.opacity = "1";
-        }, 250);
-      }, 3500);
+      document.getElementById("copyrightYear").textContent =
+        new Date().getFullYear();
     }
-
-    document.getElementById("currentYear").textContent =
-      new Date().getFullYear();
 
     renderCategoryGrid();
     renderProductSections();
     initialiseAnnouncements();
   </script>
+
 </body>
 </html>
