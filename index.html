@@ -1,42 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#344B3B">
 
-  <title>Label AKS | Elegant Ethnic Wear & Women's Fashion</title>
-
-  <meta name="description"
-    content="Discover elegant women's suits, designer suits, co-ord sets, western wear, lehengas and Indo-Western styles at Label AKS, Vikaspuri, New Delhi.">
-
+  <title>Label AKS | Elegant Women's Fashion</title>
+  <meta name="description" content="Discover women's suits, designer suits, co-ord sets, western wear, lehengas and Indo-Western fashion at Label AKS, Vikaspuri, New Delhi.">
   <meta property="og:title" content="Label AKS | Women's Fashion">
-  <meta property="og:description"
-    content="Discover your next favourite look at Label AKS, Vikaspuri, New Delhi.">
-  <meta property="og:image"
-    content="https://labelaks.in/images/label-aks-social.jpeg">
+  <meta property="og:description" content="Explore elegant fashion at Label AKS, Vikaspuri, New Delhi.">
+  <meta property="og:image" content="https://labelaks.in/images/label-aks-social.jpeg">
   <meta property="og:url" content="https://labelaks.in/">
-  <meta property="og:type" content="website">
 
-  <link rel="icon" type="image/png"
-    href="/images/label-aks-logo.png">
-
+  <link rel="icon" href="/images/label-aks-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --forest: #344B3B;
-      --forest-deep: #26392D;
-      --forest-light: #526B56;
+      --deep: #26392D;
       --champagne: #F3DDB0;
       --gold: #B99A58;
       --sage: #E8EDE5;
-      --sage-light: #F5F6F1;
+      --paper: #F5F6F1;
       --white: #FFFFFF;
       --ink: #28342C;
       --muted: #6B756D;
@@ -45,90 +33,53 @@
       --body: "Montserrat", Arial, sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 100px;
     }
 
     body {
       margin: 0;
-      background: var(--sage-light);
+      overflow-x: hidden;
+      background: var(--paper);
       color: var(--ink);
       font-family: var(--body);
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    body, button, a {
-      -webkit-tap-highlight-color: transparent;
-    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(1180px, 92%); margin: auto; }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
+    /* ANNOUNCEMENTS */
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    .container {
-      width: min(1180px, 92%);
-      margin-inline: auto;
-    }
-
-    /* ANNOUNCEMENT BAR */
-
-    .announcement-bar {
-      background: var(--forest-deep);
-      color: var(--champagne);
+    .announcement {
       min-height: 38px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px 12px;
+      display: grid;
+      place-items: center;
+      padding: 7px 12px;
+      background: var(--deep);
+      color: var(--champagne);
       text-align: center;
-      font-size: 11px;
-      letter-spacing: 1.3px;
+      font-size: 10px;
+      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    .announcement-message {
-      transition: opacity .3s ease;
-    }
-
-    /* INSTAGRAM STRIP */
-
     .instagram-banner {
+      padding: 11px 14px;
       background: var(--forest);
       color: var(--champagne);
-      text-align: center;
-      padding: 11px 14px;
       border-bottom: 2px solid var(--gold);
+      text-align: center;
       font-size: 11px;
-      letter-spacing: .35px;
     }
 
-    .instagram-banner a {
-      color: var(--champagne);
-    }
-
-    .instagram-banner a:hover {
-      color: var(--white);
-    }
-
-    .instagram-banner strong {
-      color: var(--white);
-    }
+    .instagram-banner a { color: var(--champagne); }
+    .instagram-banner strong { color: var(--white); }
 
     /* HEADER */
 
@@ -138,94 +89,103 @@
       z-index: 100;
       background: var(--white);
       border-bottom: 1px solid var(--border);
-      box-shadow: 0 3px 15px rgba(25, 45, 29, .045);
+      box-shadow: 0 3px 15px rgba(25,45,29,.05);
     }
 
     .header-inner {
-      min-height: 83px;
+      min-height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 0;
-      text-align: center;
+      padding: 10px 0;
     }
 
     .brand {
-      display: inline-flex;
+      display: flex;
       flex-direction: column;
       align-items: center;
-      line-height: 1.05;
+      line-height: 1;
     }
 
     .brand-name {
+      color: var(--forest);
       font-family: var(--heading);
-      font-size: clamp(37px, 5vw, 49px);
+      font-size: 44px;
       font-weight: 600;
       letter-spacing: 4px;
-      color: var(--forest);
     }
 
     .brand-tagline {
-      margin-top: 7px;
+      margin-top: 8px;
       color: var(--gold);
       font-size: 9px;
-      font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
 
-    /* NAVIGATION */
-
-    .main-nav {
+    nav {
       background: var(--forest);
       color: var(--white);
     }
 
     .nav-inner {
       display: flex;
-      align-items: center;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: 5px 25px;
+      justify-content: center;
+      gap: 9px 24px;
       padding: 12px 0;
     }
 
-    .main-nav a {
+    nav a {
       font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 1px;
+      letter-spacing: .8px;
       text-transform: uppercase;
-      transition: color .2s ease;
     }
 
-    .main-nav a:hover {
-      color: var(--champagne);
-    }
+    nav a:hover { color: var(--champagne); }
 
-    /* HERO */
+    /* HERO — INDEPENDENT OVERLAY, NOT A BACKGROUND GRADIENT */
 
-    .hero {
+    #homeHero {
+      position: relative;
+      isolation: isolate;
       min-height: 460px;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
+      overflow: hidden;
       padding: 75px 22px;
-      background:
-        linear-gradient(
-          rgba(30, 48, 35, .86),
-          rgba(30, 48, 35, .86)
-        ),
-        url("/images/label-aks-social.jpeg") center 45% / cover no-repeat,
-        var(--forest);
+      background-color: var(--forest);
       color: var(--white);
+      text-align: center;
     }
 
-    .hero-content {
+    #homeHero .hero-image {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      object-position: center 45%;
+    }
+
+    #homeHero .hero-overlay {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: rgba(30,48,35,.86);
+      pointer-events: none;
+    }
+
+    #homeHero .hero-content {
+      position: relative;
+      z-index: 1;
       width: min(760px, 100%);
     }
 
-    .eyebrow {
+    #homeHero .eyebrow {
       color: var(--champagne);
       font-size: 10px;
       font-weight: 600;
@@ -233,46 +193,46 @@
       text-transform: uppercase;
     }
 
-    .hero h1 {
-      margin: 15px 0 14px;
+    #homeHero h1 {
+      margin: 15px 0;
+      color: #FFFFFF;
       font-family: var(--heading);
-      font-size: clamp(43px, 7vw, 76px);
+      font-size: clamp(45px, 7vw, 76px);
       font-weight: 500;
-      line-height: 1.04;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, .15);
+      line-height: 1.05;
+      text-shadow: 0 2px 15px rgba(0,0,0,.25);
     }
 
-    .hero p {
+    #homeHero p {
       max-width: 570px;
-      margin: 0 auto 28px;
+      margin: 0 auto 26px;
       color: #F4F1E9;
       font-size: 13px;
       line-height: 1.9;
     }
 
-    .hero-actions {
+    .hero-actions, .visit-actions {
       display: flex;
-      align-items: center;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 12px;
     }
 
     .btn {
       display: inline-flex;
+      min-height: 44px;
       align-items: center;
       justify-content: center;
-      min-height: 44px;
-      padding: 12px 22px;
+      padding: 12px 21px;
       border: 1px solid var(--champagne);
       background: var(--champagne);
-      color: var(--forest-deep);
+      color: var(--deep);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: .8px;
       text-align: center;
       text-transform: uppercase;
-      transition: background .2s ease, color .2s ease;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -283,37 +243,35 @@
     .btn-outline {
       background: transparent;
       color: var(--white);
-      border-color: rgba(255, 255, 255, .65);
+      border-color: var(--white);
     }
 
-    .btn-outline:hover {
-      background: var(--white);
-      color: var(--forest);
-    }
-
-    /* SECTION HEADINGS */
+    /* SHARED SECTION HEADINGS */
 
     .section-heading {
+      margin-bottom: 28px;
       text-align: center;
-      margin-bottom: 32px;
     }
 
     .section-heading .eyebrow {
       color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .section-heading h2 {
-      margin: 5px 0 7px;
+      margin: 5px 0 8px;
       color: var(--forest);
       font-family: var(--heading);
       font-size: clamp(34px, 5vw, 48px);
       font-weight: 500;
-      line-height: 1.12;
+      line-height: 1.1;
     }
 
     .section-heading p {
-      max-width: 610px;
-      margin: 0 auto;
+      max-width: 620px;
+      margin: auto;
       color: var(--muted);
       font-size: 12px;
     }
@@ -321,26 +279,26 @@
     /* COLLECTION DIRECTORY */
 
     .collections {
-      padding: 66px 0 58px;
+      padding: 60px 0;
       background: var(--white);
     }
 
     .category-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap: 16px;
     }
 
     .category-tile {
       min-width: 0;
-      background: var(--sage-light);
       overflow: hidden;
-      transition: transform .25s ease, box-shadow .25s ease;
+      background: var(--paper);
+      transition: transform .25s, box-shadow .25s;
     }
 
     .category-tile:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(35, 55, 38, .10);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(35,55,38,.1);
     }
 
     .category-tile img {
@@ -348,64 +306,40 @@
       aspect-ratio: 3 / 4;
       object-fit: cover;
       background: var(--sage);
-      transition: transform .45s ease;
     }
 
-    .category-tile:hover img {
-      transform: scale(1.035);
-    }
-
-    .category-tile-label {
-      min-height: 64px;
-      padding: 12px 8px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    .category-label {
+      min-height: 63px;
+      display: grid;
+      place-content: center;
+      padding: 10px 6px;
       text-align: center;
     }
 
-    .category-tile-label strong {
+    .category-label strong {
       color: var(--forest);
       font-family: var(--heading);
       font-size: 19px;
-      font-weight: 600;
-      line-height: 1.1;
+      line-height: 1.2;
     }
 
-    .category-tile-label span {
-      margin-top: 6px;
+    .category-label span {
+      margin-top: 4px;
       color: var(--gold);
       font-size: 9px;
-      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    /* PRODUCT COLLECTION SECTIONS */
+    /* PRODUCT CAROUSELS */
 
     .product-section {
-      padding: 55px 0 48px;
-      background: var(--sage-light);
-      border-bottom: 1px solid var(--border);
+      padding: 50px 0;
       overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background: var(--paper);
     }
 
-    .product-section:nth-of-type(even) {
-      background: var(--white);
-    }
-
-    .product-section .section-heading {
-      margin-bottom: 23px;
-    }
-
-    .product-section .section-heading h2 {
-      font-size: clamp(32px, 4vw, 42px);
-    }
-
-    .carousel-shell {
-      position: relative;
-      width: 100%;
-    }
+    .product-section:nth-child(even) { background: var(--white); }
 
     .product-viewport {
       width: 100%;
@@ -419,23 +353,16 @@
       align-items: stretch;
       width: max-content;
       gap: 16px;
-      will-change: transform;
       transform: translateX(0);
+      will-change: transform;
     }
 
     .product-card {
       flex: 0 0 210px;
       width: 210px;
-      min-width: 0;
       overflow: hidden;
-      background: var(--white);
       border: 1px solid var(--border);
-    }
-
-    .product-image-link {
-      display: block;
-      overflow: hidden;
-      background: var(--sage);
+      background: var(--white);
     }
 
     .product-card img {
@@ -443,58 +370,48 @@
       aspect-ratio: 3 / 4;
       object-fit: cover;
       background: var(--sage);
-      transition: transform .4s ease;
-    }
-
-    .product-image-link:hover img {
-      transform: scale(1.04);
     }
 
     .product-info {
-      padding: 13px 12px 15px;
+      padding: 12px 9px 15px;
       text-align: center;
     }
 
     .product-info h3 {
-      margin: 0 0 6px;
+      margin: 0 0 5px;
       color: var(--forest);
       font-family: var(--heading);
       font-size: 19px;
       font-weight: 600;
-      line-height: 1.15;
+      line-height: 1.2;
     }
 
     .product-info p {
       margin: 0;
       color: var(--muted);
       font-size: 10px;
-      line-height: 1.6;
     }
 
     .product-link {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 9px;
+      border-bottom: 1px solid var(--gold);
       color: var(--forest);
       font-size: 9px;
       font-weight: 700;
-      letter-spacing: .8px;
       text-transform: uppercase;
-      border-bottom: 1px solid var(--gold);
     }
 
     .carousel-controls {
       display: flex;
       justify-content: center;
       gap: 12px;
-      margin-top: 20px;
+      margin-top: 18px;
     }
 
     .carousel-button {
-      display: inline-flex;
       width: 38px;
       height: 38px;
-      align-items: center;
-      justify-content: center;
       border: 1px solid var(--forest);
       border-radius: 50%;
       background: transparent;
@@ -509,16 +426,14 @@
     }
 
     .view-all {
-      display: block;
-      width: fit-content;
-      margin: 25px auto 0;
-      padding: 12px 20px;
+      display: table;
+      margin: 22px auto 0;
+      padding: 11px 20px;
       border: 1px solid var(--forest);
       color: var(--forest);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 1px;
-      text-align: center;
+      letter-spacing: .8px;
       text-transform: uppercase;
     }
 
@@ -530,7 +445,7 @@
     /* ABOUT */
 
     .about-section {
-      padding: 75px 0;
+      padding: 70px 0;
       background: var(--sage);
     }
 
@@ -538,12 +453,11 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 48px;
+      gap: 42px;
     }
 
     .about-image img {
       width: 100%;
-      max-height: 510px;
       aspect-ratio: 4 / 3;
       object-fit: cover;
       background: var(--white);
@@ -551,15 +465,18 @@
 
     .about-copy .eyebrow {
       color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .about-copy h2 {
-      margin: 9px 0 15px;
+      margin: 8px 0 15px;
       color: var(--forest);
       font-family: var(--heading);
-      font-size: clamp(37px, 5vw, 52px);
+      font-size: clamp(38px, 5vw, 52px);
       font-weight: 500;
-      line-height: 1.08;
+      line-height: 1.1;
     }
 
     .about-copy p {
@@ -568,41 +485,40 @@
       line-height: 2;
     }
 
-    .about-copy .btn {
-      margin-top: 12px;
-      background: var(--forest);
+    .about-copy .btn,
+    .visit-actions .btn {
+      margin-top: 10px;
       border-color: var(--forest);
+      background: var(--forest);
       color: var(--white);
     }
 
-    .about-copy .btn:hover {
+    .about-copy .btn:hover,
+    .visit-actions .btn:hover {
       background: transparent;
       color: var(--forest);
     }
 
-    /* VISIT THE SHOWROOM */
+    /* SHOWROOM */
 
     .visit-section {
-      padding: 70px 0;
+      padding: 65px 0;
       background: var(--white);
       text-align: center;
     }
 
     .visit-card {
       max-width: 750px;
-      margin: 0 auto;
-      padding: 35px 25px;
+      margin: auto;
+      padding: 32px 20px;
       border: 1px solid var(--border);
-      background: var(--sage-light);
+      background: var(--paper);
     }
 
-    .visit-icon {
-      color: var(--gold);
-      font-size: 26px;
-    }
+    .visit-icon { color: var(--gold); font-size: 26px; }
 
     .visit-card h2 {
-      margin: 6px 0 12px;
+      margin: 5px 0 12px;
       color: var(--forest);
       font-family: var(--heading);
       font-size: 42px;
@@ -618,51 +534,22 @@
     .visit-card .address {
       color: var(--forest);
       font-size: 14px;
-      font-weight: 600;
-    }
-
-    .visit-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .visit-actions .btn {
-      background: var(--forest);
-      border-color: var(--forest);
-      color: var(--white);
-    }
-
-    .visit-actions .btn:hover {
-      background: transparent;
-      color: var(--forest);
-    }
-
-    .visit-actions .btn-secondary {
-      background: transparent;
-      color: var(--forest);
-    }
-
-    .visit-actions .btn-secondary:hover {
-      background: var(--forest);
-      color: var(--white);
+      font-weight: 700;
     }
 
     /* FOOTER */
 
     .site-footer {
       padding: 38px 0 20px;
-      background: var(--forest-deep);
+      background: var(--deep);
       color: var(--sage);
     }
 
     .footer-main {
       display: grid;
       grid-template-columns: 1.2fr 1fr 1fr;
-      gap: 35px;
-      padding-bottom: 28px;
+      gap: 30px;
+      padding-bottom: 25px;
     }
 
     .footer-brand {
@@ -673,7 +560,7 @@
     }
 
     .footer-column h3 {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       color: var(--champagne);
       font-family: var(--heading);
       font-size: 22px;
@@ -687,9 +574,7 @@
       line-height: 2;
     }
 
-    .footer-column a:hover {
-      color: var(--champagne);
-    }
+    .footer-column a:hover { color: var(--champagne); }
 
     .footer-links {
       display: flex;
@@ -698,206 +583,72 @@
     }
 
     .footer-bottom {
-      padding-top: 18px;
-      border-top: 1px solid rgba(255, 255, 255, .15);
+      padding-top: 17px;
+      border-top: 1px solid rgba(255,255,255,.15);
       color: #C3CEC3;
       font-size: 10px;
       text-align: center;
     }
 
-    /* WHATSAPP FLOATING BUTTON */
+    /* WHATSAPP */
 
     .whatsapp-float {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
+      right: 18px;
+      bottom: 18px;
       z-index: 200;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 48px;
-      padding: 11px 17px;
-      border-radius: 28px;
+      gap: 8px;
+      padding: 12px 17px;
+      border-radius: 30px;
       background: #18794E;
-      color: white;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+      color: #FFFFFF;
+      box-shadow: 0 5px 20px rgba(0,0,0,.2);
       font-size: 11px;
       font-weight: 700;
-    }
-
-    .whatsapp-float:hover {
-      background: #11653F;
-    }
-
-    .whatsapp-icon {
-      font-size: 19px;
-      line-height: 1;
-    }
-
-    /* IMAGE FALLBACK */
-
-    .image-fallback {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px;
-      background: var(--sage);
-      color: var(--forest);
-      text-align: center;
-      font-size: 11px;
     }
 
     /* RESPONSIVE */
 
     @media (max-width: 900px) {
-      .category-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .about-layout {
-        gap: 28px;
-      }
-
-      .footer-main {
-        gap: 22px;
-      }
+      .category-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .about-layout { gap: 25px; }
+      .footer-main { gap: 20px; }
     }
 
     @media (max-width: 600px) {
-      .announcement-bar {
-        min-height: 35px;
-        font-size: 9px;
-        letter-spacing: .7px;
-      }
+      .brand-name { font-size: 39px; }
+      .brand-tagline { font-size: 8px; letter-spacing: 2px; }
+      .nav-inner { gap: 9px 14px; padding: 11px 5px; }
+      nav a { font-size: 9px; }
 
-      .instagram-banner {
-        padding: 9px 10px;
-        font-size: 9px;
-        line-height: 1.7;
-      }
-
-      .header-inner {
-        min-height: 72px;
-      }
-
-      .brand-name {
-        font-size: 39px;
-      }
-
-      .brand-tagline {
-        font-size: 8px;
-        letter-spacing: 2px;
-      }
-
-      .nav-inner {
-        gap: 8px 16px;
-        padding: 11px 4px;
-      }
-
-      .main-nav a {
-        font-size: 9px;
-      }
-
-      .hero {
+      #homeHero {
         min-height: 400px;
-        padding: 65px 18px;
-        background-position: center 45%;
+        padding: 60px 18px;
       }
 
-      .hero h1 {
-        font-size: 47px;
-      }
+      #homeHero h1 { font-size: 46px; }
+      #homeHero p { font-size: 12px; }
 
-      .hero p {
-        font-size: 12px;
-      }
+      .collections { padding: 45px 0; }
+      .category-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+      .product-section { padding: 40px 0; }
+      .product-track { gap: 12px; }
+      .product-card { flex-basis: 158px; width: 158px; }
+      .product-info h3 { font-size: 17px; }
 
-      .collections {
-        padding: 48px 0 42px;
-      }
-
-      .category-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .category-tile-label strong {
-        font-size: 18px;
-      }
-
-      .product-section {
-        padding: 42px 0 38px;
-      }
-
-      .product-track {
-        gap: 12px;
-      }
-
-      .product-card {
-        flex-basis: 158px;
-        width: 158px;
-      }
-
-      .product-info {
-        padding: 10px 8px 12px;
-      }
-
-      .product-info h3 {
-        font-size: 17px;
-      }
-
-      .about-section {
-        padding: 48px 0;
-      }
-
-      .about-layout {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .about-image img {
-        aspect-ratio: 4 / 3;
-      }
-
-      .about-copy h2 {
-        font-size: 41px;
-      }
-
-      .visit-section {
-        padding: 48px 0;
-      }
-
-      .visit-card {
-        padding: 27px 16px;
-      }
-
-      .visit-card h2 {
-        font-size: 36px;
-      }
-
-      .footer-main {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .whatsapp-float {
-        right: 13px;
-        bottom: 13px;
-        min-height: 44px;
-        padding: 10px 14px;
-      }
+      .about-section { padding: 45px 0; }
+      .about-layout { grid-template-columns: 1fr; gap: 22px; }
+      .visit-section { padding: 45px 0; }
+      .visit-card h2 { font-size: 36px; }
+      .footer-main { grid-template-columns: 1fr; gap: 20px; }
+      .whatsapp-float { right: 12px; bottom: 12px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
@@ -907,35 +658,26 @@
 </head>
 
 <body>
-
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announcement-bar" aria-live="polite">
-    <span class="announcement-message" id="announcementMessage">
-      Discover timeless style at Label AKS
-    </span>
+  <div class="announcement" aria-live="polite">
+    <span id="announcementMessage">Discover timeless style at Label AKS</span>
   </div>
 
-  <!-- INSTAGRAM PROMOTION -->
   <div class="instagram-banner">
-    <a href="https://www.instagram.com/label_aks/"
-       target="_blank" rel="noopener noreferrer">
-      Follow <strong>@label_aks</strong> on Instagram for the latest
-      stock updates &amp; exclusive offers
+    <a href="https://www.instagram.com/label_aks/" target="_blank" rel="noopener noreferrer">
+      Follow <strong>@label_aks</strong> on Instagram for the latest stock updates &amp; exclusive offers
     </a>
   </div>
 
-  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/" aria-label="Label AKS homepage">
+      <a class="brand" href="/" aria-label="Label AKS home">
         <span class="brand-name">LABEL AKS</span>
         <span class="brand-tagline">Style · Elegance · You</span>
       </a>
     </div>
   </header>
 
-  <!-- NAVIGATION -->
-  <nav class="main-nav" aria-label="Main navigation">
+  <nav aria-label="Main navigation">
     <div class="container nav-inner">
       <a href="/">Home</a>
       <a href="#collections">Collections</a>
@@ -948,158 +690,96 @@
   </nav>
 
   <main>
+    <!-- The overlay is a separate element. Hero background is not a CSS shorthand. -->
+    <section id="homeHero" class="hero">
+      <img class="hero-image"
+           src="/images/label-aks-social.jpeg"
+           alt=""
+           fetchpriority="high"
+           onerror="this.style.display='none'">
 
-    <!-- HERO -->
-    <section class="hero">
+      <div class="hero-overlay" aria-hidden="true"></div>
+
       <div class="hero-content">
         <div class="eyebrow">Welcome to Label AKS</div>
-
         <h1>Elegance in Every Thread</h1>
-
         <p>
           Explore a thoughtfully selected collection of women's fashion,
-          from everyday elegance to statement looks for your special
-          occasions.
+          from everyday elegance to statement looks for your special occasions.
         </p>
-
         <div class="hero-actions">
           <a class="btn" href="#collections">Explore Collections</a>
-
           <a class="btn btn-outline"
              href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20I%20would%20like%20to%20know%20about%20your%20collection."
-             target="_blank" rel="noopener noreferrer">
-            Enquire on WhatsApp
-          </a>
+             target="_blank" rel="noopener noreferrer">Enquire on WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- COLLECTION DIRECTORY -->
     <section class="collections" id="collections">
       <div class="container">
-
         <div class="section-heading">
           <div class="eyebrow">Find Your Style</div>
           <h2>Explore Our Collections</h2>
-          <p>
-            From effortless everyday looks to elegant occasion wear,
-            find styles that feel uniquely you.
-          </p>
+          <p>From effortless everyday looks to elegant occasion wear, find styles that feel uniquely you.</p>
         </div>
-
-        <div class="category-grid" id="categoryGrid">
-          <!-- Created by JavaScript -->
-        </div>
-
+        <div class="category-grid" id="categoryGrid"></div>
       </div>
     </section>
 
-    <!-- AUTOMATIC PRODUCT COLLECTIONS -->
-    <div id="productSections">
-      <!-- Created by JavaScript -->
-    </div>
+    <div id="productSections"></div>
 
-    <!-- ABOUT LABEL AKS -->
     <section class="about-section" id="about">
       <div class="container about-layout">
-
         <div class="about-image">
-          <img
-            src="/images/label-aks-social.jpeg"
-            alt="Discover the Label AKS fashion collection"
-            loading="lazy"
-            onerror="this.style.display='none'">
+          <img src="/images/label-aks-social.jpeg"
+               alt="Label AKS fashion collection"
+               loading="lazy"
+               onerror="this.style.display='none'">
         </div>
-
         <div class="about-copy">
           <div class="eyebrow">Our Story</div>
-
           <h2>Fashion That Feels Like You</h2>
-
-          <p>
-            At Label AKS, we believe that what you wear should make you
-            feel confident, comfortable and beautiful.
-          </p>
-
-          <p>
-            Our collection brings together elegant suits, contemporary
-            silhouettes and occasion-ready styles, selected for women
-            who appreciate thoughtful details and individual expression.
-          </p>
-
-          <p>
-            Visit our showroom in Vikaspuri and discover a collection
-            chosen with you in mind.
-          </p>
-
+          <p>At Label AKS, we believe what you wear should make you feel confident, comfortable and beautiful.</p>
+          <p>Our collection brings together elegant suits, contemporary silhouettes and occasion-ready styles, selected for women who appreciate thoughtful details and individual expression.</p>
+          <p>Visit our showroom in Vikaspuri and discover a collection chosen with you in mind.</p>
           <a class="btn" href="#visit">Visit Our Showroom</a>
         </div>
-
       </div>
     </section>
 
-    <!-- SHOWROOM DETAILS -->
     <section class="visit-section" id="visit">
       <div class="container">
-
         <div class="visit-card">
           <div class="visit-icon" aria-hidden="true">✦</div>
-
           <h2>We'd Love to See You</h2>
-
           <p class="address">Label AKS</p>
           <p>537, Site 1, Vikaspuri, New Delhi</p>
-
-          <p>
-            Come explore our collection and find something special
-            for your wardrobe.
-          </p>
-
+          <p>Come explore our collection and find something special for your wardrobe.</p>
           <div class="visit-actions">
             <a class="btn"
                href="https://www.google.com/maps/search/?api=1&query=Label%20AKS%2C%20537%20Site%201%2C%20Vikaspuri%2C%20New%20Delhi"
-               target="_blank" rel="noopener noreferrer">
-              Get Directions
-            </a>
-
-            <a class="btn btn-secondary"
-               href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20please%20share%20your%20latest%20collection."
-               target="_blank" rel="noopener noreferrer">
-              Contact Us
-            </a>
+               target="_blank" rel="noopener noreferrer">Get Directions</a>
+            <a class="btn"
+               href="https://wa.me/919810057892"
+               target="_blank" rel="noopener noreferrer">Contact Us</a>
           </div>
         </div>
-
       </div>
     </section>
-
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-
       <div class="footer-main">
-
         <div class="footer-column">
           <div class="footer-brand">LABEL AKS</div>
-
-          <p>
-            Thoughtfully selected fashion for everyday elegance
-            and special occasions.
-          </p>
-
-          <p>
-            <a href="https://www.instagram.com/label_aks/"
-               target="_blank" rel="noopener noreferrer">
-              Follow us on Instagram
-            </a>
-          </p>
+          <p>Thoughtfully selected fashion for everyday elegance and special occasions.</p>
+          <p><a href="https://www.instagram.com/label_aks/" target="_blank" rel="noopener noreferrer">Follow us on Instagram</a></p>
         </div>
 
         <div class="footer-column">
           <h3>Explore</h3>
-
           <div class="footer-links">
             <a href="#collections">All Collections</a>
             <a href="#western-wear">Western Wear</a>
@@ -1112,175 +792,88 @@
 
         <div class="footer-column">
           <h3>Visit Us</h3>
-
-          <p>
-            537, Site 1, Vikaspuri<br>
-            New Delhi, India
-          </p>
-
-          <p>
-            <a href="https://wa.me/919810057892"
-               target="_blank" rel="noopener noreferrer">
-              WhatsApp: +91 98100 57892
-            </a>
-          </p>
-
-          <p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Label%20AKS%2C%20537%20Site%201%2C%20Vikaspuri%2C%20New%20Delhi"
-               target="_blank" rel="noopener noreferrer">
-              Find us on Google Maps
-            </a>
-          </p>
+          <p>537, Site 1, Vikaspuri<br>New Delhi, India</p>
+          <p><a href="https://wa.me/919810057892" target="_blank" rel="noopener noreferrer">WhatsApp: +91 98100 57892</a></p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Label%20AKS%2C%20537%20Site%201%2C%20Vikaspuri%2C%20New%20Delhi" target="_blank" rel="noopener noreferrer">Find us on Google Maps</a></p>
         </div>
-
       </div>
 
       <div class="footer-bottom">
         © <span id="currentYear"></span> Label AKS. All rights reserved.
       </div>
-
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
   <a class="whatsapp-float"
      href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20I%20am%20interested%20in%20your%20collection."
-     target="_blank"
-     rel="noopener noreferrer"
+     target="_blank" rel="noopener noreferrer"
      aria-label="Chat with Label AKS on WhatsApp">
-
-    <span class="whatsapp-icon" aria-hidden="true">◉</span>
-    <span>Chat with us</span>
+    <span aria-hidden="true">◉</span> Chat with us
   </a>
 
   <script>
     "use strict";
 
-    /* -------------------------------------------------------
-       LABEL AKS COLLECTION DATA
-
-       Image folders are relative to the website root.
-       The numbered product images are loaded automatically.
-       ------------------------------------------------------- */
-
     const categories = [
       {
-        slug: "western-wear",
-        title: "Western Wear",
-        folder: "Westernwear",
-        count: 11,
-        sectionId: "western-wear",
+        slug: "western-wear", title: "Western Wear",
+        folder: "Westernwear", count: 11, id: "western-wear",
         description: "Contemporary styles for your wardrobe.",
         caption: "Elegant Western Wear Style",
-        cover: "/images/Westernwear/1.jpeg",
-        populated: true
+        cover: "/images/Westernwear/1.jpeg", populated: true
       },
       {
-        slug: "cord-sets",
-        title: "Co-ord Sets",
-        folder: "cordsets",
-        count: 37,
-        sectionId: "cord-sets",
+        slug: "cord-sets", title: "Co-ord Sets",
+        folder: "cordsets", count: 37, id: "cord-sets",
         description: "Effortless style, beautifully coordinated.",
         caption: "Elegant Co-ord Set",
-        cover: "/images/cordsets/1.jpeg",
-        populated: true
+        cover: "/images/cordsets/1.jpeg", populated: true
       },
       {
-        slug: "indo-western",
-        title: "Indo-Western",
-        folder: "indowestern",
-        count: 22,
-        sectionId: "indo-western",
+        slug: "indo-western", title: "Indo-Western",
+        folder: "indowestern", count: 22, id: "indo-western",
         description: "A modern expression of Indian elegance.",
         caption: "Elegant Indo-Western Style",
-        cover: "/images/indowestern/1.jpeg",
-        populated: true
+        cover: "/images/indowestern/1.jpeg", populated: true
       },
       {
-        slug: "designer-suits",
-        title: "Designer Suits",
-        folder: "designer-suits",
-        count: 71,
-        sectionId: "designer-suits",
+        slug: "designer-suits", title: "Designer Suits",
+        folder: "designer-suits", count: 71, id: "designer-suits",
         description: "Statement styles with beautiful details.",
         caption: "Elegant Designer Suit",
-        cover: "/images/designer-suits/1.jpeg",
-        populated: true
+        cover: "/images/designer-suits/1.jpeg", populated: true
       },
       {
-        slug: "suit-sets",
-        title: "Suit Sets",
-        folder: null,
-        count: 0,
-        sectionId: "suit-sets",
-        description: "Beautiful suit styles for every day.",
-        caption: "Elegant Suit Set",
-        cover: "/images/Suit 1.jpeg",
-        populated: false
+        slug: "suit-sets", title: "Suit Sets",
+        id: "suit-sets", description: "Beautiful suit styles for every day.",
+        caption: "Elegant Suit Set", cover: "/images/Suit 1.jpeg"
       },
       {
-        slug: "lehengas",
-        title: "Lehengas",
-        folder: null,
-        count: 0,
-        sectionId: "lehengas",
-        description: "Celebrate your moments in style.",
-        caption: "Elegant Lehenga",
-        cover: "/images/Lehenga 1.jpeg",
-        populated: false
+        slug: "lehengas", title: "Lehengas",
+        id: "lehengas", description: "Celebrate your moments in style.",
+        caption: "Elegant Lehenga", cover: "/images/Lehenga 1.jpeg"
       },
       {
-        slug: "daily-wear",
-        title: "Daily Wear",
-        folder: null,
-        count: 0,
-        sectionId: "daily-wear",
-        description: "Comfortable styles for everyday dressing.",
-        caption: "Everyday Style",
-        cover: "/images/suit 1a.jpeg",
-        populated: false
+        slug: "daily-wear", title: "Daily Wear",
+        id: "daily-wear", description: "Comfortable styles for everyday dressing.",
+        caption: "Everyday Style", cover: "/images/suit 1a.jpeg"
       },
       {
-        slug: "festive-wear",
-        title: "Festive Wear",
-        folder: null,
-        count: 0,
-        sectionId: "festive-wear",
-        description: "Make festive occasions feel special.",
-        caption: "Festive Collection",
-        cover: "/images/Suit2.jpeg",
-        populated: false
+        slug: "festive-wear", title: "Festive Wear",
+        id: "festive-wear", description: "Make festive occasions feel special.",
+        caption: "Festive Collection", cover: "/images/Suit2.jpeg"
       },
       {
-        slug: "party-wear",
-        title: "Party & Occasion Wear",
-        folder: null,
-        count: 0,
-        sectionId: "party-wear",
-        description: "Find a look for your next celebration.",
-        caption: "Occasion Wear",
-        cover: "/images/Suit4.jpeg",
-        populated: false
+        slug: "party-wear", title: "Party & Occasion Wear",
+        id: "party-wear", description: "Find a look for your next celebration.",
+        caption: "Occasion Wear", cover: "/images/Suit4.jpeg"
       },
       {
-        slug: "new-arrivals",
-        title: "New Arrivals",
-        folder: null,
-        count: 0,
-        sectionId: "new-arrivals",
-        description: "Discover styles from our latest selection.",
-        caption: "New Arrival",
-        cover: "/images/cod.jpeg",
-        populated: false
+        slug: "new-arrivals", title: "New Arrivals",
+        id: "new-arrivals", description: "Discover styles from our latest selection.",
+        caption: "New Arrival", cover: "/images/cod.jpeg"
       }
     ];
-
-    /*
-      Only these categories currently have numbered image folders.
-      For categories without folders, the homepage displays a
-      representative image and links to category.html.
-    */
 
     const announcements = [
       "Discover timeless style at Label AKS",
@@ -1291,173 +884,96 @@
       "Follow @label_aks for the latest stock updates"
     ];
 
-    /* -------------------------------------------------------
-       HELPERS
-       ------------------------------------------------------- */
-
-    function escapeHTML(value) {
-      return String(value).replace(/[&<>"']/g, function (character) {
-        const entities = {
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#39;"
-        };
-
-        return entities[character];
-      });
-    }
-
     function categoryURL(category) {
-      return "/category.html?category=" +
-        encodeURIComponent(category.slug);
+      return "/category.html?category=" + encodeURIComponent(category.slug);
     }
 
-    function productImagePath(category, number) {
-      return "/images/" +
-        category.folder +
-        "/" +
-        number +
-        ".jpeg";
-    }
-
-    function imageFallback(image, label) {
-      const fallback = document.createElement("div");
-
-      fallback.className = "image-fallback";
-      fallback.textContent = label;
-      fallback.style.aspectRatio = "3 / 4";
-
-      image.replaceWith(fallback);
-    }
-
-    function makeImage(src, alt, loading) {
+    function makeImage(src, alt) {
       const image = document.createElement("img");
-
       image.src = src;
       image.alt = alt;
-      image.loading = loading || "lazy";
+      image.loading = "lazy";
       image.decoding = "async";
 
       image.addEventListener("error", function () {
-        imageFallback(image, "Label AKS");
+        const fallback = document.createElement("div");
+        fallback.textContent = "Label AKS";
+        fallback.style.cssText =
+          "aspect-ratio:3/4;display:grid;place-items:center;background:#E8EDE5;color:#344B3B;font-size:12px";
+        image.replaceWith(fallback);
       }, { once: true });
 
       return image;
     }
 
-    /* -------------------------------------------------------
-       CATEGORY DIRECTORY
-       ------------------------------------------------------- */
-
     function renderCategoryGrid() {
       const grid = document.getElementById("categoryGrid");
 
-      grid.innerHTML = categories.map(function (category) {
-        return `
-          <a class="category-tile"
-             href="${categoryURL(category)}"
-             aria-label="Explore ${escapeHTML(category.title)}">
+      categories.forEach(function (category) {
+        const tile = document.createElement("a");
+        tile.className = "category-tile";
+        tile.href = categoryURL(category);
 
-            <img
-              src="${escapeHTML(category.cover)}"
-              alt="${escapeHTML(category.title)} collection"
-              loading="lazy"
-              decoding="async">
+        const image = makeImage(category.cover, category.title + " collection");
 
-            <div class="category-tile-label">
-              <strong>${escapeHTML(category.title)}</strong>
-              <span>Explore Collection</span>
-            </div>
-          </a>
-        `;
-      }).join("");
+        const label = document.createElement("div");
+        label.className = "category-label";
+        label.innerHTML =
+          "<strong></strong><span>Explore Collection</span>";
+        label.querySelector("strong").textContent = category.title;
 
-      grid.querySelectorAll("img").forEach(function (image) {
-        image.addEventListener("error", function () {
-          imageFallback(image, "Label AKS Collection");
-        }, { once: true });
+        tile.append(image, label);
+        grid.appendChild(tile);
       });
     }
 
-    /* -------------------------------------------------------
-       PRODUCT CARD
-       ------------------------------------------------------- */
-
     function createProductCard(category, number, imagePath) {
       const card = document.createElement("article");
-
       card.className = "product-card";
 
       const link = document.createElement("a");
-      link.className = "product-image-link";
       link.href = categoryURL(category);
-      link.setAttribute(
-        "aria-label",
-        "Explore " + category.title
+      link.setAttribute("aria-label", "Explore " + category.title);
+      link.appendChild(
+        makeImage(
+          imagePath,
+          category.caption + " " + String(number).padStart(2, "0")
+        )
       );
-
-      const image = makeImage(
-        imagePath,
-        category.caption + " " + number,
-        "lazy"
-      );
-
-      link.appendChild(image);
 
       const info = document.createElement("div");
       info.className = "product-info";
 
-      const title = document.createElement("h3");
-      title.textContent = category.caption + " " +
-        String(number).padStart(2, "0");
+      const heading = document.createElement("h3");
+      heading.textContent =
+        category.caption + " " + String(number).padStart(2, "0");
 
       const description = document.createElement("p");
-      description.textContent =
-        "Discover this collection at Label AKS.";
+      description.textContent = "Discover this collection at Label AKS.";
 
       const more = document.createElement("a");
       more.className = "product-link";
       more.href = categoryURL(category);
       more.textContent = "Explore Collection";
 
-      info.append(title, description, more);
+      info.append(heading, description, more);
       card.append(link, info);
-
       return card;
     }
 
-    /* -------------------------------------------------------
-       PRODUCT SECTION
-       ------------------------------------------------------- */
-
     function createProductSection(category) {
       const section = document.createElement("section");
-
       section.className = "product-section";
-      section.id = category.sectionId;
+      section.id = category.id;
 
       const container = document.createElement("div");
       container.className = "container";
 
       const heading = document.createElement("div");
       heading.className = "section-heading";
-
-      const eyebrow = document.createElement("div");
-      eyebrow.className = "eyebrow";
-      eyebrow.textContent = "Discover Label AKS";
-
-      const title = document.createElement("h2");
-      title.textContent = category.title;
-
-      const description = document.createElement("p");
-      description.textContent = category.description;
-
-      heading.append(eyebrow, title, description);
-
-      const shell = document.createElement("div");
-      shell.className = "carousel-shell";
+      heading.innerHTML = '<div class="eyebrow">Discover Label AKS</div><h2></h2><p></p>';
+      heading.querySelector("h2").textContent = category.title;
+      heading.querySelector("p").textContent = category.description;
 
       const viewport = document.createElement("div");
       viewport.className = "product-viewport";
@@ -1466,23 +982,16 @@
       track.className = "product-track";
 
       if (category.populated) {
-        for (let number = 1; number <= category.count; number++) {
+        for (let i = 1; i <= category.count; i++) {
           track.appendChild(
-            createProductCard(
-              category,
-              number,
-              productImagePath(category, number)
-            )
+            createProductCard(category, i, "/images/" + category.folder + "/" + i + ".jpeg")
           );
         }
       } else {
-        track.appendChild(
-          createProductCard(category, 1, category.cover)
-        );
+        track.appendChild(createProductCard(category, 1, category.cover));
       }
 
       viewport.appendChild(track);
-      shell.appendChild(viewport);
 
       const controls = document.createElement("div");
       controls.className = "carousel-controls";
@@ -1490,29 +999,23 @@
       const previous = document.createElement("button");
       previous.className = "carousel-button";
       previous.type = "button";
-      previous.innerHTML = "&#8592;";
-      previous.setAttribute(
-        "aria-label",
-        "Scroll " + category.title + " backwards"
-      );
+      previous.textContent = "‹";
+      previous.setAttribute("aria-label", "Scroll " + category.title + " backward");
 
       const next = document.createElement("button");
       next.className = "carousel-button";
       next.type = "button";
-      next.innerHTML = "&#8594;";
-      next.setAttribute(
-        "aria-label",
-        "Scroll " + category.title + " forwards"
-      );
+      next.textContent = "›";
+      next.setAttribute("aria-label", "Scroll " + category.title + " forward");
 
       controls.append(previous, next);
 
-      const viewAll = document.createElement("a");
-      viewAll.className = "view-all";
-      viewAll.href = categoryURL(category);
-      viewAll.textContent = "View " + category.title;
+      const all = document.createElement("a");
+      all.className = "view-all";
+      all.href = categoryURL(category);
+      all.textContent = "View " + category.title;
 
-      container.append(heading, shell, controls, viewAll);
+      container.append(heading, viewport, controls, all);
       section.appendChild(container);
 
       previous.addEventListener("click", function () {
@@ -1526,10 +1029,6 @@
       return section;
     }
 
-    /* -------------------------------------------------------
-       BUILD PRODUCT SECTIONS
-       ------------------------------------------------------- */
-
     function renderProductSections() {
       const host = document.getElementById("productSections");
       const fragment = document.createDocumentFragment();
@@ -1542,217 +1041,138 @@
       initialiseProductScrolling();
     }
 
-    /* -------------------------------------------------------
-       AUTOMATIC INFINITE SCROLL
-
-       The original product cards are duplicated once.
-       The track moves by exactly the width of the original set.
-       This creates a seamless looping carousel.
-
-       Hover, keyboard focus and touch pause the animation.
-       ------------------------------------------------------- */
-
+    /* Seamless automatic scroll; no duplicate timers are created. */
     function initialiseProductScrolling() {
-      const reducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
+      const reducedMotion =
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      document.querySelectorAll(".carousel-shell").forEach(
-        function (shell) {
-          const track = shell.querySelector(".product-track");
+      document.querySelectorAll(".product-viewport").forEach(function (viewport) {
+        const track = viewport.querySelector(".product-track");
 
-          if (!track || track.dataset.autoScrollReady === "true") {
-            return;
-          }
+        if (!track || track.dataset.ready === "true") return;
+        track.dataset.ready = "true";
 
-          track.dataset.autoScrollReady = "true";
+        const originals = Array.from(track.children);
 
-          const originalCards = Array.from(track.children);
+        if (reducedMotion || originals.length < 2) return;
 
-          if (reducedMotion || originalCards.length < 2) {
-            return;
-          }
+        originals.forEach(function (card) {
+          const clone = card.cloneNode(true);
+          clone.setAttribute("aria-hidden", "true");
 
-          originalCards.forEach(function (card) {
-            const clone = card.cloneNode(true);
-
-            clone.setAttribute("aria-hidden", "true");
-
-            clone.querySelectorAll(
-              "a, button, input, select, textarea, [tabindex]"
-            ).forEach(function (element) {
-              element.setAttribute("tabindex", "-1");
-            });
-
-            track.appendChild(clone);
+          clone.querySelectorAll("a, button, [tabindex]").forEach(function (el) {
+            el.setAttribute("tabindex", "-1");
           });
 
-          let animationFrame = 0;
+          track.appendChild(clone);
+        });
 
-          function updateAnimation() {
-            cancelAnimationFrame(animationFrame);
+        let resizeFrame;
 
-            animationFrame = requestAnimationFrame(function () {
-              const originalWidth = originalCards.reduce(
-                function (total, card) {
-                  return total + card.getBoundingClientRect().width;
-                },
-                0
-              );
+        function configure() {
+          cancelAnimationFrame(resizeFrame);
 
-              const trackStyle = window.getComputedStyle(track);
-              const gap = parseFloat(trackStyle.columnGap) ||
-                parseFloat(trackStyle.gap) ||
-                0;
+          resizeFrame = requestAnimationFrame(function () {
+            const styles = getComputedStyle(track);
+            const gap = parseFloat(styles.columnGap) || parseFloat(styles.gap) || 0;
 
-              const distance = originalWidth +
-                gap * (originalCards.length - 1);
+            const distance = originals.reduce(function (sum, card) {
+              return sum + card.getBoundingClientRect().width;
+            }, 0) + gap * (originals.length - 1);
 
-              if (!distance || !Number.isFinite(distance)) {
-                return;
-              }
+            if (!distance) return;
 
-              track.style.setProperty(
-                "--scroll-distance",
-                distance + "px"
-              );
+            const seconds = Math.max(18, distance / 24);
 
-              const duration = Math.max(18, distance / 24);
-
-              track.style.animation =
-                "labelAKSAutoScroll " +
-                duration +
-                "s linear infinite";
-
-              track.style.animationPlayState = shell.matches(
-                ":hover, :focus-within"
-              ) ? "paused" : "running";
-            });
-          }
-
-          shell.addEventListener("mouseenter", function () {
-            track.style.animationPlayState = "paused";
+            track.style.setProperty("--loop-distance", distance + "px");
+            track.style.animation =
+              "labelAKSScroll " + seconds + "s linear infinite";
+            track.style.animationPlayState =
+              viewport.matches(":hover, :focus-within") ? "paused" : "running";
           });
-
-          shell.addEventListener("mouseleave", function () {
-            track.style.animationPlayState = "running";
-          });
-
-          shell.addEventListener("focusin", function () {
-            track.style.animationPlayState = "paused";
-          });
-
-          shell.addEventListener("focusout", function (event) {
-            if (!shell.contains(event.relatedTarget)) {
-              track.style.animationPlayState = "running";
-            }
-          });
-
-          shell.addEventListener("touchstart", function () {
-            track.style.animationPlayState = "paused";
-          }, { passive: true });
-
-          shell.addEventListener("touchend", function () {
-            track.style.animationPlayState = "running";
-          }, { passive: true });
-
-          window.addEventListener("resize", updateAnimation, {
-            passive: true
-          });
-
-          updateAnimation();
         }
-      );
+
+        viewport.addEventListener("mouseenter", function () {
+          track.style.animationPlayState = "paused";
+        });
+
+        viewport.addEventListener("mouseleave", function () {
+          track.style.animationPlayState = "running";
+        });
+
+        viewport.addEventListener("focusin", function () {
+          track.style.animationPlayState = "paused";
+        });
+
+        viewport.addEventListener("focusout", function (event) {
+          if (!viewport.contains(event.relatedTarget)) {
+            track.style.animationPlayState = "running";
+          }
+        });
+
+        viewport.addEventListener("touchstart", function () {
+          track.style.animationPlayState = "paused";
+        }, { passive: true });
+
+        viewport.addEventListener("touchend", function () {
+          track.style.animationPlayState = "running";
+        }, { passive: true });
+
+        window.addEventListener("resize", configure, { passive: true });
+        configure();
+      });
     }
 
-    /* -------------------------------------------------------
-       MANUAL CAROUSEL CONTROLS
-
-       Arrow controls move the strip in addition to auto-scroll.
-       ------------------------------------------------------- */
-
     function moveCarousel(track, direction) {
-      const firstCard = track.querySelector(".product-card");
+      const card = track.querySelector(".product-card");
+      if (!card) return;
 
-      if (!firstCard) return;
-
-      const trackStyle = window.getComputedStyle(track);
-      const gap = parseFloat(trackStyle.columnGap) ||
-        parseFloat(trackStyle.gap) ||
-        0;
-
-      const amount = firstCard.getBoundingClientRect().width + gap;
+      const styles = getComputedStyle(track);
+      const gap = parseFloat(styles.gap) || 0;
+      const distance = card.getBoundingClientRect().width + gap;
 
       track.style.animationPlayState = "paused";
       track.style.transition = "transform .35s ease";
 
-      const currentTransform = window.getComputedStyle(track).transform;
+      const matrix = new DOMMatrixReadOnly(getComputedStyle(track).transform);
+      const currentX = getComputedStyle(track).transform === "none" ? 0 : matrix.m41;
 
-      let currentX = 0;
-
-      if (currentTransform && currentTransform !== "none") {
-        try {
-          currentX = new DOMMatrixReadOnly(currentTransform).m41;
-        } catch (error) {
-          currentX = 0;
-        }
-      }
-
-      const originalCards = Array.from(track.children).length / 2;
-      const originalWidth = track.children.length > 1
-        ? Array.from(track.children)
-            .slice(0, originalCards)
-            .reduce(function (total, card) {
-              return total + card.getBoundingClientRect().width;
-            }, 0) + gap * Math.max(0, originalCards - 1)
-        : 0;
-
-      let targetX = currentX - direction * amount;
-
-      if (originalWidth > 0 && Math.abs(targetX) >= originalWidth) {
-        targetX = targetX % originalWidth;
-      }
-
-      track.style.transform = "translateX(" + targetX + "px)";
+      track.style.transform =
+        "translateX(" + (currentX - direction * distance) + "px)";
 
       window.setTimeout(function () {
         track.style.transition = "";
         track.style.transform = "translateX(0)";
         track.style.animationPlayState = "running";
-      }, 450);
+      }, 400);
     }
-
-    /* -------------------------------------------------------
-       ANNOUNCEMENT ROTATION
-       ------------------------------------------------------- */
 
     function initialiseAnnouncements() {
       const element = document.getElementById("announcementMessage");
-      let current = 0;
+      let index = 0;
 
-      if (!element) return;
-
-      element.textContent = announcements[0];
-
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        return;
-      }
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
       window.setInterval(function () {
         element.style.opacity = "0";
 
         window.setTimeout(function () {
-          current = (current + 1) % announcements.length;
-          element.textContent = announcements[current];
+          index = (index + 1) % announcements.length;
+          element.textContent = announcements[index];
           element.style.opacity = "1";
-        }, 300);
-
+        }, 250);
       }, 3500);
     }
 
-    /* -------------------------------------------------------
-       INITIALISE HOMEPAGE
-       ------------------------------------------------------- */
+    /* Add animation once; it only controls product tracks. */
+    const carouselStyle = document.createElement("style");
+    carouselStyle.textContent = `
+      @keyframes labelAKSScroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(calc(-1 * var(--loop-distance))); }
+      }
+    `;
+    document.head.appendChild(carouselStyle);
 
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
@@ -1761,6 +1181,5 @@
     renderProductSections();
     initialiseAnnouncements();
   </script>
-
 </body>
 </html>
