@@ -1,30 +1,48 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#344B3B">
 
-  <title>Label AKS | Elegant Ethnic Wear in Vikaspuri, Delhi</title>
-  <meta name="description" content="Discover elegant suits, designer suits, co-ord sets, Western wear, Indo-Western styles and more at Label AKS, Vikaspuri, New Delhi.">
-  <meta name="theme-color" content="#344b3b">
+  <title>Label AKS | Elegant Ethnic Wear & Women's Fashion</title>
 
-  <link rel="icon" href="/images/label-aks-logo.png">
+  <meta name="description"
+    content="Discover elegant women's suits, designer suits, co-ord sets, western wear, lehengas and Indo-Western styles at Label AKS, Vikaspuri, New Delhi.">
+
+  <meta property="og:title" content="Label AKS | Women's Fashion">
+  <meta property="og:description"
+    content="Discover your next favourite look at Label AKS, Vikaspuri, New Delhi.">
+  <meta property="og:image"
+    content="https://labelaks.in/images/label-aks-social.jpeg">
+  <meta property="og:url" content="https://labelaks.in/">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png"
+    href="/images/label-aks-logo.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <style>
     :root {
-      --green: #526b58;
-      --green-dark: #344b3b;
-      --green-light: #e8eee7;
-      --gold: #b99a58;
-      --champagne: #f3ddb0;
-      --cream: #faf8f2;
-      --white: #ffffff;
-      --text: #30372f;
-      --muted: #777d74;
-      --border: #e6e5dc;
+      --forest: #344B3B;
+      --forest-deep: #26392D;
+      --forest-light: #526B56;
+      --champagne: #F3DDB0;
+      --gold: #B99A58;
+      --sage: #E8EDE5;
+      --sage-light: #F5F6F1;
+      --white: #FFFFFF;
+      --ink: #28342C;
+      --muted: #6B756D;
+      --border: #DDE3D9;
+      --heading: "Cormorant Garamond", Georgia, serif;
+      --body: "Montserrat", Arial, sans-serif;
     }
 
     * {
@@ -33,14 +51,25 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
       margin: 0;
-      background: var(--cream);
-      color: var(--text);
-      font-family: 'Montserrat', sans-serif;
+      background: var(--sage-light);
+      color: var(--ink);
+      font-family: var(--body);
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body, button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     a {
@@ -48,179 +77,133 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    button {
+      font: inherit;
     }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
+    .container {
+      width: min(1180px, 92%);
+      margin-inline: auto;
     }
 
-    /* Instagram banner — Forest Green & Champagne */
+    /* ANNOUNCEMENT BAR */
+
+    .announcement-bar {
+      background: var(--forest-deep);
+      color: var(--champagne);
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 12px;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    .announcement-message {
+      transition: opacity .3s ease;
+    }
+
+    /* INSTAGRAM STRIP */
+
     .instagram-banner {
-      background: #344B3B;
-      color: #F3DDB0;
+      background: var(--forest);
+      color: var(--champagne);
       text-align: center;
       padding: 11px 14px;
-      border-bottom: 2px solid #B99A58;
+      border-bottom: 2px solid var(--gold);
+      font-size: 11px;
+      letter-spacing: .35px;
     }
 
     .instagram-banner a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 7px;
-      color: #F3DDB0;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.4px;
-      text-decoration: none;
-      transition: color 0.2s;
+      color: var(--champagne);
     }
 
     .instagram-banner a:hover {
-      color: #FFFFFF;
+      color: var(--white);
     }
 
     .instagram-banner strong {
-      color: #FFFFFF;
-      font-weight: 700;
+      color: var(--white);
     }
 
-    .instagram-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 19px;
-      height: 19px;
-      border: 1.5px solid #F3DDB0;
-      border-radius: 6px;
-      color: #F3DDB0;
-      font-size: 15px;
-      line-height: 1;
-      font-weight: 700;
-    }
+    /* HEADER */
 
-    .instagram-arrow {
-      color: #FFFFFF;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-left: 5px;
-    }
-
-    /* Announcement ticker */
-    .announcement {
-      background: var(--green-dark);
-      color: white;
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 9px 0;
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .announcement-track {
-      display: inline-flex;
-      min-width: max-content;
-      animation: announcement-scroll 34s linear infinite;
-    }
-
-    .announcement-track span {
-      padding: 0 35px;
-    }
-
-    @keyframes announcement-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    /* Header */
-    header {
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(250, 248, 242, 0.97);
+      z-index: 100;
+      background: var(--white);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
+      box-shadow: 0 3px 15px rgba(25, 45, 29, .045);
     }
 
     .header-inner {
-      max-width: 1280px;
-      margin: auto;
-      padding: 12px 24px;
+      min-height: 83px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      justify-content: center;
+      padding: 12px 0;
+      text-align: center;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
+      flex-direction: column;
       align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
-    .brand img {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
+      line-height: 1.05;
     }
 
     .brand-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 30px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--green-dark);
-      line-height: 1.1;
+      font-family: var(--heading);
+      font-size: clamp(37px, 5vw, 49px);
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: var(--forest);
     }
 
-    .brand-subtitle {
-      margin-top: 4px;
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+    .brand-tagline {
+      margin-top: 7px;
       color: var(--gold);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
-    nav {
+    /* NAVIGATION */
+
+    .main-nav {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .nav-inner {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 5px 25px;
+      padding: 12px 0;
     }
 
-    nav a {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
+    .main-nav a {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color .2s ease;
     }
 
-    nav a:hover {
-      color: var(--gold);
+    .main-nav a:hover {
+      color: var(--champagne);
     }
 
-    .nav-whatsapp {
-      background: var(--green);
-      color: white;
-      padding: 10px 15px;
-      border-radius: 2px;
-    }
+    /* HERO */
 
-    .nav-whatsapp:hover {
-      color: white;
-      background: var(--green-dark);
-    }
-
-    /* Hero — improved text readability */
     .hero {
       min-height: 460px;
       display: flex;
@@ -228,515 +211,682 @@
       justify-content: center;
       text-align: center;
       padding: 75px 22px;
-
       background:
         linear-gradient(
-          rgba(30, 48, 35, 0.86),
-          rgba(30, 48, 35, 0.86)
+          rgba(30, 48, 35, .86),
+          rgba(30, 48, 35, .86)
         ),
-        url('/images/label-aks-social.jpeg') center 45% / cover no-repeat,
-        #344B3B;
-
-      color: white;
+        url("/images/label-aks-social.jpeg") center 45% / cover no-repeat,
+        var(--forest);
+      color: var(--white);
     }
 
     .hero-content {
-      max-width: 760px;
+      width: min(760px, 100%);
     }
 
     .eyebrow {
       color: var(--champagne);
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
+      font-size: 10px;
       font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
     .hero h1 {
-      margin: 15px 0;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.05;
-      font-weight: 600;
-      color: #FFFFFF;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+      margin: 15px 0 14px;
+      font-family: var(--heading);
+      font-size: clamp(43px, 7vw, 76px);
+      font-weight: 500;
+      line-height: 1.04;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, .15);
     }
 
     .hero p {
-      max-width: 580px;
+      max-width: 570px;
       margin: 0 auto 28px;
-      font-size: 14px;
-      line-height: 1.9;
       color: #F4F1E9;
+      font-size: 13px;
+      line-height: 1.9;
     }
 
-    /* Buttons */
-    .button {
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 13px 22px;
-      border: 1px solid var(--gold);
-      background: var(--gold);
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
+      min-height: 44px;
+      padding: 12px 22px;
+      border: 1px solid var(--champagne);
+      background: var(--champagne);
+      color: var(--forest-deep);
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 1px;
+      text-align: center;
       text-transform: uppercase;
-      transition: 0.2s;
-      cursor: pointer;
+      transition: background .2s ease, color .2s ease;
     }
 
-    .button:hover {
-      background: #a48749;
-      border-color: #a48749;
-    }
-
-    .button-outline {
-      margin-left: 8px;
+    .btn:hover {
       background: transparent;
-      border-color: rgba(255, 255, 255, 0.75);
+      color: var(--champagne);
     }
 
-    .button-outline:hover {
-      background: white;
-      color: var(--green-dark);
-      border-color: white;
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, .65);
     }
 
-    /* Sections */
-    .section {
-      max-width: 1280px;
-      margin: auto;
-      padding: 58px 24px;
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--forest);
     }
+
+    /* SECTION HEADINGS */
 
     .section-heading {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
-    .section-kicker {
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+    .section-heading .eyebrow {
       color: var(--gold);
-      font-weight: 700;
     }
 
     .section-heading h2 {
-      margin: 7px 0 8px;
-      color: var(--green-dark);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 4vw, 45px);
-      line-height: 1.2;
+      margin: 5px 0 7px;
+      color: var(--forest);
+      font-family: var(--heading);
+      font-size: clamp(34px, 5vw, 48px);
+      font-weight: 500;
+      line-height: 1.12;
     }
 
     .section-heading p {
+      max-width: 610px;
       margin: 0 auto;
-      max-width: 620px;
-      font-size: 12px;
       color: var(--muted);
+      font-size: 12px;
     }
 
-    /* Collection directory */
-    .collection-directory {
+    /* COLLECTION DIRECTORY */
+
+    .collections {
+      padding: 66px 0 58px;
+      background: var(--white);
+    }
+
+    .category-grid {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 42px;
+      gap: 18px;
     }
 
-    .directory-item {
-      padding: 17px 10px;
-      background: white;
-      border: 1px solid var(--border);
+    .category-tile {
+      min-width: 0;
+      background: var(--sage-light);
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .category-tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(35, 55, 38, .10);
+    }
+
+    .category-tile img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      background: var(--sage);
+      transition: transform .45s ease;
+    }
+
+    .category-tile:hover img {
+      transform: scale(1.035);
+    }
+
+    .category-tile-label {
+      min-height: 64px;
+      padding: 12px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      color: var(--green-dark);
-      font-size: 11px;
-      font-weight: 700;
-      transition: 0.2s;
     }
 
-    .directory-item:hover {
-      border-color: var(--gold);
-      background: var(--green-light);
-      transform: translateY(-2px);
+    .category-tile-label strong {
+      color: var(--forest);
+      font-family: var(--heading);
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.1;
     }
 
-    /* Collection rows */
-    .collection-row {
-      margin: 0 0 45px;
-      scroll-margin-top: 110px;
-    }
-
-    .collection-row:last-child {
-      margin-bottom: 0;
-    }
-
-    .collection-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 15px;
-      margin-bottom: 15px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .collection-heading h3 {
-      margin: 0;
-      color: var(--green-dark);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 29px;
-      line-height: 1.2;
-    }
-
-    .collection-heading p {
-      margin: 4px 0 0;
-      font-size: 10px;
-      color: var(--muted);
-    }
-
-    .view-all {
-      flex-shrink: 0;
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--green);
-      letter-spacing: 0.5px;
-    }
-
-    .view-all:hover {
+    .category-tile-label span {
+      margin-top: 6px;
       color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    /* Product strips */
-    .product-strip {
+    /* PRODUCT COLLECTION SECTIONS */
+
+    .product-section {
+      padding: 55px 0 48px;
+      background: var(--sage-light);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .product-section:nth-of-type(even) {
+      background: var(--white);
+    }
+
+    .product-section .section-heading {
+      margin-bottom: 23px;
+    }
+
+    .product-section .section-heading h2 {
+      font-size: clamp(32px, 4vw, 42px);
+    }
+
+    .carousel-shell {
+      position: relative;
+      width: 100%;
+    }
+
+    .product-viewport {
+      width: 100%;
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    .product-track {
       display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      width: max-content;
       gap: 16px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding: 3px 2px 15px;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: thin;
-      scrollbar-color: var(--gold) #eeece3;
-    }
-
-    .product-strip::-webkit-scrollbar {
-      height: 5px;
-    }
-
-    .product-strip::-webkit-scrollbar-track {
-      background: #eeece3;
-    }
-
-    .product-strip::-webkit-scrollbar-thumb {
-      background: var(--gold);
-      border-radius: 8px;
+      will-change: transform;
+      transform: translateX(0);
     }
 
     .product-card {
-      display: block;
       flex: 0 0 210px;
+      width: 210px;
       min-width: 0;
-      background: white;
+      overflow: hidden;
+      background: var(--white);
       border: 1px solid var(--border);
-      scroll-snap-align: start;
-      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .product-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 7px 22px rgba(40, 54, 42, 0.1);
+    .product-image-link {
+      display: block;
+      overflow: hidden;
+      background: var(--sage);
     }
 
     .product-card img {
       width: 100%;
-      height: 265px;
-      object-fit: contain;
-      background: #fff;
-      padding: 5px;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      background: var(--sage);
+      transition: transform .4s ease;
     }
 
-    .product-caption {
-      padding: 12px;
+    .product-image-link:hover img {
+      transform: scale(1.04);
+    }
+
+    .product-info {
+      padding: 13px 12px 15px;
       text-align: center;
-      border-top: 1px solid #f0efe8;
     }
 
-    .product-caption strong {
-      display: block;
-      color: var(--green-dark);
-      font-family: 'Cormorant Garamond', serif;
+    .product-info h3 {
+      margin: 0 0 6px;
+      color: var(--forest);
+      font-family: var(--heading);
       font-size: 19px;
-      line-height: 1.25;
+      font-weight: 600;
+      line-height: 1.15;
     }
 
-    .product-caption span {
-      display: block;
-      margin-top: 4px;
+    .product-info p {
+      margin: 0;
       color: var(--muted);
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .product-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--forest);
       font-size: 9px;
-      letter-spacing: 0.8px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .carousel-button {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--forest);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--forest);
+      cursor: pointer;
+      font-size: 19px;
+    }
+
+    .carousel-button:hover {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .view-all {
+      display: block;
+      width: fit-content;
+      margin: 25px auto 0;
+      padding: 12px 20px;
+      border: 1px solid var(--forest);
+      color: var(--forest);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
       text-transform: uppercase;
     }
 
-    .empty-collection {
-      padding: 23px;
-      border: 1px dashed #d7d8cb;
-      background: rgba(255,255,255,0.55);
-      color: var(--muted);
+    .view-all:hover {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    /* ABOUT */
+
+    .about-section {
+      padding: 75px 0;
+      background: var(--sage);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-height: 510px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: var(--white);
+    }
+
+    .about-copy .eyebrow {
+      color: var(--gold);
+    }
+
+    .about-copy h2 {
+      margin: 9px 0 15px;
+      color: var(--forest);
+      font-family: var(--heading);
+      font-size: clamp(37px, 5vw, 52px);
+      font-weight: 500;
+      line-height: 1.08;
+    }
+
+    .about-copy p {
+      color: #58645A;
       font-size: 12px;
-      text-align: center;
-    }
-
-    /* About */
-    .about {
-      background: var(--green-light);
-    }
-
-    .about-inner {
-      max-width: 1000px;
-      margin: auto;
-      padding: 60px 24px;
-      text-align: center;
-    }
-
-    .about h2 {
-      margin: 8px 0 15px;
-      color: var(--green-dark);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-    }
-
-    .about p {
-      max-width: 760px;
-      margin: 0 auto 22px;
-      color: #596258;
-      font-size: 13px;
       line-height: 2;
     }
 
-    /* Visit showroom */
-    .visit {
-      background: var(--cream);
+    .about-copy .btn {
+      margin-top: 12px;
+      background: var(--forest);
+      border-color: var(--forest);
+      color: var(--white);
     }
 
-    .visit-inner {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .visit h2 {
-      margin: 8px 0 12px;
-      color: var(--green-dark);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-    }
-
-    .address {
-      margin: 0 auto 22px;
-      color: #545b52;
-      font-size: 13px;
-      line-height: 1.9;
-    }
-
-    .visit-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .visit-buttons .button-outline-green {
+    .about-copy .btn:hover {
       background: transparent;
-      border-color: var(--green);
-      color: var(--green-dark);
+      color: var(--forest);
     }
 
-    .visit-buttons .button-outline-green:hover {
-      background: var(--green);
-      color: white;
-    }
+    /* VISIT THE SHOWROOM */
 
-    /* Footer */
-    footer {
-      padding: 28px 20px;
-      background: var(--green-dark);
-      color: white;
+    .visit-section {
+      padding: 70px 0;
+      background: var(--white);
       text-align: center;
+    }
+
+    .visit-card {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 35px 25px;
+      border: 1px solid var(--border);
+      background: var(--sage-light);
+    }
+
+    .visit-icon {
+      color: var(--gold);
+      font-size: 26px;
+    }
+
+    .visit-card h2 {
+      margin: 6px 0 12px;
+      color: var(--forest);
+      font-family: var(--heading);
+      font-size: 42px;
+      font-weight: 500;
+    }
+
+    .visit-card p {
+      margin: 6px 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .visit-card .address {
+      color: var(--forest);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .visit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .visit-actions .btn {
+      background: var(--forest);
+      border-color: var(--forest);
+      color: var(--white);
+    }
+
+    .visit-actions .btn:hover {
+      background: transparent;
+      color: var(--forest);
+    }
+
+    .visit-actions .btn-secondary {
+      background: transparent;
+      color: var(--forest);
+    }
+
+    .visit-actions .btn-secondary:hover {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      padding: 38px 0 20px;
+      background: var(--forest-deep);
+      color: var(--sage);
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 28px;
     }
 
     .footer-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
+      color: var(--champagne);
+      font-family: var(--heading);
+      font-size: 35px;
       letter-spacing: 2px;
     }
 
-    footer p {
-      margin: 6px 0;
-      font-size: 10px;
-      color: #e0e6dd;
+    .footer-column h3 {
+      margin: 0 0 12px;
+      color: var(--champagne);
+      font-family: var(--heading);
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .footer-column p,
+    .footer-column a {
+      color: #D9E0D8;
+      font-size: 11px;
+      line-height: 2;
+    }
+
+    .footer-column a:hover {
+      color: var(--champagne);
     }
 
     .footer-links {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin: 15px 0;
-      font-size: 11px;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
-    .footer-links a:hover {
-      color: #e5d0a1;
+    .footer-bottom {
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, .15);
+      color: #C3CEC3;
+      font-size: 10px;
+      text-align: center;
     }
 
-    .copyright {
-      margin-top: 18px;
-      color: #c9d2c7;
-      font-size: 9px;
-    }
+    /* WHATSAPP FLOATING BUTTON */
 
-    /* Floating WhatsApp shortcut */
-    .floating-whatsapp {
+    .whatsapp-float {
       position: fixed;
-      z-index: 80;
-      right: 18px;
-      bottom: 18px;
+      right: 20px;
+      bottom: 20px;
+      z-index: 200;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 13px 17px;
-      border-radius: 30px;
-      background: #218c54;
+      gap: 9px;
+      min-height: 48px;
+      padding: 11px 17px;
+      border-radius: 28px;
+      background: #18794E;
       color: white;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
       font-size: 11px;
       font-weight: 700;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
     }
 
-    .floating-whatsapp:hover {
-      background: #176b3f;
+    .whatsapp-float:hover {
+      background: #11653F;
     }
 
-    /* Tablet */
-    @media (max-width: 850px) {
-      .header-inner {
-        flex-direction: column;
-        gap: 10px;
-      }
+    .whatsapp-icon {
+      font-size: 19px;
+      line-height: 1;
+    }
 
-      nav {
-        justify-content: center;
+    /* IMAGE FALLBACK */
+
+    .image-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      background: var(--sage);
+      color: var(--forest);
+      text-align: center;
+      font-size: 11px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 14px;
       }
 
-      .collection-directory {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+      .about-layout {
+        gap: 28px;
       }
 
-      .hero {
-        min-height: 390px;
+      .footer-main {
+        gap: 22px;
       }
     }
 
-    /* Mobile */
-    @media (max-width: 520px) {
+    @media (max-width: 600px) {
+      .announcement-bar {
+        min-height: 35px;
+        font-size: 9px;
+        letter-spacing: .7px;
+      }
+
       .instagram-banner {
         padding: 9px 10px;
-      }
-
-      .instagram-banner a {
-        gap: 5px;
         font-size: 9px;
-      }
-
-      .instagram-arrow {
-        margin-left: 3px;
+        line-height: 1.7;
       }
 
       .header-inner {
-        padding: 10px 14px;
-      }
-
-      .brand img {
-        width: 48px;
-        height: 48px;
+        min-height: 72px;
       }
 
       .brand-name {
-        font-size: 26px;
+        font-size: 39px;
       }
 
-      nav {
-        gap: 10px 14px;
+      .brand-tagline {
+        font-size: 8px;
+        letter-spacing: 2px;
       }
 
-      nav a {
-        font-size: 10px;
+      .nav-inner {
+        gap: 8px 16px;
+        padding: 11px 4px;
       }
 
-      .nav-whatsapp {
-        padding: 8px 10px;
+      .main-nav a {
+        font-size: 9px;
       }
 
       .hero {
-        min-height: 370px;
-        padding: 55px 18px;
+        min-height: 400px;
+        padding: 65px 18px;
+        background-position: center 45%;
+      }
+
+      .hero h1 {
+        font-size: 47px;
       }
 
       .hero p {
         font-size: 12px;
       }
 
-      .button {
-        padding: 12px 14px;
-        font-size: 10px;
+      .collections {
+        padding: 48px 0 42px;
       }
 
-      .section {
-        padding: 42px 15px;
-      }
-
-      .collection-directory {
+      .category-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
+        gap: 12px;
       }
 
-      .directory-item {
-        padding: 14px 7px;
-        font-size: 10px;
+      .category-tile-label strong {
+        font-size: 18px;
       }
 
-      .collection-heading h3 {
-        font-size: 25px;
+      .product-section {
+        padding: 42px 0 38px;
+      }
+
+      .product-track {
+        gap: 12px;
       }
 
       .product-card {
-        flex-basis: 170px;
+        flex-basis: 158px;
+        width: 158px;
       }
 
-      .product-card img {
-        height: 225px;
+      .product-info {
+        padding: 10px 8px 12px;
       }
 
-      .about-inner {
-        padding: 45px 18px;
+      .product-info h3 {
+        font-size: 17px;
       }
 
-      .about h2,
-      .visit h2 {
-        font-size: 35px;
+      .about-section {
+        padding: 48px 0;
       }
 
-      .floating-whatsapp {
-        right: 12px;
-        bottom: 12px;
-        padding: 12px 14px;
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .about-image img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .about-copy h2 {
+        font-size: 41px;
+      }
+
+      .visit-section {
+        padding: 48px 0;
+      }
+
+      .visit-card {
+        padding: 27px 16px;
+      }
+
+      .visit-card h2 {
+        font-size: 36px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .whatsapp-float {
+        right: 13px;
+        bottom: 13px;
+        min-height: 44px;
+        padding: 10px 14px;
       }
     }
 
@@ -745,12 +895,12 @@
         scroll-behavior: auto;
       }
 
-      .announcement-track {
-        animation: none;
-      }
-
-      * {
-        transition: none !important;
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
       }
     }
   </style>
@@ -758,392 +908,858 @@
 
 <body>
 
-  <!-- Instagram banner -->
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar" aria-live="polite">
+    <span class="announcement-message" id="announcementMessage">
+      Discover timeless style at Label AKS
+    </span>
+  </div>
+
+  <!-- INSTAGRAM PROMOTION -->
   <div class="instagram-banner">
-    <a href="https://www.instagram.com/label_aks"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Follow Label AKS on Instagram for latest stock updates and offers">
-      <span class="instagram-icon" aria-hidden="true">◎</span>
-      <span>
-        Follow <strong>@label_aks</strong> on Instagram for the latest stock updates &amp; exclusive offers
-      </span>
-      <span class="instagram-arrow">FOLLOW US ↗</span>
+    <a href="https://www.instagram.com/label_aks/"
+       target="_blank" rel="noopener noreferrer">
+      Follow <strong>@label_aks</strong> on Instagram for the latest
+      stock updates &amp; exclusive offers
     </a>
   </div>
 
-  <!-- Announcement ticker -->
-  <div class="announcement">
-    <div class="announcement-track" aria-label="Label AKS announcements">
-      <span>Welcome to Label AKS</span>
-      <span>Discover Styles for Every Occasion</span>
-      <span>Visit Our Showroom in Vikaspuri, Delhi</span>
-      <span>For Enquiries, Connect with Us on WhatsApp</span>
-      <span>Welcome to Label AKS</span>
-      <span>Discover Styles for Every Occasion</span>
-      <span>Visit Our Showroom in Vikaspuri, Delhi</span>
-      <span>For Enquiries, Connect with Us on WhatsApp</span>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header>
-    <div class="header-inner">
-      <a class="brand" href="/" aria-label="Label AKS home">
-        <img src="/images/label-aks-logo.png" alt="Label AKS logo">
-        <div>
-          <div class="brand-name">Label AKS</div>
-          <div class="brand-subtitle">Style • Elegance • You</div>
-        </div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Label AKS homepage">
+        <span class="brand-name">LABEL AKS</span>
+        <span class="brand-tagline">Style · Elegance · You</span>
       </a>
-
-      <nav aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="#collections">Collections</a>
-        <a href="#about">About Us</a>
-        <a href="#visit">Visit Us</a>
-        <a class="nav-whatsapp"
-           href="https://wa.me/919810057892"
-           target="_blank"
-           rel="noopener noreferrer">WhatsApp Us</a>
-      </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="eyebrow">Discover Your Style</div>
-      <h1>Elegance in Every Thread</h1>
-      <p>
-        Explore thoughtfully selected styles for everyday wear, celebrations
-        and special occasions at Label AKS, your fashion destination in Vikaspuri.
-      </p>
-      <a class="button" href="#collections">Explore Collections</a>
-      <a class="button button-outline"
-         href="https://wa.me/919810057892"
-         target="_blank"
-         rel="noopener noreferrer">Contact Us</a>
+  <!-- NAVIGATION -->
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="/">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#western-wear">Western Wear</a>
+      <a href="#designer-suits">Designer Suits</a>
+      <a href="#new-arrivals">New Arrivals</a>
+      <a href="#about">Our Story</a>
+      <a href="#visit">Visit Us</a>
     </div>
-  </section>
+  </nav>
 
   <main>
-    <!-- Collections -->
-    <section class="section" id="collections">
-      <div class="section-heading">
-        <div class="section-kicker">Find Your Look</div>
-        <h2>Our Collections</h2>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Welcome to Label AKS</div>
+
+        <h1>Elegance in Every Thread</h1>
+
         <p>
-          Browse our collections below. Select any collection or product
-          to explore that category.
-        </p>
-      </div>
-
-      <div class="collection-directory" id="collectionDirectory"></div>
-      <div id="collectionRows" aria-live="polite"></div>
-    </section>
-
-    <!-- About -->
-    <section class="about" id="about">
-      <div class="about-inner">
-        <div class="section-kicker">Our Story</div>
-        <h2>Welcome to Label AKS</h2>
-        <p>
-          At Label AKS, we believe that what you wear should make you feel
-          confident, comfortable and beautiful. Discover a curated selection
-          of styles, from elegant suits and designer collections to contemporary
-          Western and Indo-Western looks.
-        </p>
-        <p>
-          Visit our showroom and explore styles for everyday dressing,
-          family occasions, festivities and celebrations.
-        </p>
-        <a class="button"
-           href="https://wa.me/919810057892"
-           target="_blank"
-           rel="noopener noreferrer">Enquire on WhatsApp</a>
-      </div>
-    </section>
-
-    <!-- Store address and directions -->
-    <section class="section visit" id="visit">
-      <div class="visit-inner">
-        <div class="section-kicker">Come Say Hello</div>
-        <h2>Visit Our Showroom</h2>
-        <p class="address">
-          <strong>Label AKS</strong><br>
-          537, Site 1, Vikaspuri,<br>
-          Near Metro Pillar 624,<br>
-          New Delhi – 110018
+          Explore a thoughtfully selected collection of women's fashion,
+          from everyday elegance to statement looks for your special
+          occasions.
         </p>
 
-        <div class="visit-buttons">
-          <a class="button"
-             href="https://www.google.com/maps/search/?api=1&query=Label+AKS%2C+537%2C+Site+1%2C+Vikaspuri%2C+Near+Metro+Pillar+624%2C+New+Delhi+110018"
-             target="_blank"
-             rel="noopener noreferrer">Get Directions</a>
+        <div class="hero-actions">
+          <a class="btn" href="#collections">Explore Collections</a>
 
-          <a class="button button-outline-green"
-             href="https://wa.me/919810057892"
-             target="_blank"
-             rel="noopener noreferrer">Message Us</a>
+          <a class="btn btn-outline"
+             href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20I%20would%20like%20to%20know%20about%20your%20collection."
+             target="_blank" rel="noopener noreferrer">
+            Enquire on WhatsApp
+          </a>
         </div>
       </div>
     </section>
-  </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-brand">Label AKS</div>
-    <p>Style • Elegance • You</p>
-    <p>537, Site 1, Vikaspuri, New Delhi – 110018</p>
+    <!-- COLLECTION DIRECTORY -->
+    <section class="collections" id="collections">
+      <div class="container">
 
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="#collections">Collections</a>
-      <a href="#about">About Us</a>
-      <a href="#visit">Visit Us</a>
-      <a href="https://www.instagram.com/label_aks"
-         target="_blank"
-         rel="noopener noreferrer">Instagram</a>
-      <a href="https://wa.me/919810057892"
-         target="_blank"
-         rel="noopener noreferrer">WhatsApp</a>
+        <div class="section-heading">
+          <div class="eyebrow">Find Your Style</div>
+          <h2>Explore Our Collections</h2>
+          <p>
+            From effortless everyday looks to elegant occasion wear,
+            find styles that feel uniquely you.
+          </p>
+        </div>
+
+        <div class="category-grid" id="categoryGrid">
+          <!-- Created by JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AUTOMATIC PRODUCT COLLECTIONS -->
+    <div id="productSections">
+      <!-- Created by JavaScript -->
     </div>
 
-    <div class="copyright">
-      © <span id="currentYear"></span> Label AKS. All rights reserved.
+    <!-- ABOUT LABEL AKS -->
+    <section class="about-section" id="about">
+      <div class="container about-layout">
+
+        <div class="about-image">
+          <img
+            src="/images/label-aks-social.jpeg"
+            alt="Discover the Label AKS fashion collection"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+
+        <div class="about-copy">
+          <div class="eyebrow">Our Story</div>
+
+          <h2>Fashion That Feels Like You</h2>
+
+          <p>
+            At Label AKS, we believe that what you wear should make you
+            feel confident, comfortable and beautiful.
+          </p>
+
+          <p>
+            Our collection brings together elegant suits, contemporary
+            silhouettes and occasion-ready styles, selected for women
+            who appreciate thoughtful details and individual expression.
+          </p>
+
+          <p>
+            Visit our showroom in Vikaspuri and discover a collection
+            chosen with you in mind.
+          </p>
+
+          <a class="btn" href="#visit">Visit Our Showroom</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SHOWROOM DETAILS -->
+    <section class="visit-section" id="visit">
+      <div class="container">
+
+        <div class="visit-card">
+          <div class="visit-icon" aria-hidden="true">✦</div>
+
+          <h2>We'd Love to See You</h2>
+
+          <p class="address">Label AKS</p>
+          <p>537, Site 1, Vikaspuri, New Delhi</p>
+
+          <p>
+            Come explore our collection and find something special
+            for your wardrobe.
+          </p>
+
+          <div class="visit-actions">
+            <a class="btn"
+               href="https://www.google.com/maps/search/?api=1&query=Label%20AKS%2C%20537%20Site%201%2C%20Vikaspuri%2C%20New%20Delhi"
+               target="_blank" rel="noopener noreferrer">
+              Get Directions
+            </a>
+
+            <a class="btn btn-secondary"
+               href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20please%20share%20your%20latest%20collection."
+               target="_blank" rel="noopener noreferrer">
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div class="footer-column">
+          <div class="footer-brand">LABEL AKS</div>
+
+          <p>
+            Thoughtfully selected fashion for everyday elegance
+            and special occasions.
+          </p>
+
+          <p>
+            <a href="https://www.instagram.com/label_aks/"
+               target="_blank" rel="noopener noreferrer">
+              Follow us on Instagram
+            </a>
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Explore</h3>
+
+          <div class="footer-links">
+            <a href="#collections">All Collections</a>
+            <a href="#western-wear">Western Wear</a>
+            <a href="#cord-sets">Co-ord Sets</a>
+            <a href="#indo-western">Indo-Western</a>
+            <a href="#designer-suits">Designer Suits</a>
+            <a href="#new-arrivals">New Arrivals</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Visit Us</h3>
+
+          <p>
+            537, Site 1, Vikaspuri<br>
+            New Delhi, India
+          </p>
+
+          <p>
+            <a href="https://wa.me/919810057892"
+               target="_blank" rel="noopener noreferrer">
+              WhatsApp: +91 98100 57892
+            </a>
+          </p>
+
+          <p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Label%20AKS%2C%20537%20Site%201%2C%20Vikaspuri%2C%20New%20Delhi"
+               target="_blank" rel="noopener noreferrer">
+              Find us on Google Maps
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="currentYear"></span> Label AKS. All rights reserved.
+      </div>
+
     </div>
   </footer>
 
-  <!-- Floating WhatsApp shortcut -->
-  <a class="floating-whatsapp"
-     href="https://wa.me/919810057892"
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a class="whatsapp-float"
+     href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20I%20am%20interested%20in%20your%20collection."
      target="_blank"
      rel="noopener noreferrer"
-     aria-label="Contact Label AKS on WhatsApp">
-    WhatsApp Us
+     aria-label="Chat with Label AKS on WhatsApp">
+
+    <span class="whatsapp-icon" aria-hidden="true">◉</span>
+    <span>Chat with us</span>
   </a>
 
   <script>
+    "use strict";
+
+    /* -------------------------------------------------------
+       LABEL AKS COLLECTION DATA
+
+       Image folders are relative to the website root.
+       The numbered product images are loaded automatically.
+       ------------------------------------------------------- */
+
     const categories = [
       {
-        slug: "westernwear",
-        name: "Western Wear",
+        slug: "western-wear",
+        title: "Western Wear",
         folder: "Westernwear",
         count: 11,
-        description: "Explore our Western Wear collection."
+        sectionId: "western-wear",
+        description: "Contemporary styles for your wardrobe.",
+        caption: "Elegant Western Wear Style",
+        cover: "/images/Westernwear/1.jpeg",
+        populated: true
       },
       {
-        slug: "cordsets",
-        name: "Co-ord Sets",
+        slug: "cord-sets",
+        title: "Co-ord Sets",
         folder: "cordsets",
         count: 37,
-        description: "Discover coordinated looks for different occasions."
+        sectionId: "cord-sets",
+        description: "Effortless style, beautifully coordinated.",
+        caption: "Elegant Co-ord Set",
+        cover: "/images/cordsets/1.jpeg",
+        populated: true
       },
       {
-        slug: "indowestern",
-        name: "Indo-Western",
+        slug: "indo-western",
+        title: "Indo-Western",
         folder: "indowestern",
         count: 22,
-        description: "A blend of Indian elegance and contemporary style."
+        sectionId: "indo-western",
+        description: "A modern expression of Indian elegance.",
+        caption: "Elegant Indo-Western Style",
+        cover: "/images/indowestern/1.jpeg",
+        populated: true
       },
       {
         slug: "designer-suits",
-        name: "Designer Suits",
+        title: "Designer Suits",
         folder: "designer-suits",
         count: 71,
-        description: "Browse our designer suit collection."
+        sectionId: "designer-suits",
+        description: "Statement styles with beautiful details.",
+        caption: "Elegant Designer Suit",
+        cover: "/images/designer-suits/1.jpeg",
+        populated: true
       },
       {
         slug: "suit-sets",
-        name: "Suit Sets",
-        products: [
-          { image: "/images/Suit 1.jpeg", label: "Suit Sets" },
-          { image: "/images/Suit2.jpeg", label: "Suit Sets" },
-          { image: "/images/Suit4.jpeg", label: "Suit Sets" },
-          { image: "/images/suit 1a.jpeg", label: "Suit Sets" },
-          { image: "/images/suit3.jpeg", label: "Suit Sets" },
-          { image: "/images/suit5.jpeg", label: "Suit Sets" },
-          { image: "/images/suit6.jpeg", label: "Suit Sets" },
-          { image: "/images/Cod2.jpeg", label: "Co-ord Sets" },
-          { image: "/images/cod.jpeg", label: "Co-ord Sets" }
-        ],
-        description: "Discover suits selected for your wardrobe."
+        title: "Suit Sets",
+        folder: null,
+        count: 0,
+        sectionId: "suit-sets",
+        description: "Beautiful suit styles for every day.",
+        caption: "Elegant Suit Set",
+        cover: "/images/Suit 1.jpeg",
+        populated: false
       },
       {
         slug: "lehengas",
-        name: "Lehengas",
-        products: [
-          { image: "/images/Lehenga%201.jpeg", label: "Lehengas" }
-        ],
-        description: "Explore our lehenga styles."
+        title: "Lehengas",
+        folder: null,
+        count: 0,
+        sectionId: "lehengas",
+        description: "Celebrate your moments in style.",
+        caption: "Elegant Lehenga",
+        cover: "/images/Lehenga 1.jpeg",
+        populated: false
       },
       {
         slug: "daily-wear",
-        name: "Daily Wear",
-        products: [],
-        description: "Comfortable styles for everyday dressing."
+        title: "Daily Wear",
+        folder: null,
+        count: 0,
+        sectionId: "daily-wear",
+        description: "Comfortable styles for everyday dressing.",
+        caption: "Everyday Style",
+        cover: "/images/suit 1a.jpeg",
+        populated: false
       },
       {
         slug: "festive-wear",
-        name: "Festive Wear",
-        products: [],
-        description: "Styles for festive gatherings and celebrations."
+        title: "Festive Wear",
+        folder: null,
+        count: 0,
+        sectionId: "festive-wear",
+        description: "Make festive occasions feel special.",
+        caption: "Festive Collection",
+        cover: "/images/Suit2.jpeg",
+        populated: false
       },
       {
         slug: "party-wear",
-        name: "Party & Occasion Wear",
-        products: [],
-        description: "Looks for parties and special occasions."
+        title: "Party & Occasion Wear",
+        folder: null,
+        count: 0,
+        sectionId: "party-wear",
+        description: "Find a look for your next celebration.",
+        caption: "Occasion Wear",
+        cover: "/images/Suit4.jpeg",
+        populated: false
       },
       {
         slug: "new-arrivals",
-        name: "New Arrivals",
-        products: [],
-        description: "Discover the latest additions to our collection."
+        title: "New Arrivals",
+        folder: null,
+        count: 0,
+        sectionId: "new-arrivals",
+        description: "Discover styles from our latest selection.",
+        caption: "New Arrival",
+        cover: "/images/cod.jpeg",
+        populated: false
       }
     ];
 
-    const singularNames = {
-      "westernwear": "Elegant Western Wear Style",
-      "cordsets": "Elegant Co-ord Set",
-      "indowestern": "Elegant Indo-Western Style",
-      "designer-suits": "Elegant Designer Suit",
-      "suit-sets": "Elegant Suit Set",
-      "lehengas": "Elegant Lehenga",
-      "daily-wear": "Elegant Daily Wear Style",
-      "festive-wear": "Elegant Festive Wear Style",
-      "party-wear": "Elegant Party Wear Style",
-      "new-arrivals": "Elegant New Arrival"
-    };
+    /*
+      Only these categories currently have numbered image folders.
+      For categories without folders, the homepage displays a
+      representative image and links to category.html.
+    */
 
-    function getProducts(category) {
-      if (Array.isArray(category.products)) {
-        return category.products;
-      }
+    const announcements = [
+      "Discover timeless style at Label AKS",
+      "Elegant styles for everyday moments",
+      "Find something special for every occasion",
+      "Explore our latest fashion collections",
+      "Visit Label AKS, Vikaspuri, New Delhi",
+      "Follow @label_aks for the latest stock updates"
+    ];
 
-      if (category.folder && category.count > 0) {
-        return Array.from({ length: category.count }, (_, index) => ({
-          image: `/images/${category.folder}/${index + 1}.jpeg`,
-          label: category.name
-        }));
-      }
+    /* -------------------------------------------------------
+       HELPERS
+       ------------------------------------------------------- */
 
-      return [];
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, function (character) {
+        const entities = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        };
+
+        return entities[character];
+      });
     }
 
-    const orderedCategories = [...categories].sort((a, b) => {
-      const aHasProducts = getProducts(a).length > 0;
-      const bHasProducts = getProducts(b).length > 0;
-
-      if (aHasProducts !== bHasProducts) {
-        return aHasProducts ? -1 : 1;
-      }
-
-      return categories.indexOf(a) - categories.indexOf(b);
-    });
-
-    const directory = document.getElementById("collectionDirectory");
-    const rows = document.getElementById("collectionRows");
-
-    function categoryUrl(category) {
-      return `/category.html?category=${encodeURIComponent(category.slug)}`;
+    function categoryURL(category) {
+      return "/category.html?category=" +
+        encodeURIComponent(category.slug);
     }
 
-    orderedCategories.forEach(category => {
+    function productImagePath(category, number) {
+      return "/images/" +
+        category.folder +
+        "/" +
+        number +
+        ".jpeg";
+    }
+
+    function imageFallback(image, label) {
+      const fallback = document.createElement("div");
+
+      fallback.className = "image-fallback";
+      fallback.textContent = label;
+      fallback.style.aspectRatio = "3 / 4";
+
+      image.replaceWith(fallback);
+    }
+
+    function makeImage(src, alt, loading) {
+      const image = document.createElement("img");
+
+      image.src = src;
+      image.alt = alt;
+      image.loading = loading || "lazy";
+      image.decoding = "async";
+
+      image.addEventListener("error", function () {
+        imageFallback(image, "Label AKS");
+      }, { once: true });
+
+      return image;
+    }
+
+    /* -------------------------------------------------------
+       CATEGORY DIRECTORY
+       ------------------------------------------------------- */
+
+    function renderCategoryGrid() {
+      const grid = document.getElementById("categoryGrid");
+
+      grid.innerHTML = categories.map(function (category) {
+        return `
+          <a class="category-tile"
+             href="${categoryURL(category)}"
+             aria-label="Explore ${escapeHTML(category.title)}">
+
+            <img
+              src="${escapeHTML(category.cover)}"
+              alt="${escapeHTML(category.title)} collection"
+              loading="lazy"
+              decoding="async">
+
+            <div class="category-tile-label">
+              <strong>${escapeHTML(category.title)}</strong>
+              <span>Explore Collection</span>
+            </div>
+          </a>
+        `;
+      }).join("");
+
+      grid.querySelectorAll("img").forEach(function (image) {
+        image.addEventListener("error", function () {
+          imageFallback(image, "Label AKS Collection");
+        }, { once: true });
+      });
+    }
+
+    /* -------------------------------------------------------
+       PRODUCT CARD
+       ------------------------------------------------------- */
+
+    function createProductCard(category, number, imagePath) {
+      const card = document.createElement("article");
+
+      card.className = "product-card";
+
       const link = document.createElement("a");
-      link.className = "directory-item";
-      link.href = categoryUrl(category);
-      link.textContent = category.name;
-      directory.appendChild(link);
-    });
+      link.className = "product-image-link";
+      link.href = categoryURL(category);
+      link.setAttribute(
+        "aria-label",
+        "Explore " + category.title
+      );
 
-    orderedCategories.forEach(category => {
-      const products = getProducts(category);
+      const image = makeImage(
+        imagePath,
+        category.caption + " " + number,
+        "lazy"
+      );
 
-      const row = document.createElement("section");
-      row.className = "collection-row";
-      row.id = `collection-${category.slug}`;
+      link.appendChild(image);
 
-      const heading = document.createElement("div");
-      heading.className = "collection-heading";
-
-      const headingText = document.createElement("div");
+      const info = document.createElement("div");
+      info.className = "product-info";
 
       const title = document.createElement("h3");
-      title.textContent = category.name;
+      title.textContent = category.caption + " " +
+        String(number).padStart(2, "0");
+
+      const description = document.createElement("p");
+      description.textContent =
+        "Discover this collection at Label AKS.";
+
+      const more = document.createElement("a");
+      more.className = "product-link";
+      more.href = categoryURL(category);
+      more.textContent = "Explore Collection";
+
+      info.append(title, description, more);
+      card.append(link, info);
+
+      return card;
+    }
+
+    /* -------------------------------------------------------
+       PRODUCT SECTION
+       ------------------------------------------------------- */
+
+    function createProductSection(category) {
+      const section = document.createElement("section");
+
+      section.className = "product-section";
+      section.id = category.sectionId;
+
+      const container = document.createElement("div");
+      container.className = "container";
+
+      const heading = document.createElement("div");
+      heading.className = "section-heading";
+
+      const eyebrow = document.createElement("div");
+      eyebrow.className = "eyebrow";
+      eyebrow.textContent = "Discover Label AKS";
+
+      const title = document.createElement("h2");
+      title.textContent = category.title;
 
       const description = document.createElement("p");
       description.textContent = category.description;
 
-      headingText.appendChild(title);
-      headingText.appendChild(description);
+      heading.append(eyebrow, title, description);
+
+      const shell = document.createElement("div");
+      shell.className = "carousel-shell";
+
+      const viewport = document.createElement("div");
+      viewport.className = "product-viewport";
+
+      const track = document.createElement("div");
+      track.className = "product-track";
+
+      if (category.populated) {
+        for (let number = 1; number <= category.count; number++) {
+          track.appendChild(
+            createProductCard(
+              category,
+              number,
+              productImagePath(category, number)
+            )
+          );
+        }
+      } else {
+        track.appendChild(
+          createProductCard(category, 1, category.cover)
+        );
+      }
+
+      viewport.appendChild(track);
+      shell.appendChild(viewport);
+
+      const controls = document.createElement("div");
+      controls.className = "carousel-controls";
+
+      const previous = document.createElement("button");
+      previous.className = "carousel-button";
+      previous.type = "button";
+      previous.innerHTML = "&#8592;";
+      previous.setAttribute(
+        "aria-label",
+        "Scroll " + category.title + " backwards"
+      );
+
+      const next = document.createElement("button");
+      next.className = "carousel-button";
+      next.type = "button";
+      next.innerHTML = "&#8594;";
+      next.setAttribute(
+        "aria-label",
+        "Scroll " + category.title + " forwards"
+      );
+
+      controls.append(previous, next);
 
       const viewAll = document.createElement("a");
       viewAll.className = "view-all";
-      viewAll.href = categoryUrl(category);
-      viewAll.textContent = "VIEW COLLECTION →";
-      viewAll.setAttribute("aria-label", `View all ${category.name}`);
+      viewAll.href = categoryURL(category);
+      viewAll.textContent = "View " + category.title;
 
-      heading.appendChild(headingText);
-      heading.appendChild(viewAll);
-      row.appendChild(heading);
+      container.append(heading, shell, controls, viewAll);
+      section.appendChild(container);
 
-      if (products.length === 0) {
-        const empty = document.createElement("div");
-        empty.className = "empty-collection";
-        empty.textContent =
-          "New styles are being added to this collection. Please check back soon.";
-        row.appendChild(empty);
-      } else {
-        const strip = document.createElement("div");
-        strip.className = "product-strip";
-        strip.setAttribute("aria-label", `${category.name} product photos`);
+      previous.addEventListener("click", function () {
+        moveCarousel(track, -1);
+      });
 
-        products.forEach((product, index) => {
-          const link = document.createElement("a");
-          link.className = "product-card";
-          link.href = categoryUrl(category);
-          link.setAttribute(
-            "aria-label",
-            `Explore ${category.name}, product ${index + 1}`
-          );
+      next.addEventListener("click", function () {
+        moveCarousel(track, 1);
+      });
 
-          const img = document.createElement("img");
-          img.src = product.image;
-          img.alt = `${category.name} – style ${index + 1}`;
-          img.loading = index < 3 ? "eager" : "lazy";
-          img.decoding = "async";
+      return section;
+    }
 
-          img.onerror = () => link.remove();
+    /* -------------------------------------------------------
+       BUILD PRODUCT SECTIONS
+       ------------------------------------------------------- */
 
-          const caption = document.createElement("div");
-          caption.className = "product-caption";
+    function renderProductSections() {
+      const host = document.getElementById("productSections");
+      const fragment = document.createDocumentFragment();
 
-          const productName = document.createElement("strong");
-          const baseName = singularNames[category.slug] || `Elegant ${category.name}`;
-          productName.textContent = `${baseName} ${String(index + 1).padStart(2, "0")}`;
+      categories.forEach(function (category) {
+        fragment.appendChild(createProductSection(category));
+      });
 
-          const productLabel = document.createElement("span");
-          productLabel.textContent = "Explore Collection";
+      host.replaceChildren(fragment);
+      initialiseProductScrolling();
+    }
 
-          caption.appendChild(productName);
-          caption.appendChild(productLabel);
+    /* -------------------------------------------------------
+       AUTOMATIC INFINITE SCROLL
 
-          link.appendChild(img);
-          link.appendChild(caption);
-          strip.appendChild(link);
-        });
+       The original product cards are duplicated once.
+       The track moves by exactly the width of the original set.
+       This creates a seamless looping carousel.
 
-        row.appendChild(strip);
+       Hover, keyboard focus and touch pause the animation.
+       ------------------------------------------------------- */
+
+    function initialiseProductScrolling() {
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      document.querySelectorAll(".carousel-shell").forEach(
+        function (shell) {
+          const track = shell.querySelector(".product-track");
+
+          if (!track || track.dataset.autoScrollReady === "true") {
+            return;
+          }
+
+          track.dataset.autoScrollReady = "true";
+
+          const originalCards = Array.from(track.children);
+
+          if (reducedMotion || originalCards.length < 2) {
+            return;
+          }
+
+          originalCards.forEach(function (card) {
+            const clone = card.cloneNode(true);
+
+            clone.setAttribute("aria-hidden", "true");
+
+            clone.querySelectorAll(
+              "a, button, input, select, textarea, [tabindex]"
+            ).forEach(function (element) {
+              element.setAttribute("tabindex", "-1");
+            });
+
+            track.appendChild(clone);
+          });
+
+          let animationFrame = 0;
+
+          function updateAnimation() {
+            cancelAnimationFrame(animationFrame);
+
+            animationFrame = requestAnimationFrame(function () {
+              const originalWidth = originalCards.reduce(
+                function (total, card) {
+                  return total + card.getBoundingClientRect().width;
+                },
+                0
+              );
+
+              const trackStyle = window.getComputedStyle(track);
+              const gap = parseFloat(trackStyle.columnGap) ||
+                parseFloat(trackStyle.gap) ||
+                0;
+
+              const distance = originalWidth +
+                gap * (originalCards.length - 1);
+
+              if (!distance || !Number.isFinite(distance)) {
+                return;
+              }
+
+              track.style.setProperty(
+                "--scroll-distance",
+                distance + "px"
+              );
+
+              const duration = Math.max(18, distance / 24);
+
+              track.style.animation =
+                "labelAKSAutoScroll " +
+                duration +
+                "s linear infinite";
+
+              track.style.animationPlayState = shell.matches(
+                ":hover, :focus-within"
+              ) ? "paused" : "running";
+            });
+          }
+
+          shell.addEventListener("mouseenter", function () {
+            track.style.animationPlayState = "paused";
+          });
+
+          shell.addEventListener("mouseleave", function () {
+            track.style.animationPlayState = "running";
+          });
+
+          shell.addEventListener("focusin", function () {
+            track.style.animationPlayState = "paused";
+          });
+
+          shell.addEventListener("focusout", function (event) {
+            if (!shell.contains(event.relatedTarget)) {
+              track.style.animationPlayState = "running";
+            }
+          });
+
+          shell.addEventListener("touchstart", function () {
+            track.style.animationPlayState = "paused";
+          }, { passive: true });
+
+          shell.addEventListener("touchend", function () {
+            track.style.animationPlayState = "running";
+          }, { passive: true });
+
+          window.addEventListener("resize", updateAnimation, {
+            passive: true
+          });
+
+          updateAnimation();
+        }
+      );
+    }
+
+    /* -------------------------------------------------------
+       MANUAL CAROUSEL CONTROLS
+
+       Arrow controls move the strip in addition to auto-scroll.
+       ------------------------------------------------------- */
+
+    function moveCarousel(track, direction) {
+      const firstCard = track.querySelector(".product-card");
+
+      if (!firstCard) return;
+
+      const trackStyle = window.getComputedStyle(track);
+      const gap = parseFloat(trackStyle.columnGap) ||
+        parseFloat(trackStyle.gap) ||
+        0;
+
+      const amount = firstCard.getBoundingClientRect().width + gap;
+
+      track.style.animationPlayState = "paused";
+      track.style.transition = "transform .35s ease";
+
+      const currentTransform = window.getComputedStyle(track).transform;
+
+      let currentX = 0;
+
+      if (currentTransform && currentTransform !== "none") {
+        try {
+          currentX = new DOMMatrixReadOnly(currentTransform).m41;
+        } catch (error) {
+          currentX = 0;
+        }
       }
 
-      rows.appendChild(row);
-    });
+      const originalCards = Array.from(track.children).length / 2;
+      const originalWidth = track.children.length > 1
+        ? Array.from(track.children)
+            .slice(0, originalCards)
+            .reduce(function (total, card) {
+              return total + card.getBoundingClientRect().width;
+            }, 0) + gap * Math.max(0, originalCards - 1)
+        : 0;
+
+      let targetX = currentX - direction * amount;
+
+      if (originalWidth > 0 && Math.abs(targetX) >= originalWidth) {
+        targetX = targetX % originalWidth;
+      }
+
+      track.style.transform = "translateX(" + targetX + "px)";
+
+      window.setTimeout(function () {
+        track.style.transition = "";
+        track.style.transform = "translateX(0)";
+        track.style.animationPlayState = "running";
+      }, 450);
+    }
+
+    /* -------------------------------------------------------
+       ANNOUNCEMENT ROTATION
+       ------------------------------------------------------- */
+
+    function initialiseAnnouncements() {
+      const element = document.getElementById("announcementMessage");
+      let current = 0;
+
+      if (!element) return;
+
+      element.textContent = announcements[0];
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+      }
+
+      window.setInterval(function () {
+        element.style.opacity = "0";
+
+        window.setTimeout(function () {
+          current = (current + 1) % announcements.length;
+          element.textContent = announcements[current];
+          element.style.opacity = "1";
+        }, 300);
+
+      }, 3500);
+    }
+
+    /* -------------------------------------------------------
+       INITIALISE HOMEPAGE
+       ------------------------------------------------------- */
 
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
+
+    renderCategoryGrid();
+    renderProductSections();
+    initialiseAnnouncements();
   </script>
 
 </body>
