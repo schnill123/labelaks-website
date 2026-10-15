@@ -2,342 +2,1068 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Label AKS | Elegance for Every Occasion</title>
-<meta name="description" content="Explore ladies suits and ethnic wear at Label AKS, Vikas Puri, New Delhi.">
-<meta name="theme-color" content="#355844">
-<link rel="icon" href="/images/label-aks-logo.png">
-<meta property="og:title" content="Label AKS | Elegance for Every Occasion">
-<meta property="og:description" content="Discover beautiful ladies suits and ethnic wear at Label AKS.">
-<meta property="og:url" content="https://labelaks.in/">
-<meta property="og:image" content="https://labelaks.in/images/label-aks-social.jpeg">
-<style>
-:root {
-  --green:#355844; --dark:#263F32; --sage:#E7F0DF;
-  --deep:#D6E5CF; --ivory:#FFFDF5; --gold:#B89550;
-  --text:#29372D; --border:#D6E1D0;
-}
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  margin:0; background:var(--sage); color:var(--text);
-  font-family:Arial,Helvetica,sans-serif; line-height:1.6;
-}
-.announcement-bar {
-  height:38px; overflow:hidden; background:#173F32; color:white;
-  display:flex; align-items:center; justify-content:center;
-  border-bottom:1px solid var(--gold); padding:0 10px;
-}
-.announcement-viewport { height:30px; overflow:hidden; width:100%; }
-.announcement-message {
-  height:30px; display:flex; justify-content:center; align-items:center;
-  font-size:14px; white-space:nowrap; transition:transform .3s ease;
-}
-header {
-  background:var(--green); color:white; padding:12px 5%;
-  display:flex; flex-direction:column; align-items:center; gap:8px;
-  text-align:center;
-}
-.brand {
-  color:white; text-decoration:none; font-family:Georgia,serif;
-  font-size:30px; letter-spacing:4px;
-}
-nav { display:flex; justify-content:center; gap:22px; flex-wrap:wrap; }
-nav a { color:white; text-decoration:none; font-size:14px; }
-nav a:hover { color:#E7D3A4; }
-.hero {
-  background:linear-gradient(135deg,var(--dark),#52745B);
-  color:white; text-align:center; padding:48px 20px;
-}
-.hero h1 {
-  font:normal clamp(34px,5vw,58px)/1.2 Georgia,serif;
-  margin:0 0 12px;
-}
-.hero p { max-width:650px; margin:0 auto 18px; }
-.button {
-  display:inline-block; background:var(--gold); color:white;
-  padding:11px 18px; border:1px solid var(--gold); border-radius:4px;
-  text-decoration:none; font-weight:bold; margin:5px;
-}
-.button:hover { background:#80632E; }
-.intro { text-align:center; padding:32px 15px 10px; }
-h2 { font:normal 30px Georgia,serif; color:var(--green); margin:0 0 8px; }
-.intro p { margin:0; }
-.collection {
-  padding:26px 5% 32px; border-bottom:1px solid var(--border);
-}
-.collection-heading {
-  max-width:1400px; margin:0 auto 14px;
-  display:flex; align-items:center; justify-content:space-between; gap:10px;
-}
-.collection-heading h2 { font-size:27px; }
-.view-all { color:var(--green); font-weight:bold; text-decoration:none; }
-.view-all:hover { text-decoration:underline; }
-.image-strip {
-  display:flex; gap:14px; overflow-x:auto; padding:2px 2px 14px;
-  max-width:1400px; margin:auto; scroll-snap-type:x mandatory;
-  overscroll-behavior-x:contain;
-}
-.image-strip::-webkit-scrollbar { height:7px; }
-.image-strip::-webkit-scrollbar-thumb { background:#9CB39A; border-radius:8px; }
-.product-card {
-  flex:0 0 210px; scroll-snap-align:start; overflow:hidden;
-  background:var(--ivory); border:1px solid var(--border);
-  border-radius:6px; color:var(--green); text-decoration:none;
-  box-shadow:0 3px 12px #263f3210;
-}
-.product-card img {
-  width:100%; height:275px; display:block;
-  object-fit:contain; background:white;
-}
-.product-card span {
-  display:block; text-align:center; padding:9px;
-  font-weight:bold;
-}
-.empty {
-  background:var(--ivory); border:1px dashed var(--border);
-  border-radius:5px; padding:18px; text-align:center;
-}
-.categories {
-  background:var(--ivory); text-align:center; padding:40px 5%;
-}
-.category-tiles {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(165px,1fr));
-  gap:12px; max-width:1200px; margin:22px auto 0;
-}
-.category-tile {
-  display:block; background:var(--sage); color:var(--green);
-  padding:14px 10px; border:1px solid var(--border);
-  border-radius:5px; font-weight:bold; text-decoration:none;
-}
-.category-tile:hover { background:var(--deep); }
-#about { background:var(--ivory); text-align:center; padding:45px 5%; }
-#about p { max-width:760px; margin:auto; }
-.contact { background:var(--deep); text-align:center; padding:45px 5%; }
-.address { font-weight:bold; max-width:650px; margin:12px auto 20px; }
-footer {
-  background:var(--dark); color:white; text-align:center; padding:30px 15px;
-}
-.footer-logo { width:85px; height:85px; object-fit:contain; }
-.footer-tagline { color:#E7D3A4; }
-.whatsapp-float {
-  position:fixed; right:15px; bottom:15px; z-index:10;
-  background:#167D46; color:white; padding:12px 17px;
-  border-radius:28px; text-decoration:none; font-weight:bold;
-  box-shadow:0 3px 12px #0003;
-}
-@media(max-width:600px) {
-  .announcement-bar { height:34px; }
-  .announcement-viewport,.announcement-message { height:28px; }
-  .announcement-message { font-size:12px; }
-  header { padding:10px 12px; }
-  .brand { font-size:26px; letter-spacing:3px; }
-  nav { gap:15px; }
-  .hero { padding:38px 16px; }
-  .collection { padding:23px 13px 27px; }
-  .collection-heading h2 { font-size:23px; }
-  .product-card { flex-basis:160px; }
-  .product-card img { height:215px; }
-  .categories { padding:32px 13px; }
-  .category-tiles { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Label AKS | Elegant Ethnic Wear in Vikaspuri, Delhi</title>
+  <meta name="description" content="Discover elegant suits, designer suits, co-ord sets, Western wear, Indo-Western styles and more at Label AKS, Vikaspuri, New Delhi.">
+  <meta name="theme-color" content="#526b58">
+
+  <link rel="icon" href="/images/label-aks-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #526b58;
+      --green-dark: #344b3b;
+      --green-light: #e8eee7;
+      --gold: #b99a58;
+      --cream: #faf8f2;
+      --white: #ffffff;
+      --text: #30372f;
+      --muted: #777d74;
+      --border: #e6e5dc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .announcement {
+      background: var(--green-dark);
+      color: white;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 9px 0;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .announcement-track {
+      display: inline-flex;
+      min-width: max-content;
+      animation: announcement-scroll 34s linear infinite;
+    }
+
+    .announcement-track span {
+      padding: 0 35px;
+    }
+
+    @keyframes announcement-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 248, 242, 0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--green-dark);
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      margin-top: 4px;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .nav-whatsapp {
+      background: var(--green);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 2px;
+    }
+
+    .nav-whatsapp:hover {
+      color: white;
+      background: var(--green-dark);
+    }
+
+    .hero {
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 75px 22px;
+      background:
+        linear-gradient(rgba(37, 54, 41, 0.65), rgba(37, 54, 41, 0.68)),
+        url('/images/label-aks-social.jpeg') center 45% / cover no-repeat,
+        var(--green);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: #e5d0a1;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      margin: 15px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      font-weight: 600;
+    }
+
+    .hero p {
+      max-width: 580px;
+      margin: 0 auto 28px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #f2f1e9;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #a48749;
+      border-color: #a48749;
+    }
+
+    .button-outline {
+      margin-left: 8px;
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.75);
+    }
+
+    .button-outline:hover {
+      background: white;
+      color: var(--green-dark);
+      border-color: white;
+    }
+
+    .section {
+      max-width: 1280px;
+      margin: auto;
+      padding: 58px 24px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .section-heading h2 {
+      margin: 7px 0 8px;
+      color: var(--green-dark);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 45px);
+      line-height: 1.2;
+    }
+
+    .section-heading p {
+      margin: 0 auto;
+      max-width: 620px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .collection-directory {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 42px;
+    }
+
+    .directory-item {
+      padding: 17px 10px;
+      background: white;
+      border: 1px solid var(--border);
+      text-align: center;
+      color: var(--green-dark);
+      font-size: 11px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .directory-item:hover {
+      border-color: var(--gold);
+      background: var(--green-light);
+      transform: translateY(-2px);
+    }
+
+    .collection-row {
+      margin: 0 0 45px;
+      scroll-margin-top: 110px;
+    }
+
+    .collection-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .collection-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 15px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .collection-heading h3 {
+      margin: 0;
+      color: var(--green-dark);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 29px;
+      line-height: 1.2;
+    }
+
+    .collection-heading p {
+      margin: 4px 0 0;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .view-all {
+      flex-shrink: 0;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 0.5px;
+    }
+
+    .view-all:hover {
+      color: var(--gold);
+    }
+
+    .product-strip {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 3px 2px 15px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) #eeece3;
+    }
+
+    .product-strip::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    .product-strip::-webkit-scrollbar-track {
+      background: #eeece3;
+    }
+
+    .product-strip::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 8px;
+    }
+
+    .product-card {
+      display: block;
+      flex: 0 0 210px;
+      min-width: 0;
+      background: white;
+      border: 1px solid var(--border);
+      scroll-snap-align: start;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 22px rgba(40, 54, 42, 0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 265px;
+      object-fit: contain;
+      background: #fff;
+      padding: 5px;
+    }
+
+    .product-caption {
+      padding: 12px;
+      text-align: center;
+      border-top: 1px solid #f0efe8;
+    }
+
+    .product-caption strong {
+      display: block;
+      color: var(--green-dark);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    .product-caption span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .empty-collection {
+      padding: 23px;
+      border: 1px dashed #d7d8cb;
+      background: rgba(255,255,255,0.55);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .about {
+      background: var(--green-light);
+    }
+
+    .about-inner {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .about h2 {
+      margin: 8px 0 15px;
+      color: var(--green-dark);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+    }
+
+    .about p {
+      max-width: 760px;
+      margin: 0 auto 22px;
+      color: #596258;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .visit {
+      background: var(--cream);
+    }
+
+    .visit-inner {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .visit h2 {
+      margin: 8px 0 12px;
+      color: var(--green-dark);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+    }
+
+    .address {
+      margin: 0 auto 22px;
+      color: #545b52;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .visit-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .visit-buttons .button-outline-green {
+      background: transparent;
+      border-color: var(--green);
+      color: var(--green-dark);
+    }
+
+    .visit-buttons .button-outline-green:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    footer {
+      padding: 28px 20px;
+      background: var(--green-dark);
+      color: white;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
+
+    footer p {
+      margin: 6px 0;
+      font-size: 10px;
+      color: #e0e6dd;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 15px 0;
+      font-size: 11px;
+    }
+
+    .footer-links a:hover {
+      color: #e5d0a1;
+    }
+
+    .copyright {
+      margin-top: 18px;
+      color: #c9d2c7;
+      font-size: 9px;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      z-index: 80;
+      right: 18px;
+      bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 17px;
+      border-radius: 30px;
+      background: #218c54;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .floating-whatsapp:hover {
+      background: #176b3f;
+    }
+
+    @media (max-width: 850px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .collection-directory {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .hero {
+        min-height: 390px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .header-inner {
+        padding: 10px 14px;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-name {
+        font-size: 26px;
+      }
+
+      nav {
+        gap: 10px 14px;
+      }
+
+      nav a {
+        font-size: 10px;
+      }
+
+      .nav-whatsapp {
+        padding: 8px 10px;
+      }
+
+      .hero {
+        min-height: 370px;
+        padding: 55px 18px;
+      }
+
+      .hero p {
+        font-size: 12px;
+      }
+
+      .button {
+        padding: 12px 14px;
+        font-size: 10px;
+      }
+
+      .section {
+        padding: 42px 15px;
+      }
+
+      .collection-directory {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .directory-item {
+        padding: 14px 7px;
+        font-size: 10px;
+      }
+
+      .collection-heading h3 {
+        font-size: 25px;
+      }
+
+      .product-card {
+        flex-basis: 170px;
+      }
+
+      .product-card img {
+        height: 225px;
+      }
+
+      .about-inner {
+        padding: 45px 18px;
+      }
+
+      .about h2,
+      .visit h2 {
+        font-size: 35px;
+      }
+
+      .floating-whatsapp {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .announcement-track {
+        animation: none;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="announcement-bar" role="region" aria-label="Store announcements">
-  <div class="announcement-viewport">
-    <div class="announcement-message" id="announcementMessage">
-      Exciting offers when you visit our store
+  <!-- Announcement ticker -->
+  <div class="announcement">
+    <div class="announcement-track" aria-label="Label AKS announcements">
+      <span>Welcome to Label AKS</span>
+      <span>Discover Styles for Every Occasion</span>
+      <span>Visit Our Showroom in Vikaspuri, Delhi</span>
+      <span>For Enquiries, Connect with Us on WhatsApp</span>
+      <span>Welcome to Label AKS</span>
+      <span>Discover Styles for Every Occasion</span>
+      <span>Visit Our Showroom in Vikaspuri, Delhi</span>
+      <span>For Enquiries, Connect with Us on WhatsApp</span>
     </div>
   </div>
-</div>
 
-<header>
-  <a class="brand" href="/">LABEL AKS</a>
-  <nav aria-label="Main navigation">
-    <a href="#collection">Collections</a>
-    <a href="#about">About Us</a>
-    <a href="#visit">Visit Us</a>
-  </nav>
-</header>
+  <!-- Header and navigation -->
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Label AKS home">
+        <img src="/images/label-aks-logo.png" alt="Label AKS logo">
+        <div>
+          <div class="brand-name">Label AKS</div>
+          <div class="brand-subtitle">Style • Elegance • You</div>
+        </div>
+      </a>
 
-<main>
-<section class="hero">
-  <h1>Elegance for Every Occasion</h1>
-  <p>Discover beautiful ladies suits and ethnic wear, thoughtfully selected for your special moments.</p>
-  <a class="button" href="#collection">Explore Collection</a>
-  <a class="button" href="https://wa.me/919810057892?text=Hello%20Label%20AKS%2C%20I%20would%20like%20to%20know%20about%20your%20collection." target="_blank" rel="noopener">Chat on WhatsApp</a>
-</section>
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">About Us</a>
+        <a href="#visit">Visit Us</a>
+        <a class="nav-whatsapp"
+           href="https://wa.me/919810057892"
+           target="_blank"
+           rel="noopener noreferrer">WhatsApp Us</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="intro" id="collection">
-  <h2>Explore Our Collections</h2>
-  <p>Swipe through the designs. Select any collection to see all its products.</p>
-</div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Discover Your Style</div>
+      <h1>Elegance in Every Thread</h1>
+      <p>
+        Explore thoughtfully selected styles for everyday wear, celebrations
+        and special occasions at Label AKS, your fashion destination in Vikaspuri.
+      </p>
+      <a class="button" href="#collections">Explore Collections</a>
+      <a class="button button-outline"
+         href="https://wa.me/919810057892"
+         target="_blank"
+         rel="noopener noreferrer">Contact Us</a>
+    </div>
+  </section>
 
-<div id="collectionRows"></div>
+  <!-- Collections -->
+  <main>
+    <section class="section" id="collections">
+      <div class="section-heading">
+        <div class="section-kicker">Find Your Look</div>
+        <h2>Our Collections</h2>
+        <p>
+          Browse our collections below. Select any collection or product
+          to explore that category.
+        </p>
+      </div>
 
-<section class="categories">
-  <h2>Shop by Category</h2>
-  <p>Choose a collection to browse its designs.</p>
-  <div class="category-tiles" id="categoryTiles"></div>
-</section>
+      <!-- Category shortcuts are generated automatically -->
+      <div class="collection-directory" id="collectionDirectory"></div>
 
-<section id="about">
-  <h2>About Label AKS</h2>
-  <p>Your destination for elegant ladies suits and ethnic wear, with styles for everyday elegance and special occasions. Visit our showroom to explore our collection.</p>
-</section>
+      <!-- Product rows are generated in the desired order -->
+      <div id="collectionRows" aria-live="polite"></div>
+    </section>
 
-<section id="visit" class="contact">
-  <h2>Visit Our Showroom</h2>
-  <p><strong>Label AKS</strong></p>
-  <p class="address">537, Site 1, Vikas Puri, Near Metro Pillar 624, New Delhi - 110018</p>
-  <a class="button" href="https://www.google.com/maps/dir/?api=1&amp;destination=28.627207420079973%2C77.07054470723371" target="_blank" rel="noopener">Get Directions to Label AKS</a>
-  <p><a href="https://wa.me/919810057892" target="_blank" rel="noopener">Contact us on WhatsApp</a></p>
-</section>
-</main>
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="about-inner">
+        <div class="section-kicker">Our Story</div>
+        <h2>Welcome to Label AKS</h2>
+        <p>
+          At Label AKS, we believe that what you wear should make you feel
+          confident, comfortable and beautiful. Discover a curated selection
+          of styles, from elegant suits and designer collections to contemporary
+          Western and Indo-Western looks.
+        </p>
+        <p>
+          Visit our showroom and explore styles for everyday dressing,
+          family occasions, festivities and celebrations.
+        </p>
+        <a class="button"
+           href="https://wa.me/919810057892"
+           target="_blank"
+           rel="noopener noreferrer">Enquire on WhatsApp</a>
+      </div>
+    </section>
 
-<footer>
-  <img class="footer-logo" src="/images/label-aks-logo.png" alt="Label AKS logo" loading="lazy">
-  <p><strong>LABEL AKS</strong></p>
-  <p class="footer-tagline">Elegance for Every Occasion</p>
-  <p>537, Site 1, Vikas Puri, Near Metro Pillar 624, New Delhi - 110018</p>
-  <p>© <span id="year"></span> Label AKS. All rights reserved.</p>
-</footer>
+    <!-- Store address and directions -->
+    <section class="section visit" id="visit">
+      <div class="visit-inner">
+        <div class="section-kicker">Come Say Hello</div>
+        <h2>Visit Our Showroom</h2>
+        <p class="address">
+          <strong>Label AKS</strong><br>
+          537, Site 1, Vikaspuri,<br>
+          Near Metro Pillar 624,<br>
+          New Delhi – 110018
+        </p>
 
-<a class="whatsapp-float" href="https://wa.me/919810057892" target="_blank" rel="noopener" aria-label="Chat with Label AKS on WhatsApp">WhatsApp</a>
+        <div class="visit-buttons">
+          <a class="button"
+             href="https://www.google.com/maps/search/?api=1&query=Label+AKS%2C+537%2C+Site+1%2C+Vikaspuri%2C+Near+Metro+Pillar+624%2C+New+Delhi+110018"
+             target="_blank"
+             rel="noopener noreferrer">Get Directions</a>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
+          <a class="button button-outline-green"
+             href="https://wa.me/919810057892"
+             target="_blank"
+             rel="noopener noreferrer">Message Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-/* Folder names and counts must match GitHub exactly. */
-const categories = [
-  {slug:"suit-sets", name:"Suit Sets", images:[
-    {src:"/images/Suit%201.jpeg", label:"Suit Collection 01"},
-    {src:"/images/Suit2.jpeg", label:"Suit Collection 02"},
-    {src:"/images/Suit4.jpeg", label:"Suit Collection 03"},
-    {src:"/images/suit%201a.jpeg", label:"Suit Collection 04"},
-    {src:"/images/suit3.jpeg", label:"Suit Collection 05"},
-    {src:"/images/suit5.jpeg", label:"Suit Collection 06"},
-    {src:"/images/suit6.jpeg", label:"Suit Collection 07"},
-    {src:"/images/cod.jpeg", label:"Featured Design 01"},
-    {src:"/images/Cod2.jpeg", label:"Featured Design 02"}
-  ]},
-  {slug:"daily-wear", name:"Daily Wear", images:[]},
-  {slug:"festive-wear", name:"Festive Wear", images:[]},
-  {slug:"party-wear", name:"Party & Occasion Wear", images:[]},
-  {slug:"designer-suits", name:"Designer Suits", folder:"images/designer-suits", count:71},
-  {slug:"lehengas", name:"Lehengas", images:[
-    {src:"/images/Lehenga%201.jpeg", label:"Lehenga Collection"}
-  ]},
-  {slug:"new-arrivals", name:"New Arrivals", images:[]},
-  {slug:"westernwear", name:"Western Wear", folder:"images/Westernwear", count:11},
-  {slug:"cordsets", name:"Co-ord Sets", folder:"images/cordsets", count:37},
-  {slug:"indowestern", name:"Indo-Western", folder:"images/indowestern", count:22}
-];
+  <!-- Footer -->
+  <footer>
+    <div class="footer-brand">Label AKS</div>
+    <p>Style • Elegance • You</p>
+    <p>537, Site 1, Vikaspuri, New Delhi – 110018</p>
 
-function getProducts(category) {
-  if (category.count) {
-    return Array.from({length:category.count}, (_,i) => ({
-      src:`/${category.folder}/${i+1}.jpeg`,
-      label:`${category.name} ${String(i+1).padStart(2,"0")}`
-    }));
-  }
-  return category.images || [];
-}
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About Us</a>
+      <a href="#visit">Visit Us</a>
+      <a href="https://wa.me/919810057892"
+         target="_blank"
+         rel="noopener noreferrer">WhatsApp</a>
+    </div>
 
-function categoryUrl(category) {
-  return `/category.html?category=${encodeURIComponent(category.slug)}`;
-}
+    <div class="copyright">
+      © <span id="currentYear"></span> Label AKS. All rights reserved.
+    </div>
+  </footer>
 
-const rows = document.getElementById("collectionRows");
-const tiles = document.getElementById("categoryTiles");
+  <!-- Floating WhatsApp shortcut -->
+  <a class="floating-whatsapp"
+     href="https://wa.me/919810057892"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contact Label AKS on WhatsApp">
+    WhatsApp Us
+  </a>
 
-categories.forEach(category => {
-  const tile = document.createElement("a");
-  tile.className = "category-tile";
-  tile.href = categoryUrl(category);
-  tile.textContent = category.name;
-  tiles.appendChild(tile);
+  <script>
+    /*
+      COLLECTION ORDER:
+      1. Western Wear
+      2. Co-ord Sets
+      3. Indo-Western
+      4. Designer Suits
+      5. Suit Sets
+      6. All remaining categories
 
-  const section = document.createElement("section");
-  section.className = "collection";
+      Numbered images are loaded from their existing folders.
+      Keep folder names and image filename capitalization exactly as uploaded.
+    */
 
-  const heading = document.createElement("div");
-  heading.className = "collection-heading";
+    const categories = [
+      {
+        slug: "westernwear",
+        name: "Western Wear",
+        folder: "Westernwear",
+        count: 11,
+        description: "Explore our Western Wear collection."
+      },
+      {
+        slug: "cordsets",
+        name: "Co-ord Sets",
+        folder: "cordsets",
+        count: 37,
+        description: "Discover coordinated looks for different occasions."
+      },
+      {
+        slug: "indowestern",
+        name: "Indo-Western",
+        folder: "indowestern",
+        count: 22,
+        description: "A blend of Indian elegance and contemporary style."
+      },
+      {
+        slug: "designer-suits",
+        name: "Designer Suits",
+        folder: "designer-suits",
+        count: 71,
+        description: "Browse our designer suit collection."
+      },
+      {
+        slug: "suit-sets",
+        name: "Suit Sets",
+        products: [
+          { image: "/images/Suit 1.jpeg", label: "Suit Sets" },
+          { image: "/images/Suit2.jpeg", label: "Suit Sets" },
+          { image: "/images/Suit4.jpeg", label: "Suit Sets" },
+          { image: "/images/suit 1a.jpeg", label: "Suit Sets" },
+          { image: "/images/suit3.jpeg", label: "Suit Sets" },
+          { image: "/images/suit5.jpeg", label: "Suit Sets" },
+          { image: "/images/suit6.jpeg", label: "Suit Sets" },
+          { image: "/images/Cod2.jpeg", label: "Co-ord Sets" },
+          { image: "/images/cod.jpeg", label: "Co-ord Sets" }
+        ],
+        description: "Discover suits selected for your wardrobe."
+      },
+      {
+        slug: "lehengas",
+        name: "Lehengas",
+        products: [
+          { image: "/images/Lehenga%201.jpeg", label: "Lehengas" }
+        ],
+        description: "Explore our lehenga styles."
+      },
+      {
+        slug: "daily-wear",
+        name: "Daily Wear",
+        products: [],
+        description: "Comfortable styles for everyday dressing."
+      },
+      {
+        slug: "festive-wear",
+        name: "Festive Wear",
+        products: [],
+        description: "Styles for festive gatherings and celebrations."
+      },
+      {
+        slug: "party-wear",
+        name: "Party & Occasion Wear",
+        products: [],
+        description: "Looks for parties and special occasions."
+      },
+      {
+        slug: "new-arrivals",
+        name: "New Arrivals",
+        products: [],
+        description: "Discover the latest additions to our collection."
+      }
+    ];
 
-  const title = document.createElement("h2");
-  title.textContent = category.name;
+    /*
+      Build the product list for a category.
+      Numbered folders use 1.jpeg, 2.jpeg, 3.jpeg, and so on.
+    */
+    function getProducts(category) {
+      if (Array.isArray(category.products)) {
+        return category.products;
+      }
 
-  const viewAll = document.createElement("a");
-  viewAll.className = "view-all";
-  viewAll.href = categoryUrl(category);
-  viewAll.textContent = "View all →";
-  heading.append(title, viewAll);
-  section.appendChild(heading);
+      if (category.folder && category.count > 0) {
+        return Array.from({ length: category.count }, (_, index) => {
+          const number = index + 1;
 
-  const products = getProducts(category);
+          return {
+            image: `/images/${category.folder}/${number}.jpeg`,
+            label: category.name
+          };
+        });
+      }
 
-  if (!products.length) {
-    const empty = document.createElement("div");
-    empty.className = "empty";
-    empty.textContent = "New styles are being added to this collection. Please check back soon.";
-    section.appendChild(empty);
-  } else {
-    const strip = document.createElement("div");
-    strip.className = "image-strip";
+      return [];
+    }
 
-    products.forEach((product, index) => {
+    /*
+      A collection is considered populated when products are configured.
+      This puts empty collections after collections with product photos.
+      The first five populated collections retain the requested order.
+    */
+    const orderedCategories = [...categories].sort((a, b) => {
+      const aHasProducts = getProducts(a).length > 0;
+      const bHasProducts = getProducts(b).length > 0;
+
+      if (aHasProducts !== bHasProducts) {
+        return aHasProducts ? -1 : 1;
+      }
+
+      return categories.indexOf(a) - categories.indexOf(b);
+    });
+
+    const directory = document.getElementById("collectionDirectory");
+    const rows = document.getElementById("collectionRows");
+
+    function categoryUrl(category) {
+      return `/category.html?category=${encodeURIComponent(category.slug)}`;
+    }
+
+    /*
+      Create category shortcut tiles in the same order as the collection rows.
+    */
+    orderedCategories.forEach(category => {
       const link = document.createElement("a");
-      link.className = "product-card";
+      link.className = "directory-item";
       link.href = categoryUrl(category);
-      link.setAttribute("aria-label", `Browse ${category.name}`);
-
-      const img = document.createElement("img");
-      img.src = product.src;
-      img.alt = product.label;
-      img.loading = index < 2 ? "eager" : "lazy";
-      img.onerror = () => link.remove();
-
-      const caption = document.createElement("span");
-      caption.textContent = product.label;
-
-      link.append(img, caption);
-      strip.appendChild(link);
+      link.textContent = category.name;
+      directory.appendChild(link);
     });
 
-    section.appendChild(strip);
-  }
-  rows.appendChild(section);
-});
+    /*
+      Create each collection heading and horizontal image strip.
+      Clicking a photo opens the separate page for that category.
+    */
+    orderedCategories.forEach(category => {
+      const products = getProducts(category);
 
-const announcements = [
-  "Exciting offers when you visit our store",
-  "🚚 Free shipping on orders above ₹5,999/-",
-  "🌸 Discover styles made for every occasion",
-  "🎁 Special surprises await in-store",
-  "💚 Your next favourite suit awaits at Label AKS",
-  "📍 Visit us at Vikas Puri, New Delhi"
-];
-const message = document.getElementById("announcementMessage");
-let announcementIndex = 0;
+      const row = document.createElement("section");
+      row.className = "collection-row";
+      row.id = `collection-${category.slug}`;
 
-setInterval(() => {
-  const height = message.parentElement.clientHeight;
-  message.style.transform = `translateY(-${height}px)`;
-  setTimeout(() => {
-    announcementIndex = (announcementIndex + 1) % announcements.length;
-    message.style.transition = "none";
-    message.style.transform = `translateY(${height}px)`;
-    message.textContent = announcements[announcementIndex];
-    void message.offsetHeight;
-    requestAnimationFrame(() => {
-      message.style.transition = "transform .3s ease";
-      message.style.transform = "translateY(0)";
+      const heading = document.createElement("div");
+      heading.className = "collection-heading";
+
+      const headingText = document.createElement("div");
+
+      const title = document.createElement("h3");
+      title.textContent = category.name;
+
+      const description = document.createElement("p");
+      description.textContent = category.description;
+
+      headingText.appendChild(title);
+      headingText.appendChild(description);
+
+      const viewAll = document.createElement("a");
+      viewAll.className = "view-all";
+      viewAll.href = categoryUrl(category);
+      viewAll.textContent = "VIEW COLLECTION →";
+      viewAll.setAttribute("aria-label", `View all ${category.name}`);
+
+      heading.appendChild(headingText);
+      heading.appendChild(viewAll);
+      row.appendChild(heading);
+
+      if (products.length === 0) {
+        const empty = document.createElement("div");
+        empty.className = "empty-collection";
+        empty.textContent =
+          "New styles are being added to this collection. Please check back soon.";
+        row.appendChild(empty);
+      } else {
+        const strip = document.createElement("div");
+        strip.className = "product-strip";
+        strip.setAttribute("aria-label", `${category.name} product photos`);
+
+        products.forEach((product, index) => {
+          const link = document.createElement("a");
+          link.className = "product-card";
+          link.href = categoryUrl(category);
+          link.setAttribute(
+            "aria-label",
+            `Explore ${category.name}, product ${index + 1}`
+          );
+
+          const img = document.createElement("img");
+          img.src = product.image;
+          img.alt = `${category.name} – style ${index + 1}`;
+          img.loading = index < 3 ? "eager" : "lazy";
+          img.decoding = "async";
+
+          img.onerror = () => {
+            link.remove();
+          };
+
+          const caption = document.createElement("div");
+          caption.className = "product-caption";
+
+          const productName = document.createElement("strong");
+          productName.textContent = category.name;
+
+          const productLabel = document.createElement("span");
+          productLabel.textContent = "Explore Collection";
+
+          caption.appendChild(productName);
+          caption.appendChild(productLabel);
+
+          link.appendChild(img);
+          link.appendChild(caption);
+          strip.appendChild(link);
+        });
+
+        row.appendChild(strip);
+      }
+
+      rows.appendChild(row);
     });
-  }, 300);
-}, 3000);
-</script>
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
 </body>
 </html>
