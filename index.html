@@ -6,34 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Label AKS | Elegant Ladies Suits in Vikas Puri</title>
-  <link rel="icon" type="image/png" href="/images/label-aks-logo.png?v=2">
-  <meta name="description" content="Discover elegant ladies suits and ethnic wear at Label AKS, 537, Site 1, Vikas Puri, Near Metro Pillar 624, New Delhi - 110018. Contact us for prices and availability.">
+  <meta name="description" content="Discover elegant ladies suits and ethnic wear at Label AKS, 537, Site 1, Vikas Puri, Near Metro Pillar 624, New Delhi - 110018.">
   <meta name="theme-color" content="#355844">
 
-  <!-- Browser tab icon: uses the existing social image for now -->
-  <link rel="icon" type="image/jpeg" href="/images/label-aks-social.jpg">
-  <link rel="apple-touch-icon" href="/images/label-aks-social.jpg">
+  <!-- Browser tab icon -->
+  <link rel="icon" type="image/png" href="/images/label-aks-logo.png">
+  <link rel="apple-touch-icon" href="/images/label-aks-logo.png">
 
-  <!-- Social media sharing preview -->
+  <!-- Social sharing preview -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Label AKS">
   <meta property="og:title" content="Label AKS | Elegance for Every Occasion">
   <meta property="og:description" content="Explore beautiful ladies suits and ethnic wear at Label AKS, Vikas Puri, New Delhi.">
   <meta property="og:url" content="https://labelaks.in/">
-  <meta property="og:image" content="https://labelaks.in/images/label-aks-social.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image" content="https://labelaks.in/images/label-aks-social.jpeg">
   <meta property="og:image:alt" content="Label AKS ladies ethnic wear boutique">
-
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Label AKS | Elegance for Every Occasion">
   <meta name="twitter:description" content="Discover elegant ladies suits and ethnic wear at Label AKS.">
-  <meta name="twitter:image" content="https://labelaks.in/images/label-aks-social.jpg">
+  <meta name="twitter:image" content="https://labelaks.in/images/label-aks-social.jpeg">
 
   <style>
     :root {
       --green: #355844;
       --green-dark: #263F32;
+      --announcement-green: #173F32;
       --sage: #E7F0DF;
       --sage-deep: #D6E5CF;
       --ivory: #FFFDF5;
@@ -59,7 +56,40 @@
       line-height: 1.6;
     }
 
-    /* CENTRED HEADER AND BRANDING */
+    /* SLIM ANNOUNCEMENT BAR */
+
+    .announcement-bar {
+      height: 38px;
+      background: var(--announcement-green);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--gold);
+      padding: 0 12px;
+    }
+
+    .announcement-viewport {
+      height: 30px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .announcement-message {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.2;
+      white-space: nowrap;
+      transition: transform 0.6s ease;
+    }
+
+    /* HEADER - TEXT ONLY, NO LOGO IMAGE */
 
     header {
       background: var(--green);
@@ -78,18 +108,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       width: 100%;
       color: white;
       text-decoration: none;
       text-align: center;
-    }
-
-    .brand img {
-      width: 76px;
-      height: 76px;
-      object-fit: contain;
-      background: transparent;
     }
 
     .brand-name {
@@ -292,13 +314,22 @@
     /* MOBILE LAYOUT */
 
     @media (max-width: 600px) {
-      header {
-        padding: 18px 12px;
+      .announcement-bar {
+        height: 34px;
+        padding: 0 8px;
       }
 
-      .brand img {
-        width: 66px;
-        height: 66px;
+      .announcement-viewport,
+      .announcement-message {
+        height: 28px;
+      }
+
+      .announcement-message {
+        font-size: 12px;
+      }
+
+      header {
+        padding: 18px 12px;
       }
 
       .brand-name {
@@ -358,19 +389,40 @@
       .product img {
         height: 300px;
       }
+
+      .announcement-message {
+        font-size: 11px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .announcement-message {
+        transition: none;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar"
+       role="region"
+       aria-label="Store announcements">
+    <div class="announcement-viewport">
+      <div class="announcement-message" id="announcementMessage">
+        Exciting offers on Store Visit
+      </div>
+    </div>
+  </div>
+
   <!-- HEADER -->
   <header>
     <a class="brand" href="/" aria-label="Label AKS home">
-      <img
-        src="/images/label-aks-social.jpg"
-        alt="Label AKS logo"
-      >
       <span class="brand-name">LABEL AKS</span>
     </a>
 
@@ -513,7 +565,7 @@
   <footer>
     <img
       class="footer-logo"
-      src="/images/label-aks-social.jpeg"
+      src="/images/label-aks-logo.png"
       alt="Label AKS logo"
       loading="lazy"
     >
@@ -540,9 +592,53 @@
     aria-label="Chat with Label AKS on WhatsApp"
   >WhatsApp</a>
 
+  <!-- ANNOUNCEMENT ROTATION -->
   <script>
     document.getElementById("year").textContent =
       new Date().getFullYear();
+
+    const announcements = [
+      "✨ Exciting offers on Store Visit",
+      "🚚 Free shipping on orders above ₹5,999/-"
+    ];
+
+    const message = document.getElementById("announcementMessage");
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    let currentAnnouncement = 0;
+
+    if (!reducedMotion) {
+      setInterval(() => {
+        const messageHeight = message.offsetHeight;
+
+        // Slide the current announcement upward.
+        message.style.transform =
+          `translateY(-${messageHeight}px)`;
+
+        setTimeout(() => {
+          currentAnnouncement =
+            (currentAnnouncement + 1) % announcements.length;
+
+          // Place the next message below the viewport.
+          message.style.transition = "none";
+          message.style.transform =
+            `translateY(${messageHeight}px)`;
+
+          message.textContent =
+            announcements[currentAnnouncement];
+
+          // Restart the transition cleanly.
+          void message.offsetHeight;
+
+          requestAnimationFrame(() => {
+            message.style.transition = "transform 0.6s ease";
+            message.style.transform = "translateY(0)";
+          });
+        }, 600);
+      }, 3500);
+    }
   </script>
 
 </body>
