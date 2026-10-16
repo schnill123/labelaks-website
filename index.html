@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,8 +43,10 @@
       max-width: 100%;
     }
 
-    /* Announcement ticker */
+    /* Announcement ticker — continuous scrolling */
+
     .announcement-bar {
+      width: 100%;
       overflow: hidden;
       background: var(--green-dark);
       color: #fff;
@@ -56,19 +59,34 @@
     .announcement-track {
       display: flex;
       width: max-content;
-      animation: announcementScroll 28s linear infinite;
+      flex-wrap: nowrap;
+      animation: announcementScroll 24s linear infinite;
+      will-change: transform;
     }
 
-    .announcement-track span {
+    .announcement-group {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+    }
+
+    .announcement-group span {
+      display: inline-block;
+      flex: 0 0 auto;
       padding-right: 65px;
     }
 
     @keyframes announcementScroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
     }
 
     /* Instagram banner */
+
     .instagram-banner {
       display: block;
       background: #f3eee4;
@@ -85,6 +103,7 @@
     }
 
     /* Brand header */
+
     .site-header {
       background: #fff;
       text-align: center;
@@ -119,6 +138,7 @@
     }
 
     /* Navigation */
+
     .main-nav {
       position: sticky;
       top: 0;
@@ -150,6 +170,7 @@
     }
 
     /* Hero */
+
     .hero {
       min-height: 245px;
       padding: 48px 20px;
@@ -205,7 +226,8 @@
       border-color: #fff;
     }
 
-    /* Shared section headings */
+    /* Shared section heading */
+
     .section-heading {
       text-align: center;
       padding: 0 18px;
@@ -237,6 +259,7 @@
     }
 
     /* Collections directory */
+
     .collections {
       padding: 55px 5% 35px;
       background: var(--cream);
@@ -294,6 +317,7 @@
     }
 
     /* Product scrolling sections */
+
     .product-section {
       padding: 45px 0 38px;
       border-bottom: 1px solid #eee9df;
@@ -325,6 +349,7 @@
     }
 
     /* Designer Suits scroll more slowly */
+
     .section-designer-suits .product-track {
       animation-duration: 100s;
     }
@@ -427,6 +452,7 @@
     }
 
     /* Instagram feed */
+
     .instagram-section {
       padding: 55px 20px;
       background: var(--cream);
@@ -480,23 +506,18 @@
       background: var(--green-dark);
     }
 
-    /* Updated Fouita iframe */
     .instagram-widget-wrap {
-      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      overflow: hidden;
+      min-height: 180px;
     }
 
-    .instagram-widget-wrap iframe {
-      display: block;
+    .instagram-widget-wrap .ft {
       width: 100%;
-      height: 500px;
-      border: 0;
-      overflow: hidden;
     }
 
     /* Our Story */
+
     .our-story {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -549,6 +570,7 @@
     }
 
     /* Showroom */
+
     .showroom {
       padding: 55px 20px;
       text-align: center;
@@ -556,37 +578,15 @@
     }
 
     .showroom-details {
-      max-width: 900px;
+      max-width: 650px;
       margin: 0 auto;
       color: #555;
       font-size: 14px;
-      line-height: 1.8;
+      line-height: 1.9;
     }
 
     .showroom-details strong {
       color: var(--green);
-    }
-
-    .showroom-info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: stretch;
-      gap: 28px;
-      margin-top: 28px;
-      text-align: left;
-    }
-
-    .showroom-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 24px 28px;
-      border: 1px solid #eee7dc;
-      background: #fff;
-    }
-
-    .showroom-info p {
-      margin: 6px 0;
     }
 
     .showroom-actions {
@@ -597,33 +597,34 @@
       margin-top: 24px;
     }
 
-    /* Compact opening-hours panel */
+    /* Opening hours */
+
     .opening-hours {
-      margin: 0;
-      padding: 22px 26px;
+      max-width: 430px;
+      margin: 24px auto 0;
+      padding: 20px 24px;
       background: var(--cream);
       border: 1px solid #eee7dc;
       text-align: left;
     }
 
     .opening-hours h3 {
-      margin: 0 0 12px;
+      margin: 0 0 14px;
       color: var(--green);
       font-family: Georgia, "Times New Roman", serif;
       font-size: 21px;
       font-weight: normal;
-      text-align: left;
+      text-align: center;
     }
 
     .hours-row {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      gap: 14px;
-      padding: 5px 0;
+      gap: 18px;
+      padding: 9px 0;
       border-bottom: 1px solid #e8e0d4;
-      font-size: 12px;
-      line-height: 1.45;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
     .hours-row:last-child {
@@ -632,15 +633,14 @@
 
     .hours-row strong {
       color: var(--green);
-      font-weight: 600;
     }
 
     .hours-row span {
       text-align: right;
-      white-space: nowrap;
     }
 
     /* Footer */
+
     .site-footer {
       background: var(--green-dark);
       color: #fff;
@@ -699,6 +699,7 @@
     }
 
     /* Floating WhatsApp button */
+
     .whatsapp-float {
       position: fixed;
       z-index: 50;
@@ -722,7 +723,8 @@
       background: #176b3d;
     }
 
-    /* Tablet */
+    /* Responsive layout */
+
     @media (max-width: 1000px) {
       .category-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -740,7 +742,6 @@
       }
     }
 
-    /* Mobile */
     @media (max-width: 650px) {
       :root {
         --product-gap: 12px;
@@ -826,18 +827,6 @@
         font-size: 11px;
       }
 
-      .instagram-section {
-        padding: 40px 14px;
-      }
-
-      .instagram-heading {
-        margin-bottom: 20px;
-      }
-
-      .instagram-widget-wrap iframe {
-        height: 380px;
-      }
-
       .our-story {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -857,21 +846,6 @@
         padding: 40px 18px;
       }
 
-      .showroom-info-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-        margin-top: 20px;
-      }
-
-      .showroom-info,
-      .opening-hours {
-        padding: 18px 20px;
-      }
-
-      .hours-row {
-        font-size: 12px;
-      }
-
       .footer-grid {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -888,13 +862,14 @@
       }
     }
 
-    /* Respect reduced-motion settings */
+    /* Respect reduced-motion preferences for product scrolling.
+       Keep the announcement ticker moving. */
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
       }
 
-      .announcement-track,
       .product-track {
         animation: none;
       }
@@ -912,10 +887,17 @@
   <!-- Announcement ticker -->
   <div class="announcement-bar" aria-label="Store announcements">
     <div class="announcement-track">
-      <span>WELCOME TO LABEL AKS · ELEGANCE IN EVERY THREAD</span>
-      <span>DISCOVER YOUR NEXT FAVOURITE LOOK · VISIT OUR VIKASPURI SHOWROOM</span>
-      <span>WELCOME TO LABEL AKS · ELEGANCE IN EVERY THREAD</span>
-      <span>DISCOVER YOUR NEXT FAVOURITE LOOK · VISIT OUR VIKASPURI SHOWROOM</span>
+
+      <div class="announcement-group">
+        <span>WELCOME TO LABEL AKS · ELEGANCE IN EVERY THREAD</span>
+        <span>DISCOVER YOUR NEXT FAVOURITE LOOK · VISIT OUR VIKASPURI SHOWROOM</span>
+      </div>
+
+      <div class="announcement-group" aria-hidden="true">
+        <span>WELCOME TO LABEL AKS · ELEGANCE IN EVERY THREAD</span>
+        <span>DISCOVER YOUR NEXT FAVOURITE LOOK · VISIT OUR VIKASPURI SHOWROOM</span>
+      </div>
+
     </div>
   </div>
 
@@ -924,10 +906,9 @@
     class="instagram-banner"
     href="https://www.instagram.com/label_aks/"
     target="_blank"
-    rel="noopener noreferrer"
+    rel="noopener"
   >
-    FOLLOW OUR JOURNEY ON INSTAGRAM ·
-    <strong>DISCOVER LABEL AKS</strong>
+    FOLLOW OUR JOURNEY ON INSTAGRAM · <strong>DISCOVER LABEL AKS</strong>
   </a>
 
   <!-- Brand header -->
@@ -954,11 +935,7 @@
     <a href="#instagram">Instagram</a>
     <a href="#our-story">Our Story</a>
     <a href="#showroom">Visit Us</a>
-    <a
-      href="https://wa.me/919810057892"
-      target="_blank"
-      rel="noopener noreferrer"
-    >Contact</a>
+    <a href="https://wa.me/919810057892" target="_blank" rel="noopener">Contact</a>
   </nav>
 
   <!-- Hero -->
@@ -989,15 +966,12 @@
   <!-- Product galleries are generated here -->
   <div id="productSections"></div>
 
-  <!-- Instagram feed -->
+  <!-- Instagram feed: Label AKS -->
   <section class="instagram-section" id="instagram">
     <div class="instagram-heading">
       <div class="instagram-eyebrow">Style · Inspiration · You</div>
       <h2>Follow Our Style on Instagram</h2>
-      <p>
-        Discover our latest looks, new arrivals and style inspiration.
-      </p>
-
+      <p>Discover our latest looks, new arrivals and style inspiration.</p>
       <a
         href="https://www.instagram.com/label_aks/"
         target="_blank"
@@ -1006,19 +980,13 @@
       >Follow @label_aks</a>
     </div>
 
-    <!-- Updated Fouita iframe embed -->
     <div class="instagram-widget-wrap">
-      <iframe
-        src="https://emb.fouita.com/widget/0x563c54/ftkbj4rp2"
-        title="Label AKS Instagram Carousel Feed"
-        width="100%"
-        height="500"
-        frameborder="0"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
+      <div data-key="Carousel Instagram Feed " class="ft" id="ftkbj4rp2"></div>
     </div>
   </section>
+
+  <!-- Fouita Instagram feed widget -->
+  <script src="https://wdg.fouita.com/widgets/0x563c54.js"></script>
 
   <!-- Our Story -->
   <section class="our-story" id="our-story">
@@ -1034,24 +1002,20 @@
     <div class="story-copy">
       <div class="eyebrow">Our Story</div>
       <h2>Style That Feels Like You</h2>
-
       <p>
         At Label AKS, we believe clothing is more than what you wear.
         It is a way to express your personality, celebrate your moments
         and feel confident in your own style.
       </p>
-
       <p>
         Our collection brings together carefully selected designs,
         beautiful details and versatile styles for women who appreciate
         elegance and individuality.
       </p>
-
       <p>
         We look forward to welcoming you and helping you find something
         you truly love.
       </p>
-
       <a class="outline-button" href="#showroom">Visit Our Showroom</a>
     </div>
   </section>
@@ -1062,62 +1026,24 @@
       <div class="eyebrow">We Would Love To Meet You</div>
       <h2>Visit Label AKS</h2>
       <p>
-        Experience our collection in person at our showroom in Vikaspuri,
-        New Delhi.
+        Experience our collection in person at our showroom in Vikaspuri, New Delhi.
       </p>
     </div>
 
     <div class="showroom-details">
-      <div class="showroom-info-grid">
+      <p><strong>Label AKS</strong></p>
+      <p>537, Site 1, Vikaspuri, New Delhi</p>
+      <p>For collection details and availability, please contact us on WhatsApp.</p>
 
-        <div class="showroom-info">
-          <p><strong>Label AKS</strong></p>
-          <p>537, Site 1, Vikaspuri, New Delhi</p>
-          <p>
-            For collection details and availability, please contact us
-            on WhatsApp.
-          </p>
-        </div>
-
-        <!-- Compact opening hours -->
-        <div class="opening-hours" aria-label="Label AKS opening hours">
-          <h3>Opening Hours</h3>
-
-          <div class="hours-row">
-            <strong>Monday</strong>
-            <span>11 AM – 8:30 PM</span>
-          </div>
-
-          <div class="hours-row">
-            <strong>Tuesday</strong>
-            <span>11 AM – 8:30 PM</span>
-          </div>
-
-          <div class="hours-row">
-            <strong>Wednesday</strong>
-            <span>By Appointment</span>
-          </div>
-
-          <div class="hours-row">
-            <strong>Thursday</strong>
-            <span>11 AM – 8:30 PM</span>
-          </div>
-
-          <div class="hours-row">
-            <strong>Friday</strong>
-            <span>11 AM – 8:30 PM</span>
-          </div>
-
-          <div class="hours-row">
-            <strong>Saturday</strong>
-            <span>11 AM – 8:30 PM</span>
-          </div>
-
-          <div class="hours-row">
-            <strong>Sunday</strong>
-            <span>11 AM – 8:30 PM</span>
-          </div>
-        </div>
+      <div class="opening-hours" aria-label="Label AKS opening hours">
+        <h3>Opening Hours</h3>
+        <div class="hours-row"><strong>Monday</strong><span>11:00 AM – 8:30 PM</span></div>
+        <div class="hours-row"><strong>Tuesday</strong><span>11:00 AM – 8:30 PM</span></div>
+        <div class="hours-row"><strong>Wednesday</strong><span>By Appointment Only</span></div>
+        <div class="hours-row"><strong>Thursday</strong><span>11:00 AM – 8:30 PM</span></div>
+        <div class="hours-row"><strong>Friday</strong><span>11:00 AM – 8:30 PM</span></div>
+        <div class="hours-row"><strong>Saturday</strong><span>11:00 AM – 8:30 PM</span></div>
+        <div class="hours-row"><strong>Sunday</strong><span>11:00 AM – 8:30 PM</span></div>
       </div>
 
       <div class="showroom-actions">
@@ -1125,14 +1051,14 @@
           class="outline-button"
           href="https://www.google.com/maps/search/?api=1&query=537%2C+Site+1%2C+Vikaspuri%2C+New+Delhi"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >Find Us on Google Maps</a>
 
         <a
           class="gold-button"
           href="https://wa.me/919810057892"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >Chat on WhatsApp</a>
       </div>
     </div>
@@ -1141,7 +1067,6 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-grid">
-
       <div class="footer-column">
         <div class="footer-brand">LABEL AKS</div>
         <p>Elegance in Every Thread.</p>
@@ -1164,22 +1089,16 @@
       <div class="footer-column">
         <h3>Get In Touch</h3>
         <p>537, Site 1, Vikaspuri, New Delhi</p>
-
-        <a
-          href="https://wa.me/919810057892"
-          target="_blank"
-          rel="noopener noreferrer"
-        >WhatsApp: +91 98100 57892</a>
-
+        <a href="https://wa.me/919810057892" target="_blank" rel="noopener">
+          WhatsApp: +91 98100 57892
+        </a>
         <a
           href="https://www.google.com/maps/search/?api=1&query=537%2C+Site+1%2C+Vikaspuri%2C+New+Delhi"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >Find Us on Google Maps</a>
-
         <a href="#our-story">About Label AKS</a>
       </div>
-
     </div>
 
     <div class="footer-bottom">
@@ -1194,14 +1113,13 @@
     class="whatsapp-float"
     href="https://wa.me/919810057892"
     target="_blank"
-    rel="noopener noreferrer"
+    rel="noopener"
     aria-label="Contact Label AKS on WhatsApp"
   >
     <span aria-hidden="true">◉</span>
     WhatsApp Us
   </a>
 
-  <!-- Website functionality -->
   <script>
     const categories = [
       {
@@ -1286,8 +1204,7 @@
       article.className = "category-card";
 
       const link = document.createElement("a");
-      link.href =
-        `/category.html?category=${encodeURIComponent(category.id)}`;
+      link.href = `/category.html?category=${encodeURIComponent(category.id)}`;
 
       const image = document.createElement("img");
       image.src = category.image;
@@ -1298,8 +1215,7 @@
       heading.textContent = category.title;
 
       const description = document.createElement("p");
-      description.textContent =
-        category.description || "Explore Collection";
+      description.textContent = category.description || "Explore Collection";
 
       link.append(image, heading, description);
       article.appendChild(link);
@@ -1319,6 +1235,7 @@
       Individual product links:
       /product.html?category=designer-suits&image=12
     */
+
     function createProductCard(category, imageNumber) {
       const card = document.createElement("article");
       card.className = "product-card";
@@ -1365,6 +1282,7 @@
     function createProductSection(category) {
       const section = document.createElement("section");
 
+      /* Designer Suits has its own scrolling speed. */
       section.className = "product-section section-" + category.id;
       section.id = category.id;
 
@@ -1386,10 +1304,7 @@
 
       const viewport = document.createElement("div");
       viewport.className = "product-viewport";
-      viewport.setAttribute(
-        "aria-label",
-        `${category.title} products`
-      );
+      viewport.setAttribute("aria-label", `${category.title} products`);
 
       const track = document.createElement("div");
       track.className = "product-track";
@@ -1398,7 +1313,7 @@
         track.appendChild(createProductCard(category, i));
       }
 
-      /* Duplicate cards for continuous scrolling */
+      /* Duplicate cards for continuous product scrolling. */
       for (let i = 1; i <= category.count; i++) {
         const clone = createProductCard(category, i);
         clone.setAttribute("aria-hidden", "true");
