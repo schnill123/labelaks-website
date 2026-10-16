@@ -8,6 +8,18 @@
   <title>Label AKS | Elegant Ladies' Ethnic Wear</title>
   <meta name="description" content="Discover elegant ladies' suits, designer suits, co-ord sets, western wear, lehengas and Indo-Western fashion at Label AKS, Vikaspuri, New Delhi.">
 
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Label AKS">
+  <meta property="og:title" content="Label AKS | Elegance in Every Thread">
+  <meta property="og:description" content="Discover elegant ladies' suits and designer wear at Label AKS, 537, Site 1, Vikaspuri, New Delhi.">
+  <meta property="og:url" content="https://labelaks.in/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/schnill123/labelaks-website/main/images/label-aks-social.jpeg">
+  <meta property="og:image:alt" content="Label AKS — Elegance in Every Thread">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Label AKS | Elegance in Every Thread">
+  <meta name="twitter:description" content="Discover elegant ladies' suits and designer wear at Label AKS, Vikaspuri, New Delhi.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/schnill123/labelaks-website/main/images/label-aks-social.jpeg">
+
   <style>
     :root {
       --green: #174d38;
@@ -43,10 +55,9 @@
       max-width: 100%;
     }
 
-    /* Announcement ticker — continuous scrolling */
+    /* Announcement ticker */
 
     .announcement-bar {
-      width: 100%;
       overflow: hidden;
       background: var(--green-dark);
       color: #fff;
@@ -59,30 +70,16 @@
     .announcement-track {
       display: flex;
       width: max-content;
-      flex-wrap: nowrap;
-      animation: announcementScroll 24s linear infinite;
-      will-change: transform;
+      animation: announcementScroll 28s linear infinite;
     }
 
-    .announcement-group {
-      display: flex;
-      flex: 0 0 auto;
-      align-items: center;
-    }
-
-    .announcement-group span {
-      display: inline-block;
-      flex: 0 0 auto;
+    .announcement-track span {
       padding-right: 65px;
     }
 
     @keyframes announcementScroll {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
     /* Instagram banner */
@@ -348,8 +345,7 @@
       will-change: transform;
     }
 
-    /* Designer Suits scroll more slowly */
-
+    /* ONLY CHANGE: Designer Suits scrolls more slowly */
     .section-designer-suits .product-track {
       animation-duration: 100s;
     }
@@ -452,7 +448,6 @@
     }
 
     /* Instagram feed */
-
     .instagram-section {
       padding: 55px 20px;
       background: var(--cream);
@@ -514,6 +509,16 @@
 
     .instagram-widget-wrap .ft {
       width: 100%;
+    }
+
+    @media (max-width: 650px) {
+      .instagram-section {
+        padding: 40px 14px;
+      }
+
+      .instagram-heading {
+        margin-bottom: 20px;
+      }
     }
 
     /* Our Story */
@@ -578,16 +583,34 @@
     }
 
     .showroom-details {
-      max-width: 650px;
+      max-width: 900px;
       margin: 0 auto;
       color: #555;
       font-size: 14px;
-      line-height: 1.9;
+      line-height: 1.8;
     }
 
-    .showroom-details strong {
-      color: var(--green);
+    .showroom-details strong { color: var(--green); }
+
+    .showroom-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      gap: 28px;
+      margin-top: 28px;
+      text-align: left;
     }
+
+    .showroom-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 24px 28px;
+      border: 1px solid #eee7dc;
+      background: #fff;
+    }
+
+    .showroom-info p { margin: 6px 0; }
 
     .showroom-actions {
       display: flex;
@@ -597,46 +620,43 @@
       margin-top: 24px;
     }
 
-    /* Opening hours */
-
+    /* Compact, elegant opening-hours panel */
     .opening-hours {
-      max-width: 430px;
-      margin: 24px auto 0;
-      padding: 20px 24px;
+      margin: 0;
+      padding: 22px 26px;
       background: var(--cream);
       border: 1px solid #eee7dc;
       text-align: left;
     }
 
     .opening-hours h3 {
-      margin: 0 0 14px;
+      margin: 0 0 12px;
       color: var(--green);
       font-family: Georgia, "Times New Roman", serif;
       font-size: 21px;
       font-weight: normal;
-      text-align: center;
+      text-align: left;
     }
 
     .hours-row {
       display: flex;
       justify-content: space-between;
-      gap: 18px;
-      padding: 9px 0;
+      align-items: baseline;
+      gap: 14px;
+      padding: 5px 0;
       border-bottom: 1px solid #e8e0d4;
-      font-size: 13px;
-      line-height: 1.5;
+      font-size: 12px;
+      line-height: 1.45;
     }
 
-    .hours-row:last-child {
-      border-bottom: 0;
-    }
+    .hours-row:last-child { border-bottom: 0; }
+    .hours-row strong { color: var(--green); font-weight: 600; }
+    .hours-row span { text-align: right; white-space: nowrap; }
 
-    .hours-row strong {
-      color: var(--green);
-    }
-
-    .hours-row span {
-      text-align: right;
+    @media (max-width: 640px) {
+      .showroom-info-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 20px; }
+      .showroom-info, .opening-hours { padding: 18px 20px; }
+      .hours-row { font-size: 12px; }
     }
 
     /* Footer */
@@ -862,24 +882,16 @@
       }
     }
 
-    /* Respect reduced-motion preferences for product scrolling.
-       Keep the announcement ticker moving. */
-
     @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-.category-card,
-  .product-card img 
-  .announcement-track {
-    animation: none;
-  }
+      html {
+        scroll-behavior: auto;
+      }
 
-  .category-card,
-  .product-card img {
-    transition: none;
-  }
-}
+      .category-card,
+      .product-card img {
+        transition: none;
+      }
+    }
   </style>
 </head>
 
@@ -888,17 +900,10 @@
   <!-- Announcement ticker -->
   <div class="announcement-bar" aria-label="Store announcements">
     <div class="announcement-track">
-
-      <div class="announcement-group">
-        <span>WELCOME TO LABEL AKS · ELEGANCE IN EVERY THREAD</span>
-        <span>DISCOVER YOUR NEXT FAVOURITE LOOK · VISIT OUR VIKASPURI SHOWROOM</span>
-      </div>
-
-      <div class="announcement-group" aria-hidden="true">
-        <span>WELCOME TO LABEL AKS · ELEGANCE IN EVERY THREAD</span>
-        <span>DISCOVER YOUR NEXT FAVOURITE LOOK · VISIT OUR VIKASPURI SHOWROOM</span>
-      </div>
-
+      <span>WELCOME TO LABEL AKS · ELEGANCE IN EVERY THREAD</span>
+      <span>DISCOVER YOUR NEXT FAVOURITE LOOK · VISIT OUR VIKASPURI SHOWROOM</span>
+      <span>WELCOME TO LABEL AKS · ELEGANCE IN EVERY THREAD</span>
+      <span>DISCOVER YOUR NEXT FAVOURITE LOOK · VISIT OUR VIKASPURI SHOWROOM</span>
     </div>
   </div>
 
@@ -1032,19 +1037,23 @@
     </div>
 
     <div class="showroom-details">
-      <p><strong>Label AKS</strong></p>
-      <p>537, Site 1, Vikaspuri, New Delhi</p>
-      <p>For collection details and availability, please contact us on WhatsApp.</p>
+      <div class="showroom-info-grid">
+        <div class="showroom-info">
+          <p><strong>Label AKS</strong></p>
+          <p>537, Site 1, Vikaspuri, New Delhi</p>
+          <p>For collection details and availability, please contact us on WhatsApp.</p>
+        </div>
 
-      <div class="opening-hours" aria-label="Label AKS opening hours">
-        <h3>Opening Hours</h3>
-        <div class="hours-row"><strong>Monday</strong><span>11:00 AM – 8:30 PM</span></div>
-        <div class="hours-row"><strong>Tuesday</strong><span>11:00 AM – 8:30 PM</span></div>
-        <div class="hours-row"><strong>Wednesday</strong><span>By Appointment Only</span></div>
-        <div class="hours-row"><strong>Thursday</strong><span>11:00 AM – 8:30 PM</span></div>
-        <div class="hours-row"><strong>Friday</strong><span>11:00 AM – 8:30 PM</span></div>
-        <div class="hours-row"><strong>Saturday</strong><span>11:00 AM – 8:30 PM</span></div>
-        <div class="hours-row"><strong>Sunday</strong><span>11:00 AM – 8:30 PM</span></div>
+        <div class="opening-hours" aria-label="Label AKS opening hours">
+          <h3>Opening Hours</h3>
+          <div class="hours-row"><strong>Monday</strong><span>11 AM – 8:30 PM</span></div>
+          <div class="hours-row"><strong>Tuesday</strong><span>11 AM – 8:30 PM</span></div>
+          <div class="hours-row"><strong>Wednesday</strong><span>By Appointment</span></div>
+          <div class="hours-row"><strong>Thursday</strong><span>11 AM – 8:30 PM</span></div>
+          <div class="hours-row"><strong>Friday</strong><span>11 AM – 8:30 PM</span></div>
+          <div class="hours-row"><strong>Saturday</strong><span>11 AM – 8:30 PM</span></div>
+          <div class="hours-row"><strong>Sunday</strong><span>11 AM – 8:30 PM</span></div>
+        </div>
       </div>
 
       <div class="showroom-actions">
@@ -1236,7 +1245,6 @@
       Individual product links:
       /product.html?category=designer-suits&image=12
     */
-
     function createProductCard(category, imageNumber) {
       const card = document.createElement("article");
       card.className = "product-card";
@@ -1283,7 +1291,7 @@
     function createProductSection(category) {
       const section = document.createElement("section");
 
-      /* Designer Suits has its own scrolling speed. */
+      /* Class lets Designer Suits have its own scrolling speed. */
       section.className = "product-section section-" + category.id;
       section.id = category.id;
 
@@ -1314,7 +1322,7 @@
         track.appendChild(createProductCard(category, i));
       }
 
-      /* Duplicate cards for continuous product scrolling. */
+      /* Duplicate the cards to support continuous scrolling. */
       for (let i = 1; i <= category.count; i++) {
         const clone = createProductCard(category, i);
         clone.setAttribute("aria-hidden", "true");
