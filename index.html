@@ -338,7 +338,6 @@
       from {
         transform: translateX(0);
       }
-
       to {
         transform: translateX(calc(-50% - var(--product-gap) / 2));
       }
@@ -481,16 +480,20 @@
       background: var(--green-dark);
     }
 
+    /* Updated Fouita iframe */
     .instagram-widget-wrap {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      min-height: 180px;
       overflow: hidden;
     }
 
-    .instagram-widget-wrap .ft {
+    .instagram-widget-wrap iframe {
+      display: block;
       width: 100%;
+      height: 500px;
+      border: 0;
+      overflow: hidden;
     }
 
     /* Our Story */
@@ -594,7 +597,7 @@
       margin-top: 24px;
     }
 
-    /* Compact, elegant opening-hours panel */
+    /* Compact opening-hours panel */
     .opening-hours {
       margin: 0;
       padding: 22px 26px;
@@ -831,6 +834,10 @@
         margin-bottom: 20px;
       }
 
+      .instagram-widget-wrap iframe {
+        height: 380px;
+      }
+
       .our-story {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -917,7 +924,7 @@
     class="instagram-banner"
     href="https://www.instagram.com/label_aks/"
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
   >
     FOLLOW OUR JOURNEY ON INSTAGRAM ·
     <strong>DISCOVER LABEL AKS</strong>
@@ -947,8 +954,11 @@
     <a href="#instagram">Instagram</a>
     <a href="#our-story">Our Story</a>
     <a href="#showroom">Visit Us</a>
-    <a href="https://wa.me/919810057892"
-       target="_blank" rel="noopener">Contact</a>
+    <a
+      href="https://wa.me/919810057892"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Contact</a>
   </nav>
 
   <!-- Hero -->
@@ -984,7 +994,9 @@
     <div class="instagram-heading">
       <div class="instagram-eyebrow">Style · Inspiration · You</div>
       <h2>Follow Our Style on Instagram</h2>
-      <p>Discover our latest looks, new arrivals and style inspiration.</p>
+      <p>
+        Discover our latest looks, new arrivals and style inspiration.
+      </p>
 
       <a
         href="https://www.instagram.com/label_aks/"
@@ -994,17 +1006,19 @@
       >Follow @label_aks</a>
     </div>
 
+    <!-- Updated Fouita iframe embed -->
     <div class="instagram-widget-wrap">
-      <div
-        data-key="Carousel Instagram Feed "
-        class="ft"
-        id="ftkbj4rp2"
-      ></div>
+      <iframe
+        src="https://emb.fouita.com/widget/0x563c54/ftkbj4rp2"
+        title="Label AKS Instagram Carousel Feed"
+        width="100%"
+        height="500"
+        frameborder="0"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
     </div>
   </section>
-
-  <!-- Fouita Instagram feed widget -->
-  <script src="https://wdg.fouita.com/widgets/0x563c54.js"></script>
 
   <!-- Our Story -->
   <section class="our-story" id="our-story">
@@ -1056,7 +1070,6 @@
     <div class="showroom-details">
       <div class="showroom-info-grid">
 
-        <!-- Address and contact information -->
         <div class="showroom-info">
           <p><strong>Label AKS</strong></p>
           <p>537, Site 1, Vikaspuri, New Delhi</p>
@@ -1112,14 +1125,14 @@
           class="outline-button"
           href="https://www.google.com/maps/search/?api=1&query=537%2C+Site+1%2C+Vikaspuri%2C+New+Delhi"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >Find Us on Google Maps</a>
 
         <a
           class="gold-button"
           href="https://wa.me/919810057892"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >Chat on WhatsApp</a>
       </div>
     </div>
@@ -1155,13 +1168,13 @@
         <a
           href="https://wa.me/919810057892"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >WhatsApp: +91 98100 57892</a>
 
         <a
           href="https://www.google.com/maps/search/?api=1&query=537%2C+Site+1%2C+Vikaspuri%2C+New+Delhi"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >Find Us on Google Maps</a>
 
         <a href="#our-story">About Label AKS</a>
@@ -1181,7 +1194,7 @@
     class="whatsapp-float"
     href="https://wa.me/919810057892"
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
     aria-label="Contact Label AKS on WhatsApp"
   >
     <span aria-hidden="true">◉</span>
