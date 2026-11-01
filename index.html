@@ -1,24 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-(function () {
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-
-  const navigation = performance.getEntriesByType('navigation')[0];
-
-  // If the page is refreshed, remove the old section anchor
-  if (navigation && navigation.type === 'reload' && window.location.hash) {
-    history.replaceState(
-      null,
-      '',
-      window.location.pathname + window.location.search
-    );
-  }
-})();
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -45,7 +27,6 @@
   {
     "@context": "https://schema.org",
     "@type": "ClothingStore",
-    "priceRange": "₹1,299–₹10,000",
     "@id": "https://labelaks.in/#store",
     "name": "Label AKS",
     "url": "https://labelaks.in/",
@@ -1058,7 +1039,7 @@
   </section>
 
   <!-- Fouita Instagram feed widget -->
-  <script defer src="https://wdg.fouita.com/widgets/0x563c54.js"></script>
+  <script src="https://wdg.fouita.com/widgets/0x563c54.js"></script>
 
   <!-- Our Story -->
   <section class="our-story" id="our-story">
@@ -1441,5 +1422,7 @@
     renderCategoryGrid();
     renderProductSections();
     initialiseAnnouncements();
-  </body>
+  </script>
+
+</body>
 </html>
