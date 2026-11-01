@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+(function () {
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  const navigation = performance.getEntriesByType('navigation')[0];
+
+  // If the page is refreshed, remove the old section anchor
+  if (navigation && navigation.type === 'reload' && window.location.hash) {
+    history.replaceState(
+      null,
+      '',
+      window.location.pathname + window.location.search
+    );
+  }
+})();
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -1423,17 +1441,5 @@
     renderCategoryGrid();
     renderProductSections();
     initialiseAnnouncements();
-  </script>
-<script>
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-
-  window.addEventListener('load', function () {
-    if (!window.location.hash) {
-      window.scrollTo(0, 0);
-    }
-  });
-</script>
   </body>
 </html>
