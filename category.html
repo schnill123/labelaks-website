@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,10 @@
   <meta name="theme-color" content="#344B3B">
 
   <title>Collections | Label AKS</title>
-  <meta name="description" content="Explore women's fashion collections at Label AKS, Vikaspuri, New Delhi.">
+  <meta name="description" id="seoDescription"
+        content="Explore women's fashion collections at Label AKS, Vikaspuri, New Delhi.">
+  <link rel="canonical" id="canonicalUrl"
+        href="https://labelaks.in/category.html">
 
   <link rel="icon" href="/images/label-aks-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -172,6 +174,22 @@
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 20px;
+    }
+
+    .seo-copy {
+      max-width: 850px;
+      margin: 38px auto 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .seo-copy h2 {
+      margin: 0 0 10px;
+      color: var(--forest);
+      font-family: var(--heading);
+      font-size: 27px;
+      font-weight: 600;
     }
 
     .product-card {
@@ -363,6 +381,11 @@
 
     <div id="productGrid" class="product-grid"></div>
 
+    <section id="categorySeoContent" class="seo-copy" aria-label="About this collection" hidden>
+      <h2 id="seoHeading"></h2>
+      <p id="seoParagraph"></p>
+    </section>
+
     <div id="emptyState" class="empty-state" hidden>
       <h2 id="errorTitle">Collection not found</h2>
       <p id="errorMessage">
@@ -399,7 +422,11 @@
     const collections = {
       "western-wear": {
         title: "Western Wear",
-        description: "Contemporary styles for your wardrobe.",
+        description: "Explore stylish Western wear for women at Label AKS in Vikaspuri, New Delhi.",
+        seoTitle: "Women's Western Wear in Vikaspuri, Delhi | Label AKS",
+        seoDescription: "Discover women's Western wear at Label AKS, Vikaspuri, New Delhi. Explore contemporary styles and enquire about designs, sizes and availability on WhatsApp.",
+        seoHeading: "Women's Western Wear at Label AKS, Vikaspuri",
+        seoContent: "Explore the Western Wear collection at Label AKS, a ladies' fashion showroom in Vikaspuri, New Delhi. Browse contemporary styles and check the latest designs in our collection. For current prices, sizes and availability, contact our team on WhatsApp or visit our showroom at 537, Site 1, Vikas Puri, near Metro Pillar 624, New Delhi - 110018.",
         folder: "Westernwear",
         count: 11,
         caption: "Elegant Western Wear Style"
@@ -407,7 +434,11 @@
 
       "cord-sets": {
         title: "Co-ord Sets",
-        description: "Effortless style, beautifully coordinated.",
+        description: "Discover elegant and coordinated women's outfits at Label AKS, Vikaspuri.",
+        seoTitle: "Women's Co-ord Sets in Vikaspuri, Delhi | Label AKS",
+        seoDescription: "Explore fashionable women's co-ord sets at Label AKS, Vikaspuri, New Delhi. Browse coordinated styles and enquire about prices and availability on WhatsApp.",
+        seoHeading: "Women's Co-ord Sets at Label AKS, Vikaspuri",
+        seoContent: "Discover coordinated outfits in the Co-ord Sets collection at Label AKS in Vikaspuri, New Delhi. Browse the styles shown here and contact us to confirm current designs, prices, sizes and availability. You can enquire directly on WhatsApp or visit our showroom at 537, Site 1, Vikas Puri, near Metro Pillar 624, New Delhi - 110018.",
         folder: "cordsets",
         count: 37,
         caption: "Elegant Co-ord Set"
@@ -415,7 +446,11 @@
 
       "indo-western": {
         title: "Indo-Western",
-        description: "A modern expression of Indian elegance.",
+        description: "Discover contemporary Indo-Western fashion at Label AKS, Vikaspuri.",
+        seoTitle: "Indo-Western Wear for Women in Vikaspuri, Delhi | Label AKS",
+        seoDescription: "Explore Indo-Western outfits at Label AKS, Vikaspuri, New Delhi. Discover contemporary styles and enquire about prices, sizes and availability.",
+        seoHeading: "Indo-Western Wear for Women at Label AKS",
+        seoContent: "Explore Indo-Western styles at Label AKS, a ladies' ethnic and contemporary wear showroom in Vikaspuri, New Delhi. Browse the designs in this collection and contact our team for current prices, sizes and availability. Visit us at 537, Site 1, Vikas Puri, near Metro Pillar 624, New Delhi - 110018, or send your enquiry through WhatsApp.",
         folder: "indowestern",
         count: 22,
         caption: "Elegant Indo-Western Style"
@@ -423,7 +458,11 @@
 
       "designer-suits": {
         title: "Designer Suits",
-        description: "Statement styles with beautiful details.",
+        description: "Explore elegant designer suits for women at Label AKS, Vikaspuri, New Delhi.",
+        seoTitle: "Designer Suits for Women in Vikaspuri, Delhi | Label AKS",
+        seoDescription: "Discover designer suits for women at Label AKS, Vikaspuri, New Delhi. Browse elegant ethnic wear designs and enquire about prices and availability on WhatsApp.",
+        seoHeading: "Designer Suits for Women at Label AKS, Vikaspuri",
+        seoContent: "Discover the Designer Suits collection at Label AKS in Vikaspuri, New Delhi. Browse the designs displayed here and contact us to check current prices, sizes and availability. Whether you are looking for an outfit for a celebration or a special occasion, our team can help with product enquiries. Visit 537, Site 1, Vikas Puri, near Metro Pillar 624, New Delhi - 110018, or enquire on WhatsApp.",
         folder: "designer-suits",
         count: 71,
         caption: "Elegant Designer Suit"
@@ -512,11 +551,13 @@
     const grid = document.getElementById("productGrid");
     const resultCount = document.getElementById("resultCount");
     const emptyState = document.getElementById("emptyState");
+    const seoContentSection = document.getElementById("categorySeoContent");
 
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
 
     function showNotFound() {
+      seoContentSection.hidden = true;
       titleElement.textContent = "Collection Not Found";
       descriptionElement.textContent =
         "We could not find that collection. Please select one from our homepage.";
@@ -600,10 +641,29 @@
         return;
       }
 
-      document.title = collection.title + " | Label AKS";
+      // Set category-specific SEO metadata after identifying the selected category.
+      document.title = collection.seoTitle || (collection.title + " | Label AKS");
+
+      document.getElementById("seoDescription").setAttribute(
+        "content",
+        collection.seoDescription || collection.description
+      );
+
+      // Query-string category URLs are the existing public URLs for these collections.
+      document.getElementById("canonicalUrl").setAttribute(
+        "href",
+        "https://labelaks.in/category.html?category=" + encodeURIComponent(categoryKey)
+      );
 
       titleElement.textContent = collection.title;
       descriptionElement.textContent = collection.description;
+
+      if (collection.seoContent) {
+        document.getElementById("seoHeading").textContent =
+          collection.seoHeading || (collection.title + " at Label AKS");
+        document.getElementById("seoParagraph").textContent = collection.seoContent;
+        seoContentSection.hidden = false;
+      }
 
       const paths = collection.folder
         ? Array.from(
