@@ -2,17 +2,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage -->
+  <!-- Label AKS Homepage -->
   <url>
     <loc>https://labelaks.in/</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Designer Suits -->
+  <!-- Western Wear -->
   <url>
-    <loc>https://labelaks.in/category.html?category=designer-suits</loc>
+    <loc>https://labelaks.in/category.html?category=western-wear</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -26,20 +26,68 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Western Wear -->
-  <url>
-    <loc>https://labelaks.in/category.html?category=western-wear</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
   <!-- Indo-Western -->
   <url>
     <loc>https://labelaks.in/category.html?category=indo-western</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Designer Suits -->
+  <url>
+    <loc>https://labelaks.in/category.html?category=designer-suits</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Suit Sets -->
+  <url>
+    <loc>https://labelaks.in/category.html?category=suit-sets</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Lehengas -->
+  <url>
+    <loc>https://labelaks.in/category.html?category=lehengas</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Daily Wear -->
+  <url>
+    <loc>https://labelaks.in/category.html?category=daily-wear</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Festive Wear -->
+  <url>
+    <loc>https://labelaks.in/category.html?category=festive-wear</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Party Wear -->
+  <url>
+    <loc>https://labelaks.in/category.html?category=party-wear</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- New Arrivals -->
+  <url>
+    <loc>https://labelaks.in/category.html?category=new-arrivals</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
