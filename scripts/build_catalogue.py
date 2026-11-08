@@ -150,6 +150,13 @@ def main():
         all_images, key=recency_key
     )[:NEW_ARRIVALS_LIMIT]
 
+    # Set each category's cover photo to its most recently added/updated image.
+    # Keep the category image lists in their existing order.
+    for slug, category in catalogue["categories"].items():
+        images = category["images"]
+        if images:
+            category["thumbnail"] = sorted(images, key=recency_key)[0]
+
     OUTPUT.write_text(
         json.dumps(catalogue, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
