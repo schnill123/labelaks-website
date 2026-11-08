@@ -209,6 +209,7 @@
     },
     "new-arrivals": {
       "images": [
+        "/images/designer-suits/3.jpeg",
         "/images/indowestern/Anarkali.jpeg",
         "/images/indowestern/Antique with bustier.jpeg",
         "/images/indowestern/Black beauty.jpeg",
@@ -232,8 +233,7 @@
         "/images/designer-suits/63.jpeg",
         "/images/designer-suits/64.jpeg",
         "/images/designer-suits/65.jpeg",
-        "/images/designer-suits/66.jpeg",
-        "/images/designer-suits/67.jpeg"
+        "/images/designer-suits/66.jpeg"
       ]
     }
   }
