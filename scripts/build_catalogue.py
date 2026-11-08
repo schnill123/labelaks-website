@@ -150,6 +150,14 @@ def main():
         all_images, key=recency_key
     )[:NEW_ARRIVALS_LIMIT]
 
+    # Store the newest photo separately for each homepage category thumbnail.
+    # Keep the normal category image order unchanged for the product galleries.
+    for category in catalogue["categories"].values():
+        image_paths = category["images"]
+        category["thumbnail"] = (
+            sorted(image_paths, key=recency_key)[0] if image_paths else None
+        )
+
     OUTPUT.write_text(
         json.dumps(catalogue, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
