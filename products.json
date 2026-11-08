@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "categories": {
+    "western-wear": {
+      "images": [
+        "/images/Westernwear/1.jpeg",
+        "/images/Westernwear/2.jpeg",
+        "/images/Westernwear/3.jpeg",
+        "/images/Westernwear/4.jpeg",
+        "/images/Westernwear/5.jpeg",
+        "/images/Westernwear/6.jpeg",
+        "/images/Westernwear/7.jpeg",
+        "/images/Westernwear/8.jpeg",
+        "/images/Westernwear/9.jpeg",
+        "/images/Westernwear/10.jpeg",
+        "/images/Westernwear/11.jpeg"
+      ]
+    },
+    "cord-sets": {
+      "images": [
+        "/images/cordsets/1.jpeg",
+        "/images/cordsets/2.jpeg",
+        "/images/cordsets/3.jpeg",
+        "/images/cordsets/4.jpeg",
+        "/images/cordsets/5.jpeg",
+        "/images/cordsets/6.jpeg",
+        "/images/cordsets/7.jpeg",
+        "/images/cordsets/8.jpeg",
+        "/images/cordsets/9.jpeg",
+        "/images/cordsets/10.jpeg",
+        "/images/cordsets/11.jpeg",
+        "/images/cordsets/12.jpeg",
+        "/images/cordsets/13.jpeg",
+        "/images/cordsets/14.jpeg",
+        "/images/cordsets/15.jpeg",
+        "/images/cordsets/16.jpeg",
+        "/images/cordsets/17.jpeg",
+        "/images/cordsets/18.jpeg",
+        "/images/cordsets/19.jpeg",
+        "/images/cordsets/20.jpeg",
+        "/images/cordsets/21.jpeg",
+        "/images/cordsets/22.jpeg",
+        "/images/cordsets/23.jpeg",
+        "/images/cordsets/24.jpeg",
+        "/images/cordsets/25.jpeg",
+        "/images/cordsets/26.jpeg",
+        "/images/cordsets/27.jpeg",
+        "/images/cordsets/28.jpeg",
+        "/images/cordsets/29.jpeg",
+        "/images/cordsets/30.jpeg",
+        "/images/cordsets/31.jpeg",
+        "/images/cordsets/32.jpeg",
+        "/images/cordsets/33.jpeg",
+        "/images/cordsets/34.jpeg",
+        "/images/cordsets/35.jpeg",
+        "/images/cordsets/36.jpeg",
+        "/images/cordsets/37.jpeg"
+      ]
+    },
+    "indo-western": {
+      "images": [
+        "/images/indowestern/1.jpeg",
+        "/images/indowestern/2.jpeg",
+        "/images/indowestern/3.jpeg",
+        "/images/indowestern/4.jpeg",
+        "/images/indowestern/5.jpeg",
+        "/images/indowestern/6.jpeg",
+        "/images/indowestern/7.jpeg",
+        "/images/indowestern/8.jpeg",
+        "/images/indowestern/9.jpeg",
+        "/images/indowestern/10.jpeg",
+        "/images/indowestern/11.jpeg",
+        "/images/indowestern/12.jpeg",
+        "/images/indowestern/13.jpeg",
+        "/images/indowestern/14.jpeg",
+        "/images/indowestern/15.jpeg",
+        "/images/indowestern/16.jpeg",
+        "/images/indowestern/17.jpeg",
+        "/images/indowestern/18.jpeg",
+        "/images/indowestern/19.jpeg",
+        "/images/indowestern/20.jpeg",
+        "/images/indowestern/21.jpeg",
+        "/images/indowestern/22.jpeg"
+      ]
+    },
+    "designer-suits": {
+      "images": [
+        "/images/designer-suits/1.jpeg",
+        "/images/designer-suits/2.jpeg",
+        "/images/designer-suits/3.jpeg",
+        "/images/designer-suits/4.jpeg",
+        "/images/designer-suits/5.jpeg",
+        "/images/designer-suits/6.jpeg",
+        "/images/designer-suits/7.jpeg",
+        "/images/designer-suits/8.jpeg",
+        "/images/designer-suits/9.jpeg",
+        "/images/designer-suits/10.jpeg",
+        "/images/designer-suits/11.jpeg",
+        "/images/designer-suits/12.jpeg",
+        "/images/designer-suits/13.jpeg",
+        "/images/designer-suits/14.jpeg",
+        "/images/designer-suits/15.jpeg",
+        "/images/designer-suits/16.jpeg",
+        "/images/designer-suits/17.jpeg",
+        "/images/designer-suits/18.jpeg",
+        "/images/designer-suits/19.jpeg",
+        "/images/designer-suits/20.jpeg",
+        "/images/designer-suits/21.jpeg",
+        "/images/designer-suits/22.jpeg",
+        "/images/designer-suits/23.jpeg",
+        "/images/designer-suits/24.jpeg",
+        "/images/designer-suits/25.jpeg",
+        "/images/designer-suits/26.jpeg",
+        "/images/designer-suits/27.jpeg",
+        "/images/designer-suits/28.jpeg",
+        "/images/designer-suits/29.jpeg",
+        "/images/designer-suits/30.jpeg",
+        "/images/designer-suits/31.jpeg",
+        "/images/designer-suits/32.jpeg",
+        "/images/designer-suits/33.jpeg",
+        "/images/designer-suits/34.jpeg",
+        "/images/designer-suits/35.jpeg",
+        "/images/designer-suits/36.jpeg",
+        "/images/designer-suits/37.jpeg",
+        "/images/designer-suits/38.jpeg",
+        "/images/designer-suits/39.jpeg",
+        "/images/designer-suits/40.jpeg",
+        "/images/designer-suits/41.jpeg",
+        "/images/designer-suits/42.jpeg",
+        "/images/designer-suits/43.jpeg",
+        "/images/designer-suits/44.jpeg",
+        "/images/designer-suits/45.jpeg",
+        "/images/designer-suits/46.jpeg",
+        "/images/designer-suits/47.jpeg",
+        "/images/designer-suits/48.jpeg",
+        "/images/designer-suits/49.jpeg",
+        "/images/designer-suits/50.jpeg",
+        "/images/designer-suits/51.jpeg",
+        "/images/designer-suits/52.jpeg",
+        "/images/designer-suits/53.jpeg",
+        "/images/designer-suits/54.jpeg",
+        "/images/designer-suits/55.jpeg",
+        "/images/designer-suits/56.jpeg",
+        "/images/designer-suits/57.jpeg",
+        "/images/designer-suits/58.jpeg",
+        "/images/designer-suits/59.jpeg",
+        "/images/designer-suits/60.jpeg",
+        "/images/designer-suits/61.jpeg",
+        "/images/designer-suits/62.jpeg",
+        "/images/designer-suits/63.jpeg",
+        "/images/designer-suits/64.jpeg",
+        "/images/designer-suits/65.jpeg",
+        "/images/designer-suits/66.jpeg",
+        "/images/designer-suits/67.jpeg",
+        "/images/designer-suits/68.jpeg",
+        "/images/designer-suits/69.jpeg",
+        "/images/designer-suits/70.jpeg",
+        "/images/designer-suits/71.jpeg",
+        "/images/designer-suits/72.jpeg"
+      ]
+    },
+    "suit-sets": {
+      "images": [
+        "/images/Suit 1.jpeg",
+        "/images/Suit2.jpeg",
+        "/images/Suit4.jpeg",
+        "/images/suit 1a.jpeg",
+        "/images/suit3.jpeg",
+        "/images/suit5.jpeg",
+        "/images/suit6.jpeg"
+      ]
+    },
+    "lehengas": {
+      "images": [
+        "/images/Lehenga 1.jpeg"
+      ]
+    },
+    "daily-wear": {
+      "images": [
+        "/images/suit 1a.jpeg",
+        "/images/Suit 1.jpeg",
+        "/images/Suit2.jpeg",
+        "/images/suit3.jpeg"
+      ]
+    },
+    "festive-wear": {
+      "images": [
+        "/images/Suit2.jpeg",
+        "/images/Suit4.jpeg",
+        "/images/Lehenga 1.jpeg",
+        "/images/suit5.jpeg"
+      ]
+    },
+    "party-wear": {
+      "images": [
+        "/images/Suit4.jpeg",
+        "/images/Lehenga 1.jpeg",
+        "/images/suit5.jpeg",
+        "/images/suit6.jpeg"
+      ]
+    },
+    "new-arrivals": {
+      "images": [
+        "/images/cod.jpeg",
+        "/images/Cod2.jpeg",
+        "/images/Suit 1.jpeg",
+        "/images/Lehenga 1.jpeg",
+        "/images/Suit2.jpeg"
+      ]
+    }
+  }
+}
