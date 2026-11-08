@@ -428,7 +428,6 @@
         seoHeading: "Women's Western Wear at Label AKS, Vikaspuri",
         seoContent: "Explore the Western Wear collection at Label AKS, a ladies' fashion showroom in Vikaspuri, New Delhi. Browse contemporary styles and check the latest designs in our collection. For current prices, sizes and availability, contact our team on WhatsApp or visit our showroom at 537, Site 1, Vikas Puri, near Metro Pillar 624, New Delhi - 110018.",
         folder: "Westernwear",
-        count: 11,
         caption: "Elegant Western Wear Style"
       },
 
@@ -440,7 +439,6 @@
         seoHeading: "Women's Co-ord Sets at Label AKS, Vikaspuri",
         seoContent: "Discover coordinated outfits in the Co-ord Sets collection at Label AKS in Vikaspuri, New Delhi. Browse the styles shown here and contact us to confirm current designs, prices, sizes and availability. You can enquire directly on WhatsApp or visit our showroom at 537, Site 1, Vikas Puri, near Metro Pillar 624, New Delhi - 110018.",
         folder: "cordsets",
-        count: 37,
         caption: "Elegant Co-ord Set"
       },
 
@@ -452,7 +450,6 @@
         seoHeading: "Indo-Western Wear for Women at Label AKS",
         seoContent: "Explore Indo-Western styles at Label AKS, a ladies' ethnic and contemporary wear showroom in Vikaspuri, New Delhi. Browse the designs in this collection and contact our team for current prices, sizes and availability. Visit us at 537, Site 1, Vikas Puri, near Metro Pillar 624, New Delhi - 110018, or send your enquiry through WhatsApp.",
         folder: "indowestern",
-        count: 22,
         caption: "Elegant Indo-Western Style"
       },
 
@@ -464,80 +461,54 @@
         seoHeading: "Designer Suits for Women at Label AKS, Vikaspuri",
         seoContent: "Discover the Designer Suits collection at Label AKS in Vikaspuri, New Delhi. Browse the designs displayed here and contact us to check current prices, sizes and availability. Whether you are looking for an outfit for a celebration or a special occasion, our team can help with product enquiries. Visit 537, Site 1, Vikas Puri, near Metro Pillar 624, New Delhi - 110018, or enquire on WhatsApp.",
         folder: "designer-suits",
-        count: 71,
         caption: "Elegant Designer Suit"
       },
 
       "suit-sets": {
         title: "Suit Sets",
         description: "Beautiful suit styles for every day.",
-        images: [
-          "/images/Suit 1.jpeg",
-          "/images/Suit2.jpeg",
-          "/images/Suit4.jpeg",
-          "/images/suit 1a.jpeg",
-          "/images/suit3.jpeg",
-          "/images/suit5.jpeg",
-          "/images/suit6.jpeg"
-        ],
+        folder: "suit-sets",
+        legacyImages: ["/images/Suit 1.jpeg", "/images/Suit2.jpeg", "/images/Suit4.jpeg", "/images/suit 1a.jpeg", "/images/suit3.jpeg", "/images/suit5.jpeg", "/images/suit6.jpeg"],
         caption: "Elegant Suit Set"
       },
 
       "lehengas": {
         title: "Lehengas",
         description: "Celebrate your special moments in style.",
-        images: [
-          "/images/Lehenga 1.jpeg"
-        ],
+        folder: "lehengas",
+        legacyImages: ["/images/Lehenga 1.jpeg"],
         caption: "Elegant Lehenga"
       },
 
       "daily-wear": {
         title: "Daily Wear",
         description: "Comfortable styles for everyday dressing.",
-        images: [
-          "/images/suit 1a.jpeg",
-          "/images/Suit 1.jpeg",
-          "/images/Suit2.jpeg",
-          "/images/suit3.jpeg"
-        ],
+        folder: "daily-wear",
+        legacyImages: ["/images/suit 1a.jpeg", "/images/Suit 1.jpeg", "/images/Suit2.jpeg", "/images/suit3.jpeg"],
         caption: "Everyday Style"
       },
 
       "festive-wear": {
         title: "Festive Wear",
         description: "Styles to celebrate every special occasion.",
-        images: [
-          "/images/Suit2.jpeg",
-          "/images/Suit4.jpeg",
-          "/images/Lehenga 1.jpeg",
-          "/images/suit5.jpeg"
-        ],
+        folder: "festive-wear",
+        legacyImages: ["/images/Suit2.jpeg", "/images/Suit4.jpeg", "/images/Lehenga 1.jpeg", "/images/suit5.jpeg"],
         caption: "Festive Collection"
       },
 
       "party-wear": {
         title: "Party & Occasion Wear",
         description: "Find a look for your next celebration.",
-        images: [
-          "/images/Suit4.jpeg",
-          "/images/Lehenga 1.jpeg",
-          "/images/suit5.jpeg",
-          "/images/suit6.jpeg"
-        ],
+        folder: "party-wear",
+        legacyImages: ["/images/Suit4.jpeg", "/images/Lehenga 1.jpeg", "/images/suit5.jpeg", "/images/suit6.jpeg"],
         caption: "Occasion Wear"
       },
 
       "new-arrivals": {
         title: "New Arrivals",
         description: "Explore our latest fashion selection.",
-        images: [
-          "/images/cod.jpeg",
-          "/images/Cod2.jpeg",
-          "/images/Suit 1.jpeg",
-          "/images/Lehenga 1.jpeg",
-          "/images/Suit2.jpeg"
-        ],
+        folder: "new-arrivals",
+        legacyImages: ["/images/cod.jpeg", "/images/Cod2.jpeg", "/images/Suit 1.jpeg", "/images/Lehenga 1.jpeg", "/images/Suit2.jpeg"],
         caption: "New Arrival"
       }
     };
@@ -635,21 +606,35 @@
       resultCount.textContent = count + " styles in this collection";
     }
 
-    function renderCollection() {
+    function getLegacyPaths() {
+      if (collection.legacyImages) return collection.legacyImages;
+      if (collection.folder) {
+        // Fallback for the original numbered folders if products.json is unavailable.
+        const oldCounts = {
+          "western-wear": 11,
+          "cord-sets": 37,
+          "indo-western": 22,
+          "designer-suits": 71
+        };
+        const count = oldCounts[categoryKey] || 0;
+        return Array.from({ length: count }, (_, i) =>
+          "/images/" + collection.folder + "/" + (i + 1) + ".jpeg"
+        );
+      }
+      return [];
+    }
+
+    async function renderCollection() {
       if (!collection) {
         showNotFound();
         return;
       }
 
-      // Set category-specific SEO metadata after identifying the selected category.
       document.title = collection.seoTitle || (collection.title + " | Label AKS");
-
       document.getElementById("seoDescription").setAttribute(
         "content",
         collection.seoDescription || collection.description
       );
-
-      // Query-string category URLs are the existing public URLs for these collections.
       document.getElementById("canonicalUrl").setAttribute(
         "href",
         "https://labelaks.in/category.html?category=" + encodeURIComponent(categoryKey)
@@ -665,25 +650,34 @@
         seoContentSection.hidden = false;
       }
 
-      const paths = collection.folder
-        ? Array.from(
-            { length: collection.count },
-            (_, i) => "/images/" + collection.folder + "/" + (i + 1) + ".jpeg"
-          )
-        : collection.images;
+      let paths = getLegacyPaths();
+      try {
+        const response = await fetch("/products.json?v=" + Date.now(), { cache: "no-store" });
+        if (response.ok) {
+          const catalogue = await response.json();
+          const generatedPaths = catalogue.categories &&
+            catalogue.categories[categoryKey] &&
+            catalogue.categories[categoryKey].images;
+          if (Array.isArray(generatedPaths)) {
+            // Generated catalogue contains legacy images too, preserving the current stock display.
+            paths = generatedPaths;
+          }
+        }
+      } catch (error) {
+        console.warn("Could not load the latest product catalogue; using existing images.", error);
+      }
 
       if (!paths || paths.length === 0) {
         showNotFound();
         return;
       }
 
+      grid.replaceChildren();
       paths.forEach(function (path, index) {
         grid.appendChild(createProductCard(path, index + 1));
       });
-
       updateCount();
     }
-
     renderCollection();
   </script>
 </body>
