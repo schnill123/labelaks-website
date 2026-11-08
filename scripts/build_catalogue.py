@@ -126,7 +126,10 @@ def main():
                 if web_path not in paths:
                     paths.append(web_path)
 
-        catalogue["categories"][slug] = {"images": paths}
+        catalogue["categories"][slug] = {
+            "images": paths,
+            "thumbnail": None,
+        }
 
     # Build New Arrivals from every category, without duplicating image paths.
     all_images = {
@@ -149,6 +152,13 @@ def main():
     catalogue["categories"]["new-arrivals"]["images"] = sorted(
         all_images, key=recency_key
     )[:NEW_ARRIVALS_LIMIT]
+
+    # Select the most recently uploaded/changed photo for each category.
+    # Keep the full image lists in their existing display order.
+    for category in catalogue["categories"].values():
+        images = category["images"]
+        if images:
+            category["thumbnail"] = min(images, key=recency_key)
 
     OUTPUT.write_text(
         json.dumps(catalogue, ensure_ascii=False, indent=2) + "\n",
