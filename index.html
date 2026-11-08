@@ -1264,7 +1264,7 @@
       link.href = `/category.html?category=${encodeURIComponent(category.id)}`;
 
       const image = document.createElement("img");
-      image.src = category.image;
+      image.src = category.image + "?v=" + Date.now();
       image.alt = category.title;
       image.loading = "lazy";
 
@@ -1280,7 +1280,32 @@
       return article;
     }
 
-    function renderCategoryGrid() {
+    async function renderCategoryGrid() {
+      // products.json is regenerated automatically whenever new product photos are uploaded.
+      // Use its latest category thumbnail instead of the fixed fallback image paths above.
+      try {
+        const response = await fetch("/products.json?v=" + Date.now(), {
+          cache: "no-store"
+        });
+
+        if (response.ok) {
+          const catalogue = await response.json();
+
+          categories.forEach(category => {
+            const data = catalogue.categories &&
+              catalogue.categories[category.id];
+
+            if (data && data.thumbnail) {
+              category.image = data.thumbnail;
+            } else if (data && Array.isArray(data.images) && data.images.length) {
+              category.image = data.images[0];
+            }
+          });
+        }
+      } catch (error) {
+        console.warn("Could not load updated category thumbnails; using fallback images.", error);
+      }
+
       categoryGrid.replaceChildren();
 
       categories.forEach(category => {
