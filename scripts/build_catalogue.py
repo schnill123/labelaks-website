@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
-"""Build products.json by scanning the Label AKS category image folders."""
+"""Build products.json by scanning Label AKS category folders.
+
+New Arrivals is generated automatically from the 25 most recently changed
+product photos across all catalogue categories, using Git commit timestamps.
+"""
 from pathlib import Path
 import json
 import re
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 IMAGE_ROOT = ROOT / "images"
@@ -55,6 +60,7 @@ CATEGORIES = {
 }
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".avif"}
+NEW_ARRIVALS_LIMIT = 25
 
 
 def natural_key(value):
@@ -62,6 +68,33 @@ def natural_key(value):
         int(part) if part.isdigit() else part.lower()
         for part in re.split(r"(\d+)", value)
     ]
+
+
+def latest_image_timestamps():
+    """Return each image's latest Git commit timestamp (newest change wins)."""
+    timestamps = {}
+    try:
+        result = subprocess.run(
+            ["git", "log", "--format=%ct", "--name-only", "--", "images"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        )
+        current_timestamp = None
+        for line in result.stdout.splitlines():
+            value = line.strip()
+            if not value:
+                continue
+            if value.isdigit():
+                current_timestamp = int(value)
+            elif current_timestamp is not None and value not in timestamps:
+                timestamps[value] = current_timestamp
+    except (FileNotFoundError, subprocess.CalledProcessError):
+        # Allows local/manual runs even when Git history is unavailable.
+        pass
+    return timestamps
 
 
 def main():
@@ -95,6 +128,27 @@ def main():
 
         catalogue["categories"][slug] = {"images": paths}
 
+    # Build New Arrivals from every category, without duplicating image paths.
+    all_images = {
+        image_path
+        for category in catalogue["categories"].values()
+        for image_path in category["images"]
+    }
+
+    timestamps = latest_image_timestamps()
+
+    def recency_key(web_path):
+        relative_path = web_path.lstrip("/")
+        file_path = ROOT / relative_path
+        timestamp = timestamps.get(relative_path)
+        if timestamp is None and file_path.is_file():
+            timestamp = int(file_path.stat().st_mtime)
+        return (-(timestamp or 0), web_path.casefold())
+
+    catalogue["categories"]["new-arrivals"]["images"] = sorted(
+        all_images, key=recency_key
+    )[:NEW_ARRIVALS_LIMIT]
+
     OUTPUT.write_text(
         json.dumps(catalogue, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
@@ -102,7 +156,9 @@ def main():
 
     print(
         f"Generated {OUTPUT} with "
-        f"{sum(len(v['images']) for v in catalogue['categories'].values())} image entries."
+        f"{sum(len(v['images']) for v in catalogue['categories'].values())} "
+        f"image entries; New Arrivals contains "
+        f"{len(catalogue['categories']['new-arrivals']['images'])} photos."
     )
 
 
