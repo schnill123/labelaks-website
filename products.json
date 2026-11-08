@@ -14,7 +14,8 @@
         "/images/Westernwear/9.jpeg",
         "/images/Westernwear/10.jpeg",
         "/images/Westernwear/11.jpeg"
-      ]
+      ],
+      "thumbnail": "/images/Westernwear/1.jpeg"
     },
     "cord-sets": {
       "images": [
@@ -55,7 +56,8 @@
         "/images/cordsets/35.jpeg",
         "/images/cordsets/36.jpeg",
         "/images/cordsets/37.jpeg"
-      ]
+      ],
+      "thumbnail": "/images/cordsets/1.jpeg"
     },
     "indo-western": {
       "images": [
@@ -88,7 +90,8 @@
         "/images/indowestern/Electric Blue.jpeg",
         "/images/indowestern/Frock with Potli .jpeg",
         "/images/indowestern/Pearl magic.jpeg"
-      ]
+      ],
+      "thumbnail": "/images/indowestern/Anarkali.jpeg"
     },
     "designer-suits": {
       "images": [
@@ -164,7 +167,8 @@
         "/images/designer-suits/70.jpeg",
         "/images/designer-suits/71.jpeg",
         "/images/designer-suits/72.jpeg"
-      ]
+      ],
+      "thumbnail": "/images/designer-suits/3.jpeg"
     },
     "suit-sets": {
       "images": [
@@ -176,12 +180,14 @@
         "/images/suit5.jpeg",
         "/images/suit6.jpeg",
         "/images/suit-sets/AKS-Test-01.jpg.png"
-      ]
+      ],
+      "thumbnail": "/images/suit-sets/AKS-Test-01.jpg.png"
     },
     "lehengas": {
       "images": [
         "/images/Lehenga 1.jpeg"
-      ]
+      ],
+      "thumbnail": "/images/Lehenga 1.jpeg"
     },
     "daily-wear": {
       "images": [
@@ -189,7 +195,8 @@
         "/images/Suit 1.jpeg",
         "/images/Suit2.jpeg",
         "/images/suit3.jpeg"
-      ]
+      ],
+      "thumbnail": "/images/Suit 1.jpeg"
     },
     "festive-wear": {
       "images": [
@@ -197,7 +204,8 @@
         "/images/Suit4.jpeg",
         "/images/Lehenga 1.jpeg",
         "/images/suit5.jpeg"
-      ]
+      ],
+      "thumbnail": "/images/Lehenga 1.jpeg"
     },
     "party-wear": {
       "images": [
@@ -205,7 +213,8 @@
         "/images/Lehenga 1.jpeg",
         "/images/suit5.jpeg",
         "/images/suit6.jpeg"
-      ]
+      ],
+      "thumbnail": "/images/Lehenga 1.jpeg"
     },
     "new-arrivals": {
       "images": [
@@ -234,7 +243,8 @@
         "/images/designer-suits/64.jpeg",
         "/images/designer-suits/65.jpeg",
         "/images/designer-suits/66.jpeg"
-      ]
+      ],
+      "thumbnail": "/images/designer-suits/3.jpeg"
     }
   }
 }
