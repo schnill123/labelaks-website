@@ -131,7 +131,8 @@ def main():
     # Build New Arrivals from every category, without duplicating image paths.
     all_images = {
         image_path
-        for category in catalogue["categories"].values()
+        for slug, category in catalogue["categories"].items()
+        if slug != "new-arrivals"
         for image_path in category["images"]
     }
 
